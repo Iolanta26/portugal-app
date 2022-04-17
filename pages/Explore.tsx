@@ -5,15 +5,18 @@ import { useRouter } from "next/router";
 const Explore = () => {
   const router = useRouter();
   return (
-    <Container>
-      <MainText>
-        <div>Portugal</div>
-        <div>in your pocket</div>
-      </MainText>
-      <ExploreButton onClick={() => router.push("./ChooseRegion")}>
-        Start exploring
-      </ExploreButton>
-    </Container>
+    <>
+      <Container>
+        {/* <Background src="./landImage.jpg" alt="landing"></Background> */}
+        <MainText>
+          <div>Portugal</div>
+          <div>in your pocket</div>
+        </MainText>
+        <ExploreButton onClick={() => router.push("./ChooseRegion")}>
+          Start exploring
+        </ExploreButton>
+      </Container>
+    </>
   );
 };
 export default Explore;
@@ -23,22 +26,27 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
-  position: relative;
-  background-image: url("./landing.jpg");
+  max-height: calc(100%-80px);
+  // position: relative;
+  background-image: url("./landImage.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  // overflow: hidden;
 `;
 
-// const LandingImage = styled.img``;
+const Background = styled.img`
+  height: fit-content;
+`;
 
 const MainText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 2;
+  z-index: 3;
+  // position: absolute;
+  color: white;
 `;
 
 const ExploreButton = styled.button`
@@ -47,4 +55,5 @@ const ExploreButton = styled.button`
   border-radius: 15px;
   font-size: 15px;
   padding: 20px 25px;
+  position: absolute;
 `;

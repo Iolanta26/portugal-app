@@ -9,12 +9,11 @@ import algarve from "../public/Algarve.svg";
 import back from "../public/back-icon.svg";
 
 import { useRouter } from "next/router";
-import { REGIONS } from "../dummy-data/regions";
 
 const MapPortugal = (region: Region) => {
   const router = useRouter();
 
-  const { id } = region;
+  // const { id } = region;
 
   console.log("region", region);
 

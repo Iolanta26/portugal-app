@@ -4,7 +4,7 @@ export const Navigation = () => {
   return (
     <Navbar>
       <CenterWrapper>
-        <CenterImage src="./navbar-center.svg" alt="center" />
+        <CenterImage src="./azulejo.svg" alt="center" />
       </CenterWrapper>
       <HeartButton>
         <Heart src="./heart.svg" alt="center" />
@@ -30,10 +30,19 @@ const Navbar = styled.div`
 `;
 
 const CenterWrapper = styled.div`
-  position: fixed;
+  width: 70px;
+  height: 70px;
+  background: #fecf81;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-const CenterImage = styled.img``;
+const CenterImage = styled.img`
+  width: 50px;
+  border-radius: 50px;
+`;
 
 const Heart = styled.img`
   display: flex;
