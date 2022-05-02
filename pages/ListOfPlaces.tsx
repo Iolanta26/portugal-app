@@ -1,49 +1,70 @@
 import Image from "next/image";
 import { NextRouter, withRouter } from "next/router";
+import { useState } from "react";
 import styled from "styled-components";
+import { LocationModal } from "../components/LocationModal";
 import { PlaceCard } from "../components/PlaceCard";
 
 import { PLACES } from "../dummy-data/places";
-import { getRegionById } from "../functions/functions";
+import { getPlaceById, getRegionById } from "../functions/functions";
 
 import back from "../public/back-icon.svg";
-import { Place } from "../types";
+import { Place, RegionVisual } from "../types";
 
 type Props = {
-  regionId: string;
-  placeId: string;
-  region: string;
   router: NextRouter;
-  place: Place[];
+  place: Place;
 };
 
-const ListOfPlaces = ({ router, placeId }: Props) => {
-  const { regionId } = router.query;
-  console.log(regionId);
+const ListOfPlaces = ({ router, place }: Props) => {
+  const [openModal, setOpenModal] = useState(false);
+  const { regionId, regionVisual } = router.query;
 
-  const PlacesAccordingToRegion = PLACES.filter(
+  // const place = getPlaceById(placeId as string);
+
+  // const { placeDesc, placeName, placeImage, location } = place;
+
+  // console.log("regionVisual", regionVisual);
+
+  const placesAccordingToRegion = PLACES.filter(
     (place) => place.region === regionId
   );
+  console.log(placesAccordingToRegion);
 
   const getRegionName = getRegionById(regionId as string)?.regionName;
 
   return (
     <>
-      <BackWrapper onClick={() => router.back()}>
-        <Image src={back} alt="back" />
-      </BackWrapper>
-      <div>Places to visit in {getRegionName}</div>
-      <MainListContainer>
-        {PlacesAccordingToRegion.map((place) => (
-          <CardsContainer key={place.id}>
-            <PlaceCard
-              placeName={place.placeName}
-              placeImage={place.placeImage}
-              location={place.location}
+      <div>
+        <BackWrapper onClick={() => router.back()}>
+          <Image src={back} alt="back" />
+        </BackWrapper>
+        <div>Places to visit in {getRegionName}</div>
+        <MainListContainer>
+          {placesAccordingToRegion.map((place) => (
+            <CardsContainer key={place.id}>
+              <PlaceCard
+                placeName={place.placeName}
+                placeImage={place.placeImage}
+                location={place.location}
+                regionVisual={regionVisual as string}
+                onClick={() => setOpenModal(true)}
+              />
+            </CardsContainer>
+          ))}
+          {openModal && (
+            <LocationModal
+              // placeName={placeName}
+              // placeImage={placeImage}
+              // location={location}
+              // description={placeDesc}
+              // regionVisual={regionVisual as string}
+              onClose={() => setOpenModal(false)}
             />
-          </CardsContainer>
-        ))}
-      </MainListContainer>
+          )}
+          2
+        </MainListContainer>
+      </div>
     </>
   );
 };

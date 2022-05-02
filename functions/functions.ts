@@ -7,6 +7,3 @@ export const getPlaceById = (placeId: string) =>
   PLACES.find((place) => place.id === placeId);
 
 export const getAllPlaces = PLACES.sort();
-
-// export const getPlacesOfRegion = (placeId: string) =>
-//   getAllPlaces().filter((placeId) => place.region === region.id);

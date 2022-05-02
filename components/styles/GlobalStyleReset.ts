@@ -4,10 +4,13 @@ export const GlobalStyleReset = createGlobalStyle`
 
 * {
   box-sizing: border-box;
+  
 }
 
 html, body {
   font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 input, button {

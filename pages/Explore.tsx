@@ -1,42 +1,41 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
-// import landing from "../public/landing.jpg";
 
 const Explore = () => {
   const router = useRouter();
   return (
-    <>
-      <Container>
-        {/* <Background src="./landImage.jpg" alt="landing"></Background> */}
-        <MainText>
-          <div>Portugal</div>
-          <div>in your pocket</div>
-        </MainText>
-        <ExploreButton onClick={() => router.push("./ChooseRegion")}>
-          Start exploring
-        </ExploreButton>
-      </Container>
-    </>
+    <ContainerMain>
+      <Background src="./landImage.jpg" alt="landing" />
+      <MainText>
+        <Portugal>Portugal</Portugal>
+        <Paragraph>in your pocket</Paragraph>
+      </MainText>
+      <ExploreButton onClick={() => router.push("./ChooseRegion")}>
+        Start exploring
+      </ExploreButton>
+    </ContainerMain>
   );
 };
 export default Explore;
 
-const Container = styled.div`
+const ContainerMain = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-height: calc(100%-80px);
-  // position: relative;
-  background-image: url("./landImage.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // overflow: hidden;
+  position: relative;
 `;
 
+const Portugal = styled.div``;
+
+const Paragraph = styled.div``;
+
 const Background = styled.img`
-  height: fit-content;
+  position: absolute;
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  top: -10px;
 `;
 
 const MainText = styled.div`
@@ -45,8 +44,9 @@ const MainText = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 3;
-  // position: absolute;
-  color: white;
+  position: absolute;
+  top: 30px;
+  color: black;
 `;
 
 const ExploreButton = styled.button`
@@ -56,4 +56,5 @@ const ExploreButton = styled.button`
   font-size: 15px;
   padding: 20px 25px;
   position: absolute;
+  top: 100px;
 `;

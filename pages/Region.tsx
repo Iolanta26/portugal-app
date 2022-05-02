@@ -6,76 +6,65 @@ import Image from "next/image";
 import { getRegionById } from "../functions/functions";
 import { useEffect, useState } from "react";
 import { RegionVisual } from "../types";
+import { BackWrapper } from "../components/StyledComponents";
 
 type Props = {
   router: NextRouter;
 };
 
 const Region = ({ router }: Props) => {
-  const [regionVisual, setRegionVisual] = useState<RegionVisual>();
-  const [isNorth, setIsNorth] = useState(false);
-  const [isLisabon, setIsLisabon] = useState(false);
-  const [isAlentejo, setIsAlentejo] = useState(false);
-  const [isCentral, setIsCentral] = useState(false);
-  const [isAlgarve, setIsAlgarve] = useState(false);
+  const [regionVisual, setRegionVisual] = useState<RegionVisual>("north");
   const { regionId } = router.query;
 
   const region = getRegionById(regionId as string);
 
   useEffect(() => {
-    if (region?.regionName === "Lisbon") {
-      setRegionVisual("lisabon");
-      setIsLisabon(true);
-    } else if (region?.regionName === "North") {
-      setRegionVisual("north");
-      setIsNorth(true);
-    } else if (region?.regionName === "Algarve") {
-      setRegionVisual("algarve");
-      setIsAlgarve(true);
-    } else if (region?.regionName === "Central Portugal") {
-      setRegionVisual("central");
-      setIsCentral(true);
-    } else if (region?.regionName === "Alentejo") {
-      setRegionVisual("alentejo");
-      setIsAlentejo(true);
+    switch (region?.regionName) {
+      case "North":
+        region.regionName === "North";
+        setRegionVisual("north");
+        break;
+      case "Lisbon":
+        region.regionName === "Lisbon";
+        setRegionVisual("lisabon");
+        break;
+      case "Central Portugal":
+        region.regionName === "Central Portugal";
+        setRegionVisual("central");
+        break;
+      case "Alentejo":
+        region.regionName === "Alentejo";
+        setRegionVisual("alentejo");
+        break;
+      case "Algarve":
+        region.regionName === "Algarve";
+        setRegionVisual("algarve");
+        break;
     }
   }, [regionVisual]);
 
-  console.log("visualType", regionVisual);
-
   return (
-    <div>
+    <MainDiv>
       <BackWrapper onClick={() => router.push({ pathname: "./ChooseRegion" })}>
         <Image src={back} alt="back" />
       </BackWrapper>
       <RegionImageWrapper>
         <RegionImage src={region?.mainImage} alt="region" />
       </RegionImageWrapper>
-      <DescriptionWrapper
-        $isNorth={isNorth}
-        $isLisabon={isLisabon}
-        $isAlentejo={isAlentejo}
-        $isCentral={isCentral}
-        $isAlgarve={isAlgarve}
-      >
+      <DescriptionWrapper $regionVisual={regionVisual}>
         <DescriptionContainer>
-          <RegionName
-            $isNorth={isNorth}
-            $isLisabon={isLisabon}
-            $isAlentejo={isAlentejo}
-            $isCentral={isCentral}
-            $isAlgarve={isAlgarve}
-          >
+          <RegionName $regionVisual={regionVisual}>
             {region?.regionName}
           </RegionName>
           <div>{region?.regionDesc}</div>
         </DescriptionContainer>
         <ButtonWrapper>
           <ExploreBtn
+            $regionVisual={regionVisual}
             onClick={() =>
               router.push({
                 pathname: "./ListOfPlaces",
-                query: { regionId },
+                query: { regionId, regionVisual },
               })
             }
           >
@@ -83,53 +72,54 @@ const Region = ({ router }: Props) => {
           </ExploreBtn>
         </ButtonWrapper>
       </DescriptionWrapper>
-    </div>
+    </MainDiv>
   );
 };
 
 export default withRouter(Region);
 
-const BackWrapper = styled.button`
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  z-index: 2;
-  top: 15px;
-  left: 15px;
+const MainDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 `;
 
 const RegionImageWrapper = styled.div`
-  position: relative;
   overflow: hidden;
-  height: 700px;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
 `;
 
 const RegionImage = styled.img`
-  position: absolute;
   height: 500px;
-  width: 500px;
-  top: 0%;
-  left: 0%;
+  min-width: 500px;
   object-fit: cover;
+  position: absolute;
 `;
 
 const DescriptionWrapper = styled.div<{
-  $isNorth?: boolean;
-  $isLisabon: boolean;
-  $isAlentejo: boolean;
-  $isCentral: boolean;
-  $isAlgarve: boolean;
+  $regionVisual: string;
 }>`
   position: absolute;
-  top: 470px;
-  left: 0%;
-  height: 475px;
-  background-color: ${(props) => props.$isNorth && "#248cf9"};
-  background-color: ${(props) => props.$isLisabon && "#2E70B2"};
-  background-color: ${(props) => props.$isAlentejo && "#FCB743"};
-  background-color: ${(props) => props.$isCentral && "#2DBE5A"};
-  background-color: ${(props) => props.$isAlgarve && "#B07420"};
+  top: 430px;
+  width: 100%;
+  background-color: ${(props) =>
+    props.$regionVisual === "north"
+      ? "#248cf9"
+      : props.$regionVisual === "lisabon"
+      ? "#2E70B2"
+      : props.$regionVisual === "central"
+      ? "#2DBE5A"
+      : props.$regionVisual === "alentejo"
+      ? "#FCB743"
+      : props.$regionVisual === "algarve"
+      ? "#B07420"
+      : "transparent"};
   border-radius: 50px;
 `;
 
@@ -138,18 +128,21 @@ const DescriptionContainer = styled.div`
 `;
 
 const RegionName = styled.div<{
-  $isNorth?: boolean;
-  $isLisabon: boolean;
-  $isAlentejo: boolean;
-  $isCentral: boolean;
-  $isAlgarve: boolean;
+  $regionVisual: string;
 }>`
   font-size: 34px;
-  color: ${(props) => props.$isNorth && "#FCB743"};
-  color: ${(props) => props.$isLisabon && "#FCB743"};
-  color: ${(props) => props.$isAlentejo && "#B07420"};
-  color: ${(props) => props.$isCentral && "#2E70B2"};
-  color: ${(props) => props.$isAlgarve && "#FCB743"};
+  color: ${(props) =>
+    props.$regionVisual === "north"
+      ? "#FCB743"
+      : props.$regionVisual === "lisabon"
+      ? "#FCB743"
+      : props.$regionVisual === "central"
+      ? "#2E70B2"
+      : props.$regionVisual === "alentejo"
+      ? "#B07420"
+      : props.$regionVisual === "algarve"
+      ? "#FCB743"
+      : "transparent"};
 `;
 
 const ButtonWrapper = styled.div`
@@ -159,10 +152,32 @@ const ButtonWrapper = styled.div`
   margin-top: 50px;
 `;
 
-const ExploreBtn = styled.button`
+const ExploreBtn = styled.button<{
+  $regionVisual: string;
+}>`
   border: none;
   background: #fcb743;
   border-radius: 15px;
   font-size: 15px;
   padding: 20px 25px;
+  background-color: ${(props) =>
+    props.$regionVisual === "north"
+      ? "#FCB743"
+      : props.$regionVisual === "lisabon"
+      ? "#FCB743"
+      : props.$regionVisual === "central"
+      ? "#2E70B2"
+      : props.$regionVisual === "alentejo"
+      ? "#B07420"
+      : props.$regionVisual === "algarve"
+      ? "#FCB743"
+      : "transparent"};
+  color: ${(props) =>
+    props.$regionVisual === "north"
+      ? "black"
+      : props.$regionVisual === "lisabon"
+      ? "black"
+      : props.$regionVisual === "algarve"
+      ? "black"
+      : "#fff5e8"};
 `;

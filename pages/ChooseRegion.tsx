@@ -9,16 +9,13 @@ import algarve from "../public/Algarve.svg";
 import back from "../public/back-icon.svg";
 
 import { useRouter } from "next/router";
+import { BackWrapper, FlexContainer } from "../components/StyledComponents";
 
-const MapPortugal = (region: Region) => {
+const MapPortugal = () => {
   const router = useRouter();
 
-  // const { id } = region;
-
-  console.log("region", region);
-
   return (
-    <div>
+    <FlexContainer>
       <BackWrapper onClick={() => router.push({ pathname: "./Explore" })}>
         <Image src={back} alt="back" />
       </BackWrapper>
@@ -35,6 +32,7 @@ const MapPortugal = (region: Region) => {
             })
           }
         >
+          <div>North</div>
           <Image src={north} alt="north" />
         </North>
         <Central
@@ -45,6 +43,7 @@ const MapPortugal = (region: Region) => {
             })
           }
         >
+          <div>Central Region</div>
           <Image src={central} alt="central" />
         </Central>
         <Lisbon
@@ -55,6 +54,7 @@ const MapPortugal = (region: Region) => {
             })
           }
         >
+          <div>Lisbon capital area</div>
           <Image src={lisbon} alt="lisbon" />
         </Lisbon>
         <Alentejo
@@ -65,6 +65,7 @@ const MapPortugal = (region: Region) => {
             })
           }
         >
+          <div>Alentejo</div>
           <Image src={alentejo} alt="alentejo" />
         </Alentejo>
         <Algarve
@@ -75,23 +76,20 @@ const MapPortugal = (region: Region) => {
             })
           }
         >
+          <div>Algarve</div>
           <Image src={algarve} alt="algarve" />
         </Algarve>
       </Map>
-    </div>
+    </FlexContainer>
   );
 };
 
 export default MapPortugal;
 
-const BackWrapper = styled.button`
-  background: transparent;
-  border: none;
-  cursor: pointer;
-`;
-
 const TextContainer = styled.div`
-  margin-left: 20px;
+  margin-left: 35px;
+  margin-top: 50px;
+  margin-bottom: 40px;
 `;
 
 const MainText = styled.div`
