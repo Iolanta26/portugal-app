@@ -15,9 +15,9 @@ export const Navigation = () => {
 };
 
 const Navbar = styled.div`
-  background-color: #fff3e0;
-  height: 60px;
-  border-radius: 10px;
+  background-color: #fecf81;
+  height: 55px;
+  border-radius: 15px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -30,9 +30,9 @@ const Navbar = styled.div`
 `;
 
 const CenterWrapper = styled.div`
-  width: 70px;
-  height: 70px;
-  background: #fecf81;
+  width: 80px;
+  height: 80px;
+  background: #ffe5ba;
   border-radius: 50%;
   display: flex;
   align-items: center;

@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { NextRouter, withRouter } from "next/router";
-import { useState } from "react";
+
 import styled from "styled-components";
-import { LocationModal } from "../components/LocationModal";
+
 import { PlaceCard } from "../components/PlaceCard";
 
 import { PLACES } from "../dummy-data/places";
-import { getPlaceById, getRegionById } from "../functions/functions";
+import { getRegionById } from "../functions/functions";
 
 import back from "../public/back-icon.svg";
 import { Place, RegionVisual } from "../types";
@@ -14,17 +14,20 @@ import { Place, RegionVisual } from "../types";
 type Props = {
   router: NextRouter;
   place: Place;
+  placeName: string;
+  placeImage: string;
+  location: string;
+  regionVisual: RegionVisual;
 };
 
-const ListOfPlaces = ({ router, place }: Props) => {
-  const [openModal, setOpenModal] = useState(false);
+const ListOfPlaces = ({ router }: Props) => {
   const { regionId, regionVisual } = router.query;
 
   // const place = getPlaceById(placeId as string);
 
   // const { placeDesc, placeName, placeImage, location } = place;
 
-  // console.log("regionVisual", regionVisual);
+  console.log("regionVisual", regionVisual);
 
   const placesAccordingToRegion = PLACES.filter(
     (place) => place.region === regionId
@@ -34,12 +37,22 @@ const ListOfPlaces = ({ router, place }: Props) => {
   const getRegionName = getRegionById(regionId as string)?.regionName;
 
   return (
-    <>
-      <div>
-        <BackWrapper onClick={() => router.back()}>
-          <Image src={back} alt="back" />
-        </BackWrapper>
-        <div>Places to visit in {getRegionName}</div>
+    <PageContainer>
+      <BackWrapper onClick={() => router.back()}>
+        <Image src={back} alt="back" />
+      </BackWrapper>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <TextWrapper>
+          <Places>Places to visit in </Places>
+          <RegionName>{getRegionName}</RegionName>
+        </TextWrapper>
         <MainListContainer>
           {placesAccordingToRegion.map((place) => (
             <CardsContainer key={place.id}>
@@ -47,29 +60,22 @@ const ListOfPlaces = ({ router, place }: Props) => {
                 placeName={place.placeName}
                 placeImage={place.placeImage}
                 location={place.location}
-                regionVisual={regionVisual as string}
-                onClick={() => setOpenModal(true)}
+                placeDesc={place.placeDesc}
+                regionVisual={regionVisual as RegionVisual}
               />
             </CardsContainer>
           ))}
-          {openModal && (
-            <LocationModal
-              // placeName={placeName}
-              // placeImage={placeImage}
-              // location={location}
-              // description={placeDesc}
-              // regionVisual={regionVisual as string}
-              onClose={() => setOpenModal(false)}
-            />
-          )}
-          2
         </MainListContainer>
       </div>
-    </>
+    </PageContainer>
   );
 };
 
 export default withRouter(ListOfPlaces);
+
+const PageContainer = styled.div`
+  padding-bottom: 100px;
+`;
 
 const BackWrapper = styled.div`
   background: transparent;
@@ -86,10 +92,24 @@ const MainListContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 350px;
-  margin-top: 40px;
+  width: 350px;
+  margin-top: 10px;
 `;
 
 const CardsContainer = styled.div`
   display: flex;
+`;
+
+const TextWrapper = styled.div`
+  margin-top: 50px;
+  color: #13406c;
+  width: 300px;
+`;
+
+const Places = styled.div`
+  font-size: 20px;
+`;
+
+const RegionName = styled.div`
+  font-size: 40px;
 `;
