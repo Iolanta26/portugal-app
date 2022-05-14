@@ -1,15 +1,29 @@
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
 export const Navigation = () => {
+  const router = useRouter();
   return (
     <Navbar>
+      <MenuButton onClick={() => router.push("./ChooseRegion")}>
+        <Icon src="./map-pin.svg" alt="map-pin" />
+        <MenuText>Regions</MenuText>
+      </MenuButton>
+      <MenuButton>
+        <Icon src="./search.svg" alt="search" />
+        <MenuText>Search</MenuText>
+      </MenuButton>
       <CenterWrapper>
         <CenterImage src="./azulejo.svg" alt="center" />
       </CenterWrapper>
-      <HeartButton>
-        <Heart src="./heart.svg" alt="center" />
-        Favourite
-      </HeartButton>
+      <MenuButton>
+        <Icon src="./heart.svg" alt="favourite" />
+        <MenuText>Favourite</MenuText>
+      </MenuButton>
+      <MenuButton onClick={() => router.push("./Info")}>
+        <Icon src="./info.svg" alt="info" />
+        <MenuText>Info</MenuText>
+      </MenuButton>
     </Navbar>
   );
 };
@@ -17,7 +31,6 @@ export const Navigation = () => {
 const Navbar = styled.div`
   background-color: #fecf81;
   height: 55px;
-  border-radius: 15px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -26,7 +39,7 @@ const Navbar = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  z-index: 5;
+  z-index: 200;
 `;
 
 const CenterWrapper = styled.div`
@@ -44,17 +57,26 @@ const CenterImage = styled.img`
   border-radius: 50px;
 `;
 
-const Heart = styled.img`
-  display: flex;
+const Icon = styled.img`
+  // display: flex;
+  position: absolute;
+  top: 0px;
 `;
 
-const HeartButton = styled.button`
-  position: fixed;
+const MenuButton = styled.button`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   font-size: 10px;
-  right: 18%;
   background: transparent;
+  height: 38px;
+  width: 40px;
   border: none;
+  position: relative;
+`;
+
+const MenuText = styled.div`
+  position: absolute;
+  bottom: 0px;
 `;

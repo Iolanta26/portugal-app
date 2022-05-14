@@ -8,6 +8,7 @@ export const BackWrapper = styled.button`
   z-index: 3;
   top: 15px;
   left: 15px;
+  position: fixed;
 `;
 
 export const FlexContainer = styled.div`
@@ -16,4 +17,21 @@ export const FlexContainer = styled.div`
   flex-direction: center;
   margin: 0;
   padding: 0;
+`;
+
+export const PlaceName = styled.div`
+  font-family: "Rochester", cursive;
+  color: white;
+  font-size: 30px;
+`;
+
+export const LocationName = styled.div`
+  font-size: 16px;
+  line-height: 30px;
+`;
+
+export const Description = styled.div`
+  width: 85%;
+  text-align: center;
+  margin-bottom: 10px;
 `;

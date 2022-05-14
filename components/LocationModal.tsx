@@ -2,6 +2,8 @@ import Image from "next/image";
 import styled from "styled-components";
 
 import back from "../public/back-icon.svg";
+import heartButton from "../public/add-to-favourites.svg";
+import { Description, LocationName, PlaceName } from "./StyledComponents";
 
 type Props = {
   placeName: string;
@@ -23,24 +25,24 @@ export const LocationModal = ({
   console.log(placeName);
   return (
     <MainContainer>
-      <BackWrapper onClick={onClose}>
-        <Image src={back} alt="back" />
-      </BackWrapper>
       <ImageFrame>
         <ImageOfPlace src={placeImage} alt="place image" />
       </ImageFrame>
-      <Text>
-        <div>{placeName}</div>
-        <div>{location}</div>
+      <Text $regionVisual={regionVisual}>
+        <PlaceName>{placeName}</PlaceName>
+        <LocationName>{location}</LocationName>{" "}
+        <HeartButtonWrapper>
+          <Image src={heartButton} alt="add to favourites" />
+        </HeartButtonWrapper>
       </Text>
-      <div>
+      <Description>
         {description}
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem commodi
         temporibus sed quod dolor, tenetur magnam distinctio maiores ab odio
-        aliquid, enim hic officiis, accusamus sapiente natus in iure quibusdam
-        laudantium dolores incidunt deserunt voluptates voluptas. Aliquid
-      </div>
-      <Back onClick={onClose}>Close</Back>
+      </Description>
+      <Back $regionVisual={regionVisual} onClick={onClose}>
+        Close
+      </Back>
     </MainContainer>
   );
 };
@@ -53,62 +55,92 @@ const MainContainer = styled.div`
   left: 0;
   display: flex;
   align-items: center;
-  // justify-content: center;
   flex-direction: column;
   z-index: 98;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background-color: white;
-`;
-
-const BackWrapper = styled.button`
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  z-index: 150;
-  top: 10px;
-  left: 10px;
-  background-color: white;
-  width: 55px;
-  height: 55px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15);
 `;
 
 const ImageFrame = styled.div`
-  position: relative;
-  object-fit: cover;
-  height: 700px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   z-index: 100;
   overflow: hidden;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
 `;
 
 const ImageOfPlace = styled.img`
+  width: 100%;
+  height: 400px;
   object-fit: cover;
+  position: absolute;
 `;
 
-const Text = styled.div`
-  width: 300px;
-  height: 300px;
-  position: absolute;
+const Text = styled.div<{
+  $regionVisual: string;
+}>`
+  background-color: ${(props) =>
+    props.$regionVisual === "north"
+      ? "#248cf9"
+      : props.$regionVisual === "lisabon"
+      ? "#2E70B2"
+      : props.$regionVisual === "central"
+      ? "#2DBE5A"
+      : props.$regionVisual === "alentejo"
+      ? "#FCB743"
+      : props.$regionVisual === "algarve"
+      ? "#B07420"
+      : "transparent"};
+  width: 80%;
+  height: 120px;
   color: white;
-  z-index: 150;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-radius: 30px;
+  position: relative;
+  top: -60px;
+  z-index: 120;
 `;
 
-const Back = styled.button`
+const HeartButtonWrapper = styled.div`
   position: absolute;
-  bottom: 200px;
-  z-index: 150;
+  top: 90px;
+  right: 40px;
+`;
+
+const Back = styled.button<{
+  $regionVisual: string;
+}>`
+  border: none;
+  background: #fcb743;
+  border-radius: 15px;
+  width: 120px;
+  font-size: 16px;
+  padding: 20px 25px;
+  background-color: ${(props) =>
+    props.$regionVisual === "north"
+      ? "#FCB743"
+      : props.$regionVisual === "lisabon"
+      ? "#FCB743"
+      : props.$regionVisual === "central"
+      ? "#2E70B2"
+      : props.$regionVisual === "alentejo"
+      ? "#B07420"
+      : props.$regionVisual === "algarve"
+      ? "#FCB743"
+      : "transparent"};
+  color: ${(props) =>
+    props.$regionVisual === "north"
+      ? "black"
+      : props.$regionVisual === "lisabon"
+      ? "black"
+      : props.$regionVisual === "algarve"
+      ? "black"
+      : "#fff5e8"};
+  margin-top: 16px;
 `;

@@ -4,6 +4,7 @@ import { NextRouter, withRouter } from "next/router";
 import styled from "styled-components";
 
 import { PlaceCard } from "../components/PlaceCard";
+import { BackWrapper } from "../components/StyledComponents";
 
 import { PLACES } from "../dummy-data/places";
 import { getRegionById } from "../functions/functions";
@@ -75,16 +76,6 @@ export default withRouter(ListOfPlaces);
 
 const PageContainer = styled.div`
   padding-bottom: 100px;
-`;
-
-const BackWrapper = styled.div`
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  z-index: 2;
-  top: 15px;
-  left: 15px;
 `;
 
 const MainListContainer = styled.div`

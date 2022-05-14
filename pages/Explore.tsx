@@ -5,7 +5,7 @@ const Explore = () => {
   const router = useRouter();
   return (
     <ContainerMain>
-      <Background src="./landImage.jpg" alt="landing" />
+      <Background src="./landImage1.jpg" alt="landing" />
       <MainText>
         <Portugal>Portugal</Portugal>
         <Paragraph>in your pocket</Paragraph>
@@ -26,9 +26,16 @@ const ContainerMain = styled.div`
   position: relative;
 `;
 
-const Portugal = styled.div``;
+const Portugal = styled.div`
+  font-family: "Rochester", cursive;
+  color: white;
+  font-size: 50px;
+`;
 
-const Paragraph = styled.div``;
+const Paragraph = styled.div`
+  color: white;
+  font-size: 20px;
+`;
 
 const Background = styled.img`
   position: absolute;
@@ -45,8 +52,7 @@ const MainText = styled.div`
   flex-direction: column;
   z-index: 3;
   position: absolute;
-  top: 30px;
-  color: black;
+  top: 380px;
 `;
 
 const ExploreButton = styled.button`
@@ -56,5 +62,5 @@ const ExploreButton = styled.button`
   font-size: 15px;
   padding: 20px 25px;
   position: absolute;
-  top: 100px;
+  top: 600px;
 `;

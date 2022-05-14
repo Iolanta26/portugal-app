@@ -44,7 +44,7 @@ const Region = ({ router }: Props) => {
   }, [regionVisual]);
 
   return (
-    <MainDiv>
+    <MainDiv $regionVisual={regionVisual}>
       <BackWrapper onClick={() => router.push({ pathname: "./ChooseRegion" })}>
         <Image src={back} alt="back" />
       </BackWrapper>
@@ -78,12 +78,28 @@ const Region = ({ router }: Props) => {
 
 export default withRouter(Region);
 
-const MainDiv = styled.div`
+const MainDiv = styled.div<{
+  $regionVisual: string;
+}>`
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 0;
   padding: 0;
+  background-color: white;
+  height: 100vh;
+  background-color: ${(props) =>
+    props.$regionVisual === "north"
+      ? "#248cf9"
+      : props.$regionVisual === "lisabon"
+      ? "#2E70B2"
+      : props.$regionVisual === "central"
+      ? "#2DBE5A"
+      : props.$regionVisual === "alentejo"
+      ? "#FCB743"
+      : props.$regionVisual === "algarve"
+      ? "#B07420"
+      : "transparent"};
 `;
 
 const RegionImageWrapper = styled.div`
@@ -108,6 +124,7 @@ const DescriptionWrapper = styled.div<{
   position: absolute;
   top: 430px;
   width: 100%;
+  height: fit-content;
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? "#248cf9"
@@ -120,7 +137,7 @@ const DescriptionWrapper = styled.div<{
       : props.$regionVisual === "algarve"
       ? "#B07420"
       : "transparent"};
-  border-radius: 50px;
+  border-radius: 30px;
 `;
 
 const DescriptionContainer = styled.div`
@@ -131,6 +148,7 @@ const RegionName = styled.div<{
   $regionVisual: string;
 }>`
   font-size: 34px;
+  margin-bottom: 20px;
   color: ${(props) =>
     props.$regionVisual === "north"
       ? "#FCB743"
