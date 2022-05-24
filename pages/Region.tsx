@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { REGIONS } from "../dummy-data/regions";
-import { NextRouter, useRouter, withRouter } from "next/router";
+import { NextRouter, withRouter } from "next/router";
 import back from "../public/back-icon.svg";
 import Image from "next/image";
 import { getRegionById } from "../functions/functions";
 import { useEffect, useState } from "react";
 import { RegionVisual } from "../types";
 import { BackWrapper } from "../components/StyledComponents";
+import tram from "../public/tram.svg";
 
 type Props = {
   router: NextRouter;
@@ -52,6 +52,9 @@ const Region = ({ router }: Props) => {
         <RegionImage src={region?.mainImage} alt="region" />
       </RegionImageWrapper>
       <DescriptionWrapper $regionVisual={regionVisual}>
+        <TramDiv>
+          <Image src={tram} alt="tram" />
+        </TramDiv>
         <DescriptionContainer>
           <RegionName $regionVisual={regionVisual}>
             {region?.regionName}
@@ -85,7 +88,6 @@ const MainDiv = styled.div<{
   align-items: center;
   flex-direction: column;
   margin: 0;
-  padding: 0;
   background-color: white;
   height: 100vh;
   background-color: ${(props) =>
@@ -198,4 +200,12 @@ const ExploreBtn = styled.button<{
       : props.$regionVisual === "algarve"
       ? "black"
       : "#fff5e8"};
+  margin-bottom: 100px;
+`;
+
+const TramDiv = styled.div`
+  width: 80px;
+  position: absolute;
+  right: 40px;
+  top: -55px;
 `;

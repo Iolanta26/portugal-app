@@ -59,7 +59,6 @@ const Card = styled.div<{
   margin: 10px;
   border-radius: 15px;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 10px 0;
   cursor: pointer;
   background-color: ${(props) =>
     props.$regionVisual === "north"

@@ -18,7 +18,7 @@ export const REGIONS: Region[] = [
     id: "2central-portugal",
     regionName: "Central Portugal",
     regionDesc:
-      "Central Portugal is an amazing region, a place where you can discover villages of rare beauty frozen in time, breathtaking landscapes, cities that know how to preserve their history and at the same time embrace modernity. Visiting this region is definitely one of the things to do in Portugal so don’t miss the opportunity!",
+      "Central Portugal is an amazing region, a place where you can discover villages of rare beauty frozen in time, breathtaking landscapes, cities that know how to preserve their history and at the same time embrace modernity. Visiting this region is definitely one of the things to do in Portugal so don’t miss the opportunity! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum",
     mainImage:
       "https://images.unsplash.com/photo-1635893312205-6abda7db17a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2187&q=80",
     images: [

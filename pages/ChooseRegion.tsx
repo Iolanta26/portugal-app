@@ -1,15 +1,15 @@
-import Image from "next/image";
+import { useRouter } from "next/router";
 import styled from "styled-components";
-import { Region } from "../types/types";
+
+import { BackWrapper, FlexContainer } from "../components/StyledComponents";
+import Image from "next/image";
+
 import north from "../public/North.svg";
 import central from "../public/Central-portugal.svg";
 import alentejo from "../public/Alentejo.svg";
 import lisbon from "../public/Lisbon.svg";
 import algarve from "../public/Algarve.svg";
 import back from "../public/back-icon.svg";
-
-import { useRouter } from "next/router";
-import { BackWrapper, FlexContainer } from "../components/StyledComponents";
 
 const MapPortugal = () => {
   const router = useRouter();
@@ -32,7 +32,7 @@ const MapPortugal = () => {
             })
           }
         >
-          <div>North</div>
+          <RegionNameNorth>North</RegionNameNorth>
           <Image src={north} alt="north" />
         </North>
         <Central
@@ -43,7 +43,9 @@ const MapPortugal = () => {
             })
           }
         >
-          <div>Central Region</div>
+          <RegionNameCentral>
+            Central <br /> Region
+          </RegionNameCentral>
           <Image src={central} alt="central" />
         </Central>
         <Lisbon
@@ -54,7 +56,7 @@ const MapPortugal = () => {
             })
           }
         >
-          <div>Lisbon capital area</div>
+          <RegionNameLisbon>Lisbon</RegionNameLisbon>
           <Image src={lisbon} alt="lisbon" />
         </Lisbon>
         <Alentejo
@@ -65,7 +67,7 @@ const MapPortugal = () => {
             })
           }
         >
-          <div>Alentejo</div>
+          <RegionNameAlentejo>Alentejo</RegionNameAlentejo>
           <Image src={alentejo} alt="alentejo" />
         </Alentejo>
         <Algarve
@@ -76,7 +78,7 @@ const MapPortugal = () => {
             })
           }
         >
-          <div>Algarve</div>
+          <RegionNameAlgarve>Algarve</RegionNameAlgarve>
           <Image src={algarve} alt="algarve" />
         </Algarve>
       </Map>
@@ -108,10 +110,63 @@ const Map = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  // background: red;
+
   // height: 600px;
   margin-top: 20px;
   margin-left: 20px;
+`;
+
+const RegionNameNorth = styled.div`
+  color: white;
+  font-family: "Rochester", cursive;
+  font-size: 35px;
+  margin-top: 50px;
+  position: absolute;
+  z-index: 20;
+  left: 60px;
+`;
+
+const RegionNameCentral = styled.div`
+  color: white;
+  font-family: "Rochester", cursive;
+  font-size: 30px;
+  margin-top: 50px;
+  position: absolute;
+  z-index: 20;
+  top: -10px;
+  left: 110px;
+`;
+
+const RegionNameAlentejo = styled.div`
+  color: white;
+  font-family: "Rochester", cursive;
+  font-size: 30px;
+  margin-top: 50px;
+  position: absolute;
+  z-index: 20;
+  top: 50px;
+  left: 70px;
+`;
+
+const RegionNameAlgarve = styled.div`
+  color: white;
+  font-family: "Rochester", cursive;
+  font-size: 25px;
+  margin-top: 0px;
+  position: absolute;
+  z-index: 20;
+  top: 10px;
+  left: 40px;
+`;
+
+const RegionNameLisbon = styled.div`
+  color: white;
+  font-family: "Rochester", cursive;
+  font-size: 20px;
+  position: absolute;
+  z-index: 20;
+  left: 13px;
+  top: 10px;
 `;
 
 const North = styled.button`
@@ -125,7 +180,7 @@ const North = styled.button`
   &:active,
   &:hover {
     transition: ease 0.5s;
-    transform: scale(1.1, 1.1);
+    transform: scale(1.05, 1.05);
   }
 `;
 
@@ -141,7 +196,7 @@ const Central = styled.button`
   &:active,
   &:hover {
     transition: ease 0.5s;
-    transform: scale(1.1, 1.1);
+    transform: scale(1.05, 1.05);
   }
 `;
 
@@ -158,7 +213,7 @@ const Lisbon = styled.button`
   &:active,
   &:hover {
     transition: ease 0.5s;
-    transform: scale(1.1, 1.1);
+    transform: scale(1.05, 1.05);
   }
 `;
 
@@ -175,7 +230,7 @@ const Alentejo = styled.button`
   &:active,
   &:hover {
     transition: ease 0.5s;
-    transform: scale(1.1, 1.1);
+    transform: scale(1.05, 1.05);
   }
 `;
 
@@ -192,6 +247,6 @@ const Algarve = styled.button`
   &:active,
   &:hover {
     transition: ease 0.5s;
-    transform: scale(1.1, 1.1);
+    transform: scale(1.05, 1.05);
   }
 `;

@@ -5,7 +5,7 @@ const Explore = () => {
   const router = useRouter();
   return (
     <ContainerMain>
-      <Background src="./landImage1.jpg" alt="landing" />
+      <Background src="./land.jpg" alt="landing" />
       <MainText>
         <Portugal>Portugal</Portugal>
         <Paragraph>in your pocket</Paragraph>
