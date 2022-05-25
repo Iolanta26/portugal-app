@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { BackWrapper, FlexContainer } from "../components/StyledComponents";
 import Image from "next/image";
 
+import portugalMap from "../public/portugal-map.svg";
+
 import north from "../public/North.svg";
 import central from "../public/Central-portugal.svg";
 import alentejo from "../public/Alentejo.svg";
@@ -23,7 +25,7 @@ const MapPortugal = () => {
         <MainText>Choose region</MainText>
         <SubText>you would like to see</SubText>
       </TextContainer>
-      <Map>
+      {/* <Map>
         <North
           onClick={() =>
             router.push({
@@ -81,6 +83,59 @@ const MapPortugal = () => {
           <RegionNameAlgarve>Algarve</RegionNameAlgarve>
           <Image src={algarve} alt="algarve" />
         </Algarve>
+      </Map> */}
+      <Map>
+        <Image src={portugalMap} alt="portugal-app" />
+        <NorthButton
+          onClick={() =>
+            router.push({
+              pathname: "./Region",
+              query: { regionId: "1north" },
+            })
+          }
+        >
+          North
+        </NorthButton>
+        <CentralRegionButton
+          onClick={() =>
+            router.push({
+              pathname: "./Region",
+              query: { regionId: "2central-portugal" },
+            })
+          }
+        >
+          Central Region
+        </CentralRegionButton>
+        <AlentejoButton
+          onClick={() =>
+            router.push({
+              pathname: "./Region",
+              query: { regionId: "4alentejo" },
+            })
+          }
+        >
+          Alentejo
+        </AlentejoButton>
+        <AlgarveButton
+          onClick={() =>
+            router.push({
+              pathname: "./Region",
+              query: { regionId: "5algarve" },
+            })
+          }
+        >
+          Algarve
+        </AlgarveButton>
+        <LisbonButton
+          onClick={() =>
+            router.push({
+              pathname: "./Region",
+              query: { regionId: "3lisbon" },
+            })
+          }
+        >
+          Lisbon
+        </LisbonButton>
       </Map>
     </FlexContainer>
   );
@@ -110,10 +165,78 @@ const Map = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-
-  // height: 600px;
+  height: 100%;
   margin-top: 20px;
-  margin-left: 20px;
+  position: relative;
+`;
+
+const NorthButton = styled.div`
+  position: absolute;
+  left: 180px;
+  top: 50px;
+  width: 200px;
+  height: 70px;
+  background: transparent;
+  color: white;
+  font-family: "Rochester", cursive;
+  font-size: 30px;
+`;
+
+const CentralRegionButton = styled.div`
+  position: absolute;
+  left: 123px;
+  top: 140px;
+  width: 150px;
+  height: 140px;
+  color: white;
+  font-family: "Rochester", cursive;
+  font-size: 30px;
+  text-align: center;
+`;
+
+const AlentejoButton = styled.div`
+  position: absolute;
+  left: 105px;
+  top: 280px;
+  width: 150px;
+  height: 240px;
+  color: white;
+  font-family: "Rochester", cursive;
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const AlgarveButton = styled.div`
+  position: absolute;
+  left: 100px;
+  top: 515px;
+  width: 140px;
+  height: 60px;
+  color: white;
+  font-family: "Rochester", cursive;
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const LisbonButton = styled.div`
+  position: absolute;
+  left: 53px;
+  top: 305px;
+  width: 60px;
+  height: 70px;
+  color: white;
+  font-family: "Rochester", cursive;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const RegionNameNorth = styled.div`
