@@ -35,11 +35,7 @@ export const LocationModal = ({
           <Image src={heartButton} alt="add to favourites" />
         </HeartButtonWrapper>
       </Text>
-      <Description>
-        {description}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem commodi
-        temporibus sed quod dolor, tenetur magnam distinctio maiores ab odio
-      </Description>
+      <Description>{description}</Description>
       <Back $regionVisual={regionVisual} onClick={onClose}>
         Close
       </Back>

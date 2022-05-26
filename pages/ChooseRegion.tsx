@@ -25,7 +25,7 @@ const MapPortugal = () => {
         <MainText>Choose region</MainText>
         <SubText>you would like to see</SubText>
       </TextContainer>
-      {/* <Map>
+      <Map>
         <North
           onClick={() =>
             router.push({
@@ -83,8 +83,8 @@ const MapPortugal = () => {
           <RegionNameAlgarve>Algarve</RegionNameAlgarve>
           <Image src={algarve} alt="algarve" />
         </Algarve>
-      </Map> */}
-      <Map>
+      </Map>
+      {/* <Map>
         <Image src={portugalMap} alt="portugal-app" />
         <NorthButton
           onClick={() =>
@@ -136,7 +136,7 @@ const MapPortugal = () => {
         >
           Lisbon
         </LisbonButton>
-      </Map>
+      </Map> */}
     </FlexContainer>
   );
 };
@@ -167,6 +167,8 @@ const Map = styled.div`
   position: relative;
   height: 100%;
   margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 25px;
   position: relative;
 `;
 
