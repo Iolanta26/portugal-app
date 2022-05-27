@@ -12,23 +12,11 @@ type Props = {
   regionVisual: RegionVisual;
 };
 
-const Favourite = ({
-  router,
-
-  placeDesc,
-  placeImage,
-  location,
-}: Props) => {
+const Favourite = ({ router }: Props) => {
   const { placeName, regionVisual } = router.query;
   return (
     <div>
-      <ListOfFavourites
-        placeName={placeName}
-        placeImage={placeImage}
-        location={location}
-        placeDesc={placeDesc}
-        regionVisual={regionVisual}
-      />
+      <ListOfFavourites />
     </div>
   );
 };
