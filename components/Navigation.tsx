@@ -1,5 +1,8 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+
+import azulejo from "../public/azulejo.png";
 
 export const Navigation = () => {
   const router = useRouter();
@@ -14,9 +17,11 @@ export const Navigation = () => {
         <MenuText>Search</MenuText>
       </MenuButton>
       <CenterWrapper>
-        <CenterImage src="./azulejo.svg" alt="center" />
+        <ImageWrapper>
+          <AzulejoImage src={azulejo} alt="center" />
+        </ImageWrapper>
       </CenterWrapper>
-      <MenuButton>
+      <MenuButton onClick={() => router.push("./Favourite")}>
         <Icon src="./heart.svg" alt="favourite" />
         <MenuText>Favourite</MenuText>
       </MenuButton>
@@ -52,9 +57,12 @@ const CenterWrapper = styled.div`
   justify-content: center;
 `;
 
-const CenterImage = styled.img`
-  width: 50px;
+const AzulejoImage = styled(Image)`
   border-radius: 50px;
+`;
+
+const ImageWrapper = styled.div`
+  width: 50px;
 `;
 
 const Icon = styled.img`

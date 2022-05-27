@@ -24,10 +24,6 @@ type Props = {
 const ListOfPlaces = ({ router }: Props) => {
   const { regionId, regionVisual } = router.query;
 
-  // const place = getPlaceById(placeId as string);
-
-  // const { placeDesc, placeName, placeImage, location } = place;
-
   console.log("regionVisual", regionVisual);
 
   const placesAccordingToRegion = PLACES.filter(

@@ -14,7 +14,8 @@ export const BackWrapper = styled.button`
 export const FlexContainer = styled.div`
   dipslay: flex;
   justify-content: center;
-  flex-direction: center;
+  align-items: center;
+  flex-direction: column;
   margin: 0;
   padding: 0;
 `;

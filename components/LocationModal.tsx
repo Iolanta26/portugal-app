@@ -1,7 +1,7 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
-import back from "../public/back-icon.svg";
 import heartButton from "../public/add-to-favourites.svg";
 import { Description, LocationName, PlaceName } from "./StyledComponents";
 
@@ -22,6 +22,7 @@ export const LocationModal = ({
   regionVisual,
   onClose,
 }: Props) => {
+  const router = useRouter();
   console.log(placeName);
   return (
     <MainContainer>
@@ -31,7 +32,14 @@ export const LocationModal = ({
       <Text $regionVisual={regionVisual}>
         <PlaceName>{placeName}</PlaceName>
         <LocationName>{location}</LocationName>{" "}
-        <HeartButtonWrapper>
+        <HeartButtonWrapper
+          onClick={() =>
+            router.push({
+              pathname: "./Favourite",
+              query: { placeName, regionVisual },
+            })
+          }
+        >
           <Image src={heartButton} alt="add to favourites" />
         </HeartButtonWrapper>
       </Text>
