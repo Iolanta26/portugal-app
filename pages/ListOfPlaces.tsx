@@ -21,15 +21,26 @@ type Props = {
   regionVisual: RegionVisual;
 };
 
-const ListOfPlaces = ({ router }: Props) => {
+const ListOfPlaces = ({ router, place }: Props) => {
   const { regionId, regionVisual } = router.query;
 
-  console.log("regionVisual", regionVisual);
+  // console.log("regionVisual", regionVisual);
 
   const placesAccordingToRegion = PLACES.filter(
     (place) => place.region === regionId
-  );
-  console.log(placesAccordingToRegion);
+  ).map((place) => (
+    <CardsContainer key={place.id}>
+      <PlaceCard
+        place={place}
+        // placeName={place.placeName}
+        // placeImage={place.placeImage}
+        // location={place.location}
+        // placeDesc={place.placeDesc}
+        regionVisual={regionVisual as RegionVisual}
+      />
+    </CardsContainer>
+  ));
+  // console.log(placesAccordingToRegion);
 
   const getRegionName = getRegionById(regionId as string)?.regionName;
 
@@ -50,19 +61,7 @@ const ListOfPlaces = ({ router }: Props) => {
           <Places>Places to visit in </Places>
           <RegionName>{getRegionName}</RegionName>
         </TextWrapper>
-        <MainListContainer>
-          {placesAccordingToRegion.map((place) => (
-            <CardsContainer key={place.id}>
-              <PlaceCard
-                placeName={place.placeName}
-                placeImage={place.placeImage}
-                location={place.location}
-                placeDesc={place.placeDesc}
-                regionVisual={regionVisual as RegionVisual}
-              />
-            </CardsContainer>
-          ))}
-        </MainListContainer>
+        <MainListContainer>{placesAccordingToRegion}</MainListContainer>
       </div>
     </PageContainer>
   );

@@ -36,3 +36,20 @@ export const Description = styled.div`
   text-align: center;
   margin-bottom: 10px;
 `;
+
+export const ImageFrame = styled.div`
+  z-index: 100;
+  overflow: hidden;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+`;
+
+export const ImageOfPlace = styled.img`
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  position: absolute;
+`;

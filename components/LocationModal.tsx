@@ -1,29 +1,32 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useContext } from "react";
 import styled from "styled-components";
 
 import heartButton from "../public/add-to-favourites.svg";
+import { Place } from "../types";
+import { AppContext } from "./store/appContext";
 import { Description, LocationName, PlaceName } from "./StyledComponents";
 
 type Props = {
-  placeName: string;
-  placeImage: string;
-  location: string;
   regionVisual: string;
-  description: string;
+  place: Place;
   onClose: () => void;
 };
 
-export const LocationModal = ({
-  placeImage,
-  placeName,
-  location,
-  description,
-  regionVisual,
-  onClose,
-}: Props) => {
+export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
   const router = useRouter();
-  console.log(placeName);
+
+  const { selectedFavouritePlace, setSelectedFavouritePlace } =
+    useContext(AppContext);
+
+  const { placeName, placeImage, location, placeDesc } = place;
+
+  const addToFavouriteList = (place: Place) => {
+    setSelectedFavouritePlace(place);
+    console.log("favourite: ", selectedFavouritePlace);
+  };
+
   return (
     <MainContainer>
       <ImageFrame>
@@ -31,19 +34,16 @@ export const LocationModal = ({
       </ImageFrame>
       <Text $regionVisual={regionVisual}>
         <PlaceName>{placeName}</PlaceName>
-        <LocationName>{location}</LocationName>{" "}
+        <LocationName>{location}</LocationName>
         <HeartButtonWrapper
-          onClick={() =>
-            router.push({
-              pathname: "./Favourite",
-              query: { placeName, regionVisual },
-            })
-          }
+          onClick={() => {
+            addToFavouriteList(place);
+          }}
         >
           <Image src={heartButton} alt="add to favourites" />
         </HeartButtonWrapper>
       </Text>
-      <Description>{description}</Description>
+      <Description>{placeDesc}</Description>
       <Back $regionVisual={regionVisual} onClick={onClose}>
         Close
       </Back>
@@ -115,6 +115,7 @@ const HeartButtonWrapper = styled.div`
   position: absolute;
   top: 90px;
   right: 40px;
+  cursor: pointer;
 `;
 
 const Back = styled.button<{

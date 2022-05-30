@@ -1,26 +1,18 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { RegionVisual } from "../types";
+import { Place, RegionVisual } from "../types";
 import { LocationModal } from "./LocationModal";
 
 type Props = {
-  placeName: string;
-  placeImage: string;
-  location: string;
-  placeDesc: string;
   regionVisual: RegionVisual;
+  place: Place;
 };
 
-export const PlaceCard = ({
-  placeImage,
-  placeName,
-  location,
-  placeDesc,
-  regionVisual,
-}: Props) => {
+export const PlaceCard = ({ regionVisual, place }: Props) => {
   const [openModal, setOpenModal] = useState(false);
 
-  console.log("regionalVisual", regionVisual);
+  const { placeName, placeImage, location } = place;
+
   return (
     <>
       {!openModal && (
@@ -34,10 +26,7 @@ export const PlaceCard = ({
       )}
       {openModal && (
         <LocationModal
-          placeName={placeName}
-          placeImage={placeImage}
-          location={location}
-          description={placeDesc}
+          place={place}
           regionVisual={regionVisual as string}
           onClose={() => setOpenModal(false)}
         />

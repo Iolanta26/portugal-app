@@ -168,7 +168,7 @@ export const PLACES: Place[] = [
     ],
   },
   {
-    id: "17",
+    id: "7",
     region: "5algarve",
     location: "Lagos",
     placeName: "Lagos",
@@ -183,7 +183,7 @@ export const PLACES: Place[] = [
     ],
   },
   {
-    id: "17",
+    id: "8",
     region: "4alentejo",
     location: "Tróia Peninsula",
     placeName: "Tróia Peninsula",
@@ -197,7 +197,7 @@ export const PLACES: Place[] = [
     ],
   },
   {
-    id: "17",
+    id: "9",
     region: "4alentejo",
     location: "Alentejo",
     placeName: "Almendres Cromlech",
@@ -212,7 +212,7 @@ export const PLACES: Place[] = [
     ],
   },
   {
-    id: "17",
+    id: "10",
     region: "4alentejo",
     location: "Monsaraz",
     placeName: "Monsaraz",
@@ -227,7 +227,7 @@ export const PLACES: Place[] = [
     ],
   },
   {
-    id: "17",
+    id: "11",
     region: "4alentejo",
     location: "Alentejo",
     placeName: "Birdwatching",

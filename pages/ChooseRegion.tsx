@@ -2,10 +2,10 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 
 import { BackWrapper, FlexContainer } from "../components/StyledComponents";
-import Image from "next/image";
-
-import back from "../public/back-icon.svg";
 import { MapSvgComponent } from "../components/MapSvgComponent";
+
+import Image from "next/image";
+import back from "../public/back-icon.svg";
 
 const MapPortugal = () => {
   const router = useRouter();
@@ -21,9 +21,7 @@ const MapPortugal = () => {
       </TextContainer>
       <FlexContainer>
         <Map>
-          <MapWrapper>
-            <MapSvgComponent />
-          </MapWrapper>
+          <MapSvgComponent />
         </Map>
       </FlexContainer>
     </>
@@ -56,17 +54,5 @@ const Map = styled.div`
   align-items: center;
   flex-direction: column;
 
-  margin-bottom: 50px;
-`;
-
-const MapWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 500px;
-
-  @media (max-width: 768px) {
-    width: 90%;
-  }
+  margin-bottom: 40px;
 `;

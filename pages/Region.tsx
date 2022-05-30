@@ -5,7 +5,11 @@ import Image from "next/image";
 import { getRegionById } from "../functions/functions";
 import { useEffect, useState } from "react";
 import { RegionVisual } from "../types";
-import { BackWrapper } from "../components/StyledComponents";
+import {
+  BackWrapper,
+  ImageFrame,
+  ImageOfPlace,
+} from "../components/StyledComponents";
 import tram from "../public/tram.svg";
 
 type Props = {
@@ -45,12 +49,14 @@ const Region = ({ router }: Props) => {
 
   return (
     <MainDiv $regionVisual={regionVisual}>
-      <BackWrapper onClick={() => router.push({ pathname: "./ChooseRegion" })}>
-        <Image src={back} alt="back" />
-      </BackWrapper>
-      <RegionImageWrapper>
-        <RegionImage src={region?.mainImage} alt="region" />
-      </RegionImageWrapper>
+      <ImageFrame>
+        <BackWrapper
+          onClick={() => router.push({ pathname: "./ChooseRegion" })}
+        >
+          <Image src={back} alt="back" />
+        </BackWrapper>
+        <ImageOfPlace src={region?.mainImage} alt="region" />
+      </ImageFrame>
       <DescriptionWrapper $regionVisual={regionVisual}>
         <TramDiv>
           <Image src={tram} alt="tram" />
@@ -88,8 +94,9 @@ const MainDiv = styled.div<{
   align-items: center;
   flex-direction: column;
   margin: 0;
-  background-color: white;
-  height: 100vh;
+  // background-color: white;
+  // height: 100vh;
+  position: relative;
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? "#248cf9"
@@ -104,27 +111,11 @@ const MainDiv = styled.div<{
       : "transparent"};
 `;
 
-const RegionImageWrapper = styled.div`
-  overflow: hidden;
-  height: 500px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-`;
-
-const RegionImage = styled.img`
-  height: 500px;
-  min-width: 500px;
-  object-fit: cover;
-  position: absolute;
-`;
-
 const DescriptionWrapper = styled.div<{
   $regionVisual: string;
 }>`
   position: absolute;
-  top: 430px;
+  top: 400px;
   width: 100%;
   height: fit-content;
   background-color: ${(props) =>
@@ -140,6 +131,7 @@ const DescriptionWrapper = styled.div<{
       ? "#B07420"
       : "transparent"};
   border-radius: 30px;
+  z-index: 10;
 `;
 
 const DescriptionContainer = styled.div`

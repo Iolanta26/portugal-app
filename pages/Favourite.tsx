@@ -1,24 +1,29 @@
-import React from "react";
-import { ListOfFavourites } from "../components/ListOfFavourites";
-import { RegionVisual } from "../types";
-import { NextRouter, withRouter } from "next/router";
+import React, { useContext, useEffect, useState } from "react";
+import { Place, RegionVisual } from "../types";
+import { AppContext } from "../components/store/appContext";
 
 type Props = {
-  router: NextRouter;
-  placeName: string;
-  placeImage: string;
-  location: string;
-  placeDesc: string;
+  place: Place;
   regionVisual: RegionVisual;
 };
 
-const Favourite = ({ router }: Props) => {
-  const { placeName, regionVisual } = router.query;
+const Favourite = () => {
+  const [list, setList] = useState([]);
+  const { selectedFavouritePlace, setSelectedFavouritePlace } =
+    useContext(AppContext);
+
+  const { placeName, location, placeDesc } = selectedFavouritePlace;
+
+  console.log(selectedFavouritePlace);
+
   return (
     <div>
-      <ListOfFavourites />
+      <div></div>
+      <div>{placeName}</div>
+      <div>{location}</div>
+      <div>{placeDesc}</div>
     </div>
   );
 };
 
-export default withRouter(Favourite);
+export default Favourite;
