@@ -2,8 +2,8 @@ import Image from "next/image";
 import { NextRouter, withRouter } from "next/router";
 
 import styled from "styled-components";
+import { PlaceCard } from "../components";
 
-import { PlaceCard } from "../components/PlaceCard";
 import { BackWrapper } from "../components/StyledComponents";
 
 import { PLACES } from "../dummy-data/places";

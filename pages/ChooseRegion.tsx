@@ -2,10 +2,10 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 
 import { BackWrapper, FlexContainer } from "../components/StyledComponents";
-import { MapSvgComponent } from "../components/MapSvgComponent";
 
 import Image from "next/image";
 import back from "../public/back-icon.svg";
+import { MapSvgComponent } from "../components";
 
 const MapPortugal = () => {
   const router = useRouter();
