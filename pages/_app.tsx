@@ -24,6 +24,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     useState<Place>(place);
   const [regionVisualColor, setRegionVisualColor] =
     useState<RegionVisual>(regionVisual);
+  const [selectedPlaces, setSelectedPlaces] = useState<Place[]>([]);
+
+  // const listOfFavouritesHandler = (selectedPlaces) => {
+  //   setSelectedPlaces((prevState) => [...prevState, { selectedPlaces }]);
+  // };
 
   return (
     <AppContext.Provider
@@ -32,6 +37,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         setSelectedFavouritePlace,
         regionVisualColor,
         setRegionVisualColor,
+        selectedPlaces,
+        setSelectedPlaces,
       }}
     >
       <Component {...pageProps} />

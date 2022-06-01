@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 
 import heartButton from "../public/add-to-favourites.svg";
 import { Place, RegionVisual } from "../types";
+import { HeartButton } from "./HeartButton";
 import { AppContext } from "./store";
 import { Description, LocationName, PlaceName } from "./StyledComponents";
 
@@ -15,7 +16,8 @@ type Props = {
 };
 
 export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
-  const router = useRouter();
+  const [isClicked, setIsClicked] = useState(Boolean(false));
+  const [disable, setDisable] = useState(false);
 
   const {
     selectedFavouritePlace,
@@ -29,6 +31,8 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
     setSelectedFavouritePlace(place);
     console.log("favourite: ", selectedFavouritePlace);
     setRegionVisualColor(regionVisual as RegionVisual);
+    setIsClicked(true);
+    setDisable(true);
   };
 
   return (
@@ -39,12 +43,16 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
       <Text $regionVisual={regionVisual}>
         <PlaceName>{placeName}</PlaceName>
         <LocationName>{location}</LocationName>
-        <HeartButtonWrapper
-          onClick={() => {
-            addToFavouriteList(place);
-          }}
-        >
-          <Image src={heartButton} alt="add to favourites" />
+        <HeartButtonWrapper>
+          <HeartEllipseButton
+            disabled={disable}
+            $isClicked={isClicked}
+            onClick={() => {
+              addToFavouriteList(place);
+            }}
+          >
+            <HeartButton />
+          </HeartEllipseButton>
         </HeartButtonWrapper>
       </Text>
       <Description>{placeDesc}</Description>
@@ -152,4 +160,18 @@ const Back = styled.button<{
       ? "black"
       : "#fff5e8"};
   margin-top: 16px;
+`;
+
+const HeartEllipseButton = styled.button<{
+  $isClicked?: boolean;
+  $disabledMode?: boolean;
+}>`
+  background-color: ${(props) => (props.$isClicked ? "#FA3593" : "#ffd1fd")} ;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex:
+  justify-content: center;
+  align-items: center;
+  
 `;
