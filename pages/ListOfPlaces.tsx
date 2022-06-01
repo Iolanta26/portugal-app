@@ -14,33 +14,18 @@ import { Place, RegionVisual } from "../types";
 
 type Props = {
   router: NextRouter;
-  place: Place;
-  placeName: string;
-  placeImage: string;
-  location: string;
-  regionVisual: RegionVisual;
 };
 
-const ListOfPlaces = ({ router, place }: Props) => {
+const ListOfPlaces = ({ router }: Props) => {
   const { regionId, regionVisual } = router.query;
-
-  // console.log("regionVisual", regionVisual);
 
   const placesAccordingToRegion = PLACES.filter(
     (place) => place.region === regionId
   ).map((place) => (
     <CardsContainer key={place.id}>
-      <PlaceCard
-        place={place}
-        // placeName={place.placeName}
-        // placeImage={place.placeImage}
-        // location={place.location}
-        // placeDesc={place.placeDesc}
-        regionVisual={regionVisual as RegionVisual}
-      />
+      <PlaceCard place={place} regionVisual={regionVisual as RegionVisual} />
     </CardsContainer>
   ));
-  // console.log(placesAccordingToRegion);
 
   const getRegionName = getRegionById(regionId as string)?.regionName;
 

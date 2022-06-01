@@ -1,11 +1,11 @@
 import { GlobalStyleReset } from "../components/styles/GlobalStyleReset";
 import type { AppProps } from "next/app";
 
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
-import { AppContext } from "../components/store/appContext";
-import { Place } from "../types";
+import { Place, RegionVisual } from "../types";
 import { Navigation } from "../components/Navigation";
+import { AppContext } from "../components/store";
 
 const place: Place = {
   placeName: "",
@@ -20,10 +20,16 @@ const place: Place = {
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [selectedFavouritePlace, setSelectedFavouritePlace] =
     useState<Place>(place);
+  const [regionVisualColor, setRegionVisualColor] = useState<RegionVisual>("");
 
   return (
     <AppContext.Provider
-      value={{ selectedFavouritePlace, setSelectedFavouritePlace }}
+      value={{
+        selectedFavouritePlace,
+        setSelectedFavouritePlace,
+        regionVisualColor,
+        setRegionVisualColor,
+      }}
     >
       <Component {...pageProps} />
       <Navigation />

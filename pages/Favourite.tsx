@@ -1,29 +1,53 @@
-import React, { useContext, useEffect, useState } from "react";
+import Image from "next/image";
+import React, { useContext, useState } from "react";
+import { BackWrapper, PlaceCard } from "../components";
+import { AppContext } from "../components/store";
 import { Place, RegionVisual } from "../types";
-import { AppContext } from "../components/store/appContext";
+
+import back from "../public/back-icon.svg";
+import { useRouter } from "next/router";
+import styled from "styled-components";
 
 type Props = {
   place: Place;
   regionVisual: RegionVisual;
 };
 
-const Favourite = () => {
+const Favourite = ({}: Props) => {
   const [list, setList] = useState([]);
-  const { selectedFavouritePlace, setSelectedFavouritePlace } =
-    useContext(AppContext);
 
-  const { placeName, location, placeDesc } = selectedFavouritePlace;
+  const router = useRouter();
+  const { selectedFavouritePlace, regionVisualColor } = useContext(AppContext);
 
   console.log(selectedFavouritePlace);
+  console.log("regionVisual:", regionVisualColor);
 
   return (
     <div>
-      <div></div>
-      <div>{placeName}</div>
-      <div>{location}</div>
-      <div>{placeDesc}</div>
+      <BackWrapper onClick={() => router.back()}>
+        <Image src={back} alt="back" />
+      </BackWrapper>
+      <TextWrapper>
+        <Places>Your favourite locations</Places>
+      </TextWrapper>
+      <div>
+        <PlaceCard
+          regionVisual={regionVisualColor as RegionVisual}
+          place={selectedFavouritePlace}
+        />
+      </div>
     </div>
   );
 };
+
+const TextWrapper = styled.div`
+  margin-top: 50px;
+  color: #13406c;
+  width: 300px;
+`;
+
+const Places = styled.div`
+  font-size: 30px;
+`;
 
 export default Favourite;

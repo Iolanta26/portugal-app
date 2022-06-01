@@ -4,8 +4,8 @@ import { useContext } from "react";
 import styled from "styled-components";
 
 import heartButton from "../public/add-to-favourites.svg";
-import { Place } from "../types";
-import { AppContext } from "./store/appContext";
+import { Place, RegionVisual } from "../types";
+import { AppContext } from "./store";
 import { Description, LocationName, PlaceName } from "./StyledComponents";
 
 type Props = {
@@ -17,14 +17,18 @@ type Props = {
 export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
   const router = useRouter();
 
-  const { selectedFavouritePlace, setSelectedFavouritePlace } =
-    useContext(AppContext);
+  const {
+    selectedFavouritePlace,
+    setSelectedFavouritePlace,
+    setRegionVisualColor,
+  } = useContext(AppContext);
 
   const { placeName, placeImage, location, placeDesc } = place;
 
   const addToFavouriteList = (place: Place) => {
     setSelectedFavouritePlace(place);
     console.log("favourite: ", selectedFavouritePlace);
+    setRegionVisualColor(regionVisual as RegionVisual);
   };
 
   return (
