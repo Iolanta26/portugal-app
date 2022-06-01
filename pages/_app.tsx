@@ -17,10 +17,13 @@ const place: Place = {
   otherImages: [],
 };
 
+const regionVisual: RegionVisual = "alentejo";
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [selectedFavouritePlace, setSelectedFavouritePlace] =
     useState<Place>(place);
-  const [regionVisualColor, setRegionVisualColor] = useState<RegionVisual>("");
+  const [regionVisualColor, setRegionVisualColor] =
+    useState<RegionVisual>(regionVisual);
 
   return (
     <AppContext.Provider
