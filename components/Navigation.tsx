@@ -12,7 +12,7 @@ export const Navigation = () => {
         <Icon src="./map-pin.svg" alt="map-pin" />
         <MenuText>Regions</MenuText>
       </MenuButton>
-      <MenuButton>
+      <MenuButton onClick={() => router.push("./Search")}>
         <Icon src="./search.svg" alt="search" />
         <MenuText>Search</MenuText>
       </MenuButton>

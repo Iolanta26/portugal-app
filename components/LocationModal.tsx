@@ -1,9 +1,6 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
 import { useContext, useState } from "react";
 import styled from "styled-components";
 
-import heartButton from "../public/add-to-favourites.svg";
 import { Place, RegionVisual } from "../types";
 import { HeartButton } from "./HeartButton";
 import { AppContext } from "./store";
