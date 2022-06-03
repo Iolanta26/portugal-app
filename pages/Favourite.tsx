@@ -11,11 +11,10 @@ import styled from "styled-components";
 type Props = {
   place: Place;
   regionVisual: RegionVisual;
+  selectedFavouritePlace: Place;
 };
 
 const Favourite = ({}: Props) => {
-  const [list, setList] = useState([]);
-
   const router = useRouter();
   const { selectedFavouritePlace, regionVisualColor } = useContext(AppContext);
 

@@ -10,7 +10,7 @@ import { PLACES } from "../dummy-data/places";
 import { getRegionById } from "../functions/functions";
 
 import back from "../public/back-icon.svg";
-import { Place, RegionVisual } from "../types";
+import { RegionVisual } from "../types";
 
 type Props = {
   router: NextRouter;
