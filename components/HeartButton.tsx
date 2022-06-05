@@ -2,7 +2,7 @@ export const HeartButton = () => {
   return (
     <div>
       <svg
-        width="49"
+        width="40"
         height="50"
         viewBox="0 0 49 50"
         fill={""}

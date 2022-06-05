@@ -5,46 +5,37 @@ import { useState } from "react";
 
 import { Place, RegionVisual } from "../types";
 import { Navigation } from "../components/Navigation";
-import { AppContext } from "../components/store";
+import { FavContext } from "../store/appContext";
 
-const place: Place = {
-  placeName: "",
-  placeImage: "",
-  id: "",
-  location: "",
-  region: "",
-  placeDesc: "",
-  otherImages: [],
-};
+// const place: Place = {
+//   placeName: "",
+//   placeImage: "",
+//   id: "",
+//   location: "",
+//   region: "",
+//   placeDesc: "",
+// };
 
-const regionVisual: RegionVisual = "alentejo";
+// const regionVisual: RegionVisual = "alentejo";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const [selectedFavouritePlace, setSelectedFavouritePlace] =
-    useState<Place>(place);
-  const [regionVisualColor, setRegionVisualColor] =
-    useState<RegionVisual>(regionVisual);
-  const [selectedPlaces, setSelectedPlaces] = useState<Place[]>([]);
+  // const [selectedFavPlaces, setSelectedFavPlaces] = useState<Place[]>([]);
+  // const [regionVisualColor, setRegionVisualColor] =
+  //   useState<RegionVisual>(regionVisual);
+  // const [selectedPlaces, setSelectedPlaces] = useState<Place[]>([]);
 
-  // const listOfFavouritesHandler = (selectedPlaces) => {
-  //   setSelectedPlaces((prevState) => [...prevState, { selectedPlaces }]);
+  // const addToFavouritesHandler = (place: Place) => {
+  //   setSelectedFavPlaces((prevPlaces) => {
+  //     return prevPlaces?.concat(place);
+  //   });
   // };
 
   return (
-    <AppContext.Provider
-      value={{
-        selectedFavouritePlace,
-        setSelectedFavouritePlace,
-        regionVisualColor,
-        setRegionVisualColor,
-        selectedPlaces,
-        setSelectedPlaces,
-      }}
-    >
+    <>
       <Component {...pageProps} />
       <Navigation />
       <GlobalStyleReset />
-    </AppContext.Provider>
+    </>
   );
 };
 

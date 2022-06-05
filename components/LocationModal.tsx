@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 import { Place, RegionVisual } from "../types";
 import { HeartButton } from "./HeartButton";
-import { AppContext } from "./store";
+import { FavContext } from "../store/appContext";
 import { Description, LocationName, PlaceName } from "./StyledComponents";
 
 type Props = {
-  regionVisual: string;
+  regionVisual: RegionVisual;
   place: Place;
   onClose: () => void;
 };
@@ -16,20 +16,15 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
   const [isClicked, setIsClicked] = useState(Boolean(false));
   const [disable, setDisable] = useState(false);
 
-  const {
-    selectedFavouritePlace,
-    setSelectedFavouritePlace,
-    setRegionVisualColor,
-  } = useContext(AppContext);
+  const placesCtx = useContext(FavContext);
 
   const { placeName, placeImage, location, placeDesc } = place;
 
-  const addToFavouriteList = (place: Place) => {
-    setSelectedFavouritePlace(place);
-    console.log("favourite: ", selectedFavouritePlace);
-    setRegionVisualColor(regionVisual as RegionVisual);
+  const addToFavouriteList = () => {
+    console.log("favourite: ", place);
     setIsClicked(true);
     setDisable(true);
+    placesCtx.selectedPlaces.push(place);
   };
 
   return (
@@ -45,7 +40,7 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
             disabled={disable}
             $isClicked={isClicked}
             onClick={() => {
-              addToFavouriteList(place);
+              addToFavouriteList();
             }}
           >
             <HeartButton />
@@ -106,7 +101,7 @@ const Text = styled.div<{
       ? "#FCB743"
       : props.$regionVisual === "algarve"
       ? "#B07420"
-      : "transparent"};
+      : "#FA3593"};
   width: 80%;
   height: 120px;
   color: white;
@@ -147,7 +142,7 @@ const Back = styled.button<{
       ? "#B07420"
       : props.$regionVisual === "algarve"
       ? "#FCB743"
-      : "transparent"};
+      : "#DA000D"};
   color: ${(props) =>
     props.$regionVisual === "north"
       ? "black"

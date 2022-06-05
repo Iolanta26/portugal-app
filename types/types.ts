@@ -13,7 +13,6 @@ export type Place = {
   placeName: string;
   placeDesc: string;
   placeImage: string;
-  otherImages: string[];
 };
 
 export type RegionVisual =

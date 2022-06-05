@@ -1,8 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext, useState } from "react";
-import styled, { StyledProps } from "styled-components";
+import { useState } from "react";
+import styled from "styled-components";
 import { PlaceCard } from "../components";
-import { AppContext } from "../components/store";
 import { PLACES } from "../dummy-data/places";
 import { RegionVisual } from "../types";
 
@@ -12,8 +10,6 @@ type Props = {
 
 const Search = ({ regionVisual }: Props) => {
   const [searchPlace, setSearchPlace] = useState("");
-
-  //   const { regionVisualColor, setRegionVisualColor } = useContext(AppContext);
 
   console.log("regionVisual: ", regionVisual);
   return (

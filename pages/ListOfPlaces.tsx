@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { NextRouter, withRouter } from "next/router";
+import { useContext } from "react";
 
 import styled from "styled-components";
 import { PlaceCard } from "../components";
@@ -10,6 +11,7 @@ import { PLACES } from "../dummy-data/places";
 import { getRegionById } from "../functions/functions";
 
 import back from "../public/back-icon.svg";
+import { FavContext } from "../store/appContext";
 import { RegionVisual } from "../types";
 
 type Props = {
@@ -19,13 +21,11 @@ type Props = {
 const ListOfPlaces = ({ router }: Props) => {
   const { regionId, regionVisual } = router.query;
 
+  const placesCtx = useContext(FavContext);
+
   const placesAccordingToRegion = PLACES.filter(
     (place) => place.region === regionId
-  ).map((place) => (
-    <CardsContainer key={place.id}>
-      <PlaceCard place={place} regionVisual={regionVisual as RegionVisual} />
-    </CardsContainer>
-  ));
+  );
 
   const getRegionName = getRegionById(regionId as string)?.regionName;
 
@@ -46,7 +46,16 @@ const ListOfPlaces = ({ router }: Props) => {
           <Places>Places to visit in </Places>
           <RegionName>{getRegionName}</RegionName>
         </TextWrapper>
-        <MainListContainer>{placesAccordingToRegion}</MainListContainer>
+        <MainListContainer>
+          {placesAccordingToRegion.map((place) => (
+            <CardsContainer key={place.id}>
+              <PlaceCard
+                place={place}
+                regionVisual={regionVisual as RegionVisual}
+              />
+            </CardsContainer>
+          ))}
+        </MainListContainer>
       </div>
     </PageContainer>
   );

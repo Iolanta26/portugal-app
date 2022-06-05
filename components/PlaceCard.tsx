@@ -27,7 +27,7 @@ export const PlaceCard = ({ regionVisual, place }: Props) => {
       {openModal && (
         <LocationModal
           place={place}
-          regionVisual={regionVisual as string}
+          regionVisual={regionVisual}
           onClose={() => setOpenModal(false)}
         />
       )}
@@ -60,7 +60,7 @@ const Card = styled.div<{
       ? "#FCB743"
       : props.$regionVisual === "algarve"
       ? "#B07420"
-      : "transparent"};
+      : "#FA3593"};
 `;
 
 const ShortDesc = styled.div`
