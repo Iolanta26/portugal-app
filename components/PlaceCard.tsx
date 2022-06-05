@@ -60,7 +60,7 @@ const Card = styled.div<{
       ? "#FCB743"
       : props.$regionVisual === "algarve"
       ? "#B07420"
-      : "#FA3593"};
+      : "transparent"};
 `;
 
 const ShortDesc = styled.div`

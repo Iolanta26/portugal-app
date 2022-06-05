@@ -2,19 +2,12 @@ import Image from "next/image";
 import React, { useContext } from "react";
 import { BackWrapper, PlaceCard } from "../components";
 
-import { Place, RegionVisual } from "../types";
-
 import back from "../public/back-icon.svg";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { FavContext } from "../store/appContext";
 
-type Props = {
-  place: Place;
-  regionVisual: RegionVisual;
-};
-
-const Favourite = ({ regionVisual }: Props) => {
+const Favourite = () => {
   const router = useRouter();
   const placesCtx = useContext(FavContext);
 
@@ -37,7 +30,10 @@ const Favourite = ({ regionVisual }: Props) => {
         <MainListContainer>
           {placesCtx.selectedPlaces.map((place) => (
             <div key={"fav" + `${place.id}`}>
-              <PlaceCard place={place} regionVisual={regionVisual} />
+              <PlaceCard
+                place={place}
+                regionVisual={placesCtx.regionVisualColor}
+              />
             </div>
           ))}
         </MainListContainer>
@@ -69,54 +65,5 @@ const MainListContainer = styled.div`
   margin-top: 10px;
 `;
 
-const FavouriteCard = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 300px;
-  height: 170px;
-  overflow: hidden;
-  margin: 10px;
-  border-radius: 15px;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  background-color: #fa3593;
-`;
-
-const ShortDesc = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 3;
-  width: 135px;
-  position: absolute;
-  right: 5px;
-  color: #fff3e0;
-`;
-
-const Name = styled.div`
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-`;
-
-const Location = styled.div`
-  font-size: 12px;
-  font-weight: 400;
-  text-align: center;
-`;
-
-const PlaceImage = styled.img`
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  position: absolute;
-  border-radius: 15px;
-  left: 10px;
-`;
 
 export default Favourite;

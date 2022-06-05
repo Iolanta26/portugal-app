@@ -11,7 +11,6 @@ type Props = {
 const Search = ({ regionVisual }: Props) => {
   const [searchPlace, setSearchPlace] = useState("");
 
-  console.log("regionVisual: ", regionVisual);
   return (
     <>
       <SearchBarWrapper>

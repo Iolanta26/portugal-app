@@ -20,11 +20,14 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
 
   const { placeName, placeImage, location, placeDesc } = place;
 
+  console.log("modal regionVisual: ", regionVisual);
+
   const addToFavouriteList = () => {
     console.log("favourite: ", place);
     setIsClicked(true);
     setDisable(true);
     placesCtx.selectedPlaces.push(place);
+    placesCtx.regionVisualColor = regionVisual;
   };
 
   return (
@@ -101,7 +104,7 @@ const Text = styled.div<{
       ? "#FCB743"
       : props.$regionVisual === "algarve"
       ? "#B07420"
-      : "#FA3593"};
+      : "transparent"};
   width: 80%;
   height: 120px;
   color: white;
