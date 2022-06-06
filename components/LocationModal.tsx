@@ -20,14 +20,11 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
 
   const { placeName, placeImage, location, placeDesc } = place;
 
-  console.log("modal regionVisual: ", regionVisual);
-
   const addToFavouriteList = () => {
     console.log("favourite: ", place);
     setIsClicked(true);
     setDisable(true);
     placesCtx.selectedPlaces.push(place);
-    placesCtx.regionVisualColor = regionVisual;
   };
 
   return (
@@ -149,7 +146,7 @@ const Back = styled.button<{
   color: ${(props) =>
     props.$regionVisual === "north"
       ? "black"
-      : props.$regionVisual === "lisabon"
+      : props.$regionVisual === "lisbon"
       ? "black"
       : props.$regionVisual === "algarve"
       ? "black"

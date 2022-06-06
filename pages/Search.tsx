@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { PlaceCard } from "../components";
 import { PLACES } from "../dummy-data/places";
-import { getRegionById } from "../functions/functions";
 import { RegionVisual } from "../types";
 
 type Props = {
@@ -11,32 +10,6 @@ type Props = {
 
 const Search = ({}: Props) => {
   const [searchPlace, setSearchPlace] = useState("");
-  const [regionVisual, setRegionVisual] = useState<RegionVisual>();
-
-  // useEffect(() => {
-  //   switch (region?.regionName) {
-  //     case "North":
-  //       region.regionName === "North";
-  //       setRegionVisual("north");
-  //       break;
-  //     case "Lisbon":
-  //       region.regionName === "Lisbon";
-  //       setRegionVisual("lisabon");
-  //       break;
-  //     case "Central Portugal":
-  //       region.regionName === "Central Portugal";
-  //       setRegionVisual("central");
-  //       break;
-  //     case "Alentejo":
-  //       region.regionName === "Alentejo";
-  //       setRegionVisual("alentejo");
-  //       break;
-  //     case "Algarve":
-  //       region.regionName === "Algarve";
-  //       setRegionVisual("algarve");
-  //       break;
-  //   }
-  // }, [regionVisual]);
 
   return (
     <>
