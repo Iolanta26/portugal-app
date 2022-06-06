@@ -11,10 +11,22 @@ const Info = () => (
     <MyName>Iolanta Scheifel</MyName>
     <SocialIcons>
       <SocialIconContainer>
-        <Image src={github} alt="github icon" />
+        <a
+          href="https://github.com/iolantascheifel/portugal-app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image src={github} alt="github icon" />
+        </a>
       </SocialIconContainer>
       <SocialIconContainer>
-        <Image src={linkedin} alt="linkedin icon" />
+        <a
+          href="https://www.linkedin.com/in/iolanta-scheifel/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image src={linkedin} alt="linkedin icon" />
+        </a>
       </SocialIconContainer>
     </SocialIcons>
     <TechnologiesContainer>
@@ -62,6 +74,9 @@ const SocialIcons = styled.div`
 const SocialIconContainer = styled.div`
   width: 40px;
   margin: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const TechnologiesContainer = styled.div`
