@@ -11,7 +11,7 @@ const MapPortugal = () => {
   const router = useRouter();
 
   return (
-    <>
+    <MainFlexContainer>
       <BackWrapper onClick={() => router.push({ pathname: "./Explore" })}>
         <Image src={back} alt="back" />
       </BackWrapper>
@@ -19,21 +19,25 @@ const MapPortugal = () => {
         <MainText>Click on region</MainText>
         <SubText>you would like to see</SubText>
       </TextContainer>
-      <FlexContainer>
+      <FlexContainer $isRow={false}>
         <Map>
           <MapSvgComponent />
         </Map>
       </FlexContainer>
-    </>
+    </MainFlexContainer>
   );
 };
 
 export default MapPortugal;
 
+const MainFlexContainer = styled.div`
+  height: 95vh;
+`;
+
 const TextContainer = styled.div`
   margin-left: 35px;
   margin-top: 50px;
-  // margin-bottom: 20px;
+  margin-bottom: 20px;
 `;
 
 const MainText = styled.div`

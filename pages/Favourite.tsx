@@ -30,7 +30,7 @@ const Favourite = () => {
         </TextWrapper>
         <MainListContainer>
           {placesCtx.selectedPlaces.map((place) => (
-            <div key={"fav" + `${place.id}`}>
+            <div key={"fav" + `${place.location}` + `${place.id}`}>
               <PlaceCard
                 place={place}
                 regionVisual={place.visual as RegionVisual}

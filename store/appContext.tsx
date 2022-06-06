@@ -1,9 +1,9 @@
-import { createContext, Dispatch, SetStateAction, useState } from "react";
-import { Place, RegionVisual } from "../types";
+import { createContext, useState } from "react";
+import { Place } from "../types";
 
 type FavContextObj = {
   selectedPlaces: Place[];
-  addToFavourites: (place: Place, regionVisual: RegionVisual) => void;
+  addToFavourites: (place: Place) => void;
 };
 
 export const FavContext = createContext<FavContextObj>({
@@ -14,7 +14,7 @@ export const FavContext = createContext<FavContextObj>({
 const FavContextProvider = (props: any) => {
   const [selectedFavPlaces, setSelectedFavPlaces] = useState<Place[]>([]);
 
-  const addToFavouritesHandler = (place: Place, regionVisual: RegionVisual) => {
+  const addToFavouritesHandler = (place: Place) => {
     setSelectedFavPlaces((prevPlace) => {
       return prevPlace?.concat(place);
     });

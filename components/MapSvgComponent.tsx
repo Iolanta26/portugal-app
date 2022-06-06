@@ -298,6 +298,8 @@ const Region = styled.g`
   &:focus,
   &:active,
   &:hover {
-    transition: ease 0.5s;
+      transform: translateY(1px);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.45);
+    }
   }
 `;

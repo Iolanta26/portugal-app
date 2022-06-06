@@ -61,6 +61,11 @@ const Card = styled.div<{
       : props.$regionVisual === "algarve"
       ? "#B07420"
       : "transparent"};
+  &:hover,
+  :focus {
+    transform: translateY(2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 const ShortDesc = styled.div`

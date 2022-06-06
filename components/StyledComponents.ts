@@ -11,11 +11,13 @@ export const BackWrapper = styled.button`
   position: fixed;
 `;
 
-export const FlexContainer = styled.div`
+export const FlexContainer = styled.div<{
+  $isRow: boolean;
+}>`
   dipslay: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: ${(props) => (props.$isRow === true ? "row" : "column")};
   margin: 0;
   padding: 0;
 `;
@@ -37,19 +39,23 @@ export const Description = styled.div`
   margin-bottom: 10px;
 `;
 
-export const ImageFrame = styled.div`
-  z-index: 100;
+export const ImageFrame = styled.div<{
+  $regionDiv: boolean;
+}>`
   overflow: hidden;
-  height: 400px;
+  height: ${(props) => (props.$regionDiv === true ? "500px" : "400px")};
   width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
+  z-index: 2;
 `;
 
-export const ImageOfPlace = styled.img`
+export const ImageOfPlace = styled.img<{
+  $regionDiv: boolean;
+}>`
   width: 100%;
-  height: 400px;
+  height: ${(props) => (props.$regionDiv === true ? "500px" : "400px")};
   object-fit: cover;
   position: absolute;
 `;

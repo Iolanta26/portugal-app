@@ -29,7 +29,7 @@ export const REGIONS: Region[] = [
   },
   {
     id: "3lisbon",
-    regionName: "Lisbon",
+    regionName: "Greater Lisbon",
     regionDesc:
       "The Lisbon region of Portugal is the economic and political power of the country. The capital and largest city of Portugal. You can find great landmarks, such as Park Eduardo VII, which fronts the statue of Marques de Pombal (responsible for the reconstruction of the city after an earthquake) and, in the northern end, the largest Portuguese flag in the world.",
     mainImage:
@@ -59,7 +59,7 @@ export const REGIONS: Region[] = [
     regionDesc:
       "The Algarve is Portugal's southernmost region, and one of the most popular vacation destinations in Europe. Blessed with a superb coastline and some of the country's loveliest beaches, the province enjoys hot, dry summers and short, mild winters. Warm sea temperatures and gentle winds add to its allure.",
     mainImage:
-      "https://images.unsplash.com/photo-1621971913709-377f53807c6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
+      "https://images.pexels.com/photos/5886096/pexels-photo-5886096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     images: [
       "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80",
       "https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",

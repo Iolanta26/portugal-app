@@ -4,7 +4,12 @@ import styled from "styled-components";
 import { Place, RegionVisual } from "../types";
 import { HeartButton } from "./HeartButton";
 import { FavContext } from "../store/appContext";
-import { Description, LocationName, PlaceName } from "./StyledComponents";
+import {
+  Description,
+  ImageFrame,
+  LocationName,
+  PlaceName,
+} from "./StyledComponents";
 
 type Props = {
   regionVisual: RegionVisual;
@@ -29,7 +34,7 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
 
   return (
     <MainContainer>
-      <ImageFrame>
+      <ImageFrame $regionDiv={false}>
         <ImageOfPlace src={placeImage} alt="place image" />
       </ImageFrame>
       <Text $regionVisual={regionVisual}>
@@ -70,15 +75,15 @@ const MainContainer = styled.div`
   background-color: white;
 `;
 
-const ImageFrame = styled.div`
-  z-index: 100;
-  overflow: hidden;
-  height: 400px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-`;
+// const ImageFrame = styled.div`
+//   z-index: 100;
+//   overflow: hidden;
+//   height: 400px;
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   position: relative;
+// `;
 
 const ImageOfPlace = styled.img`
   width: 100%;
@@ -152,6 +157,12 @@ const Back = styled.button<{
       ? "black"
       : "#fff5e8"};
   margin-top: 16px;
+  &:hover,
+  :focus {
+    transform: translateY(2px);
+    transition: ease 0.2s;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.15);
+  }
 `;
 
 const HeartEllipseButton = styled.button<{
@@ -165,5 +176,12 @@ const HeartEllipseButton = styled.button<{
   display: flex:
   justify-content: center;
   align-items: center;
+
+  &:hover,
+  :focus {
+    transform: translateY(3px);
+    transition: ease 0.2s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
   
 `;

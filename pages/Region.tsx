@@ -10,7 +10,6 @@ import {
   ImageFrame,
   ImageOfPlace,
 } from "../components/StyledComponents";
-import tram from "../public/tram.svg";
 
 type Props = {
   router: NextRouter;
@@ -28,8 +27,8 @@ const Region = ({ router }: Props) => {
         region.regionName === "North";
         setRegionVisual("north");
         break;
-      case "Lisbon":
-        region.regionName === "Lisbon";
+      case "Greater Lisbon":
+        region.regionName === "Greater Lisbon";
         setRegionVisual("lisbon");
         break;
       case "Central Portugal":
@@ -49,18 +48,15 @@ const Region = ({ router }: Props) => {
 
   return (
     <MainDiv $regionVisual={regionVisual}>
-      <ImageFrame>
+      <ImageFrame $regionDiv={true}>
         <BackWrapper
           onClick={() => router.push({ pathname: "./ChooseRegion" })}
         >
           <Image src={back} alt="back" />
         </BackWrapper>
-        <ImageOfPlace src={region?.mainImage} alt="region" />
+        <ImageOfPlace $regionDiv={true} src={region?.mainImage} alt="region" />
       </ImageFrame>
       <DescriptionWrapper $regionVisual={regionVisual}>
-        <TramDiv>
-          <Image src={tram} alt="tram" />
-        </TramDiv>
         <DescriptionContainer>
           <RegionName $regionVisual={regionVisual}>
             {region?.regionName}
@@ -94,30 +90,17 @@ const MainDiv = styled.div<{
   align-items: center;
   flex-direction: column;
   margin: 0;
-  // background-color: white;
-  // height: 100vh;
   position: relative;
-  background-color: ${(props) =>
-    props.$regionVisual === "north"
-      ? "#248cf9"
-      : props.$regionVisual === "lisbon"
-      ? "#2E70B2"
-      : props.$regionVisual === "central"
-      ? "#2DBE5A"
-      : props.$regionVisual === "alentejo"
-      ? "#FCB743"
-      : props.$regionVisual === "algarve"
-      ? "#B07420"
-      : "transparent"};
+  background-color: white;
 `;
 
 const DescriptionWrapper = styled.div<{
   $regionVisual: string;
 }>`
   position: absolute;
-  top: 400px;
+  top: 450px;
   width: 100%;
-  height: fit-content;
+  height: 100%;
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? "#248cf9"
@@ -131,7 +114,7 @@ const DescriptionWrapper = styled.div<{
       ? "#B07420"
       : "transparent"};
   border-radius: 30px;
-  z-index: 10;
+  z-index: 20;
 `;
 
 const DescriptionContainer = styled.div`
@@ -193,6 +176,12 @@ const ExploreBtn = styled.button<{
       ? "black"
       : "#fff5e8"};
   margin-bottom: 100px;
+  &:hover,
+  :focus {
+    transform: translateY(2px);
+    transition: ease 0.2s;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.15);
+  }
 `;
 
 const TramDiv = styled.div`
