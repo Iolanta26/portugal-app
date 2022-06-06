@@ -29,7 +29,15 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
     console.log("favourite: ", place);
     setIsClicked(true);
     setDisable(true);
-    placesCtx.selectedPlaces.push(place);
+    const foundId = placesCtx.selectedPlaces.find(
+      (placeId: Place) => placeId?.id === place.id
+    );
+    console.log("foundId", foundId);
+    if (foundId) {
+      return;
+    } else {
+      return placesCtx.selectedPlaces?.push(place);
+    }
   };
 
   return (
@@ -74,16 +82,6 @@ const MainContainer = styled.div`
   width: 100vw;
   background-color: white;
 `;
-
-// const ImageFrame = styled.div`
-//   z-index: 100;
-//   overflow: hidden;
-//   height: 400px;
-//   width: 100%;
-//   display: flex;
-//   justify-content: center;
-//   position: relative;
-// `;
 
 const ImageOfPlace = styled.img`
   width: 100%;
