@@ -5,6 +5,7 @@ export const PLACES: Place[] = [
     id: "1",
     region: "3lisbon",
     location: "Sintra",
+    visual: "lisbon",
     placeName: "The Monserrate Palace",
     placeDesc:
       "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Montesinho Natural Park, and the Alvão Natural Park.",
@@ -15,6 +16,7 @@ export const PLACES: Place[] = [
     id: "2",
     region: "3lisbon",
     location: "Lisbon",
+    visual: "lisbon",
     placeName: "Jerónimos Monastery",
     placeDesc:
       "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Montesinho Natural Park, and the Alvão Natural Park.",
@@ -25,6 +27,7 @@ export const PLACES: Place[] = [
     id: "3",
     region: "3lisbon",
     location: "Lisbon",
+    visual: "lisbon",
     placeName: "Belém Tower",
     placeDesc:
       "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Montesinho Natural Park, and the Alvão Natural Park.",
@@ -35,6 +38,7 @@ export const PLACES: Place[] = [
     id: "4",
     region: "3lisbon",
     location: "Lisbon",
+    visual: "lisbon",
     placeName: "Lisbon Zoo",
     placeDesc:
       "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Montesinho Natural Park, and the Alvão Natural Park.",
@@ -45,6 +49,7 @@ export const PLACES: Place[] = [
     id: "5",
     region: "3lisbon",
     location: "Lisbon",
+    visual: "lisbon",
     placeName: "Cascais",
     placeDesc:
       "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Montesinho Natural Park, and the Alvão Natural Park.",
@@ -55,6 +60,7 @@ export const PLACES: Place[] = [
     id: "6",
     region: "4alentejo",
     location: "Evora",
+    visual: "alentejo",
     placeName: "Evora",
     placeDesc:
       "Full of impressive historical sights and cultural landmarks, Evora, the capital of the region, is one of the most popular places to visit in Alentejo. Boasting a remarkably well-preserved old town center surrounded by medieval walls, it is a beautiful city to get lost in.",
@@ -66,6 +72,7 @@ export const PLACES: Place[] = [
     id: "12",
     region: "5algarve",
     location: "Faro",
+    visual: "algarve",
     placeName: "Faro",
     placeDesc:
       "Busy Faro is the capital city of the Algarve, and its international airport is the gateway for many tourists arriving in southern Portugal.The nearby esplanade harbors a small marina, beyond which lies an expanse of lagoons and wetlands teeming with marine life. This beautiful natural park is also composed of numerous islets and enormous sandbars with their own fabulous beaches, including one named after the city.",
@@ -76,6 +83,7 @@ export const PLACES: Place[] = [
     id: "13",
     region: "5algarve",
     location: "Praça Marques de Pombal",
+    visual: "algarve",
     placeName: " Arquivo Histórico Municipal ",
     placeDesc:
       "The handsome main square features an eye-catching mosaic sun burst radiating from a central obelisk and is ringed by orange trees and plenty of inviting cafés and restaurants. A fun-filled diversion is to take the ferry from the quay near the marina to the Spanish border town of Ayamonte, with its colorful tapas restaurants and traditionally styled delicatessens. ",
@@ -86,6 +94,7 @@ export const PLACES: Place[] = [
     id: "14",
     region: "5algarve",
     location: "Olhão",
+    visual: "algarve",
     placeName: "Olhão",
     placeDesc:
       "The Algarve's busiest fishing port, Olhão is all about the ocean, and some of the best seafood restaurants in the region are on Avenida da República, the town's vibrant thoroughfare. ",
@@ -96,6 +105,7 @@ export const PLACES: Place[] = [
     id: "15",
     region: "5algarve",
     location: "Loulé",
+    visual: "algarve",
     placeName: "Loulé",
     placeDesc:
       "Loulé has always been a lively commercial hub. The Moors built on Roman foundations to create a thriving center of commerce and constructed a castle here in the 12th century to protect their interests. You can walk the ramparts for fine views over the old town, and there's a small museum set within the grounds.",
@@ -106,6 +116,7 @@ export const PLACES: Place[] = [
     id: "16",
     region: "5algarve",
     location: "Albufeira",
+    visual: "algarve",
     placeName: "Albufeira",
     placeDesc:
       "Albufeira is the destination of choice for many Algarve holidaymakers. Its central location on the coast of southern Portugal makes it one of the region's most accessible resorts, and it's a favorite with tourists from across Europe and beyond.",
@@ -116,6 +127,7 @@ export const PLACES: Place[] = [
     id: "7",
     region: "5algarve",
     location: "Lagos",
+    visual: "algarve",
     placeName: "Lagos",
     placeDesc:
       "Lagos is the western Algarve's liveliest resort town. It's also of great historical significance. Prince Henry the Navigator launched Portugal's Age of Discovery from Lagos in the 15th century, and the nobleman later became governor of the Algarve. His extraordinary vision, and the bravery of the intrepid explorers who set sail for uncharted waters, helped place Portugal on the world map, and Lagos is proud of its seafaring heritage.",
@@ -126,6 +138,7 @@ export const PLACES: Place[] = [
     id: "8",
     region: "4alentejo",
     location: "Tróia Peninsula",
+    visual: "alentejo",
     placeName: "Tróia Peninsula",
     placeDesc:
       "The Tróia Peninsula is one of the coastal gems in the region, and a great place to retreat from the more crowded beaches, enjoy water sports and go dolphin-watching. Located along the Sado River Estuary, it is a popular birdwatching destination, and the 18km (11mi) of white sand practically ensure semi-secluded beach space. Although the coast, estuary and local restaurants are the main attractions, there are also Roman ruins including tombs, a port and baths.",
@@ -135,6 +148,7 @@ export const PLACES: Place[] = [
     id: "9",
     region: "4alentejo",
     location: "Alentejo",
+    visual: "alentejo",
     placeName: "Almendres Cromlech",
     placeDesc:
       "About 17km (10.5mi) from Évora, Almendres Cromlech – the largest stone formation in Portugal – is a group of standing stones that date from the Neolithic period. Historians believe these stones, which form two circles, may have been positioned to serve astronomical and time-keeping purposes in addition to acting as a ceremonial site.",
@@ -145,6 +159,7 @@ export const PLACES: Place[] = [
     id: "10",
     region: "4alentejo",
     location: "Monsaraz",
+    visual: "alentejo",
     placeName: "Monsaraz",
     placeDesc:
       "It was listed as one of Portugal’s Seven Wonders in 2017, has been classified a top monument village and is the epitome of a traditional Portuguese village. Perched on a hilltop that allows you to take in the surrounding countryside, it’s as picturesque as it is old-worldly and peaceful.",
@@ -155,6 +170,7 @@ export const PLACES: Place[] = [
     id: "11",
     region: "4alentejo",
     location: "Alentejo",
+    visual: "alentejo",
     placeName: "Birdwatching",
     placeDesc:
       "Birdwatching is a top activity for nature enthusiasts in Portugal, and the Alentejo’s large expanses of rural countryside provide plenty of space to catch glimpses of local species. The Sado Estuary, Castro Verde and São Mamede Park are all excellent spots to see these creatures in the wild, including flamingos, herons, eagles and swallows.",
@@ -165,6 +181,7 @@ export const PLACES: Place[] = [
     id: "18",
     region: "3lisbon",
     location: "Lisbon",
+    visual: "lisbon",
     placeName: "Castelo de S. Jorge",
     placeDesc:
       "Saint George's Castle is a historic castle in the Portuguese capital of Lisbon, located in the freguesia of Santa Maria Maior. Human occupation of the castle hill dates to at least the 8th century BC while the first fortifications built date from the 1st century BC. The hill on which Saint George's Castle stands has played an important part in the history of Lisbon",
@@ -175,6 +192,7 @@ export const PLACES: Place[] = [
     id: "19",
     region: "3lisbon",
     location: "Lisbon",
+    visual: "lisbon",
     placeName: "Oceanário de Lisboa",
     placeDesc:
       "It is located in the Parque das Nações, which was the exhibition grounds for the Expo '98. It is the largest indoor aquarium in Europe.",
@@ -185,6 +203,7 @@ export const PLACES: Place[] = [
     id: "20",
     region: "3lisbon",
     location: "Lisbon",
+    visual: "lisbon",
     placeName: "Time Out Market",
     placeDesc:
       "Time Out Market Lisboa is a food hall located in the Mercado da Ribeira at Cais do Sodré in Lisbon, Portugal.",
@@ -195,6 +214,7 @@ export const PLACES: Place[] = [
     id: "21",
     region: "3lisbon",
     location: "Lisbon",
+    visual: "lisbon",
     placeName: "Museu Nacional do Azulejo",
     placeDesc:
       "The Museu Nacional do Azulejo, occasionally known in English as the National Tile Museum, is an art museum in Lisbon, Portugal dedicated to the azulejo, traditional tilework of Portugal and the former Portuguese Empire, as well as of other Iberophone cultures. Housed in the former Madre de Deus Convent, the museum's collection is one of the largest of ceramics in the world.",

@@ -30,7 +30,7 @@ const Region = ({ router }: Props) => {
         break;
       case "Lisbon":
         region.regionName === "Lisbon";
-        setRegionVisual("lisabon");
+        setRegionVisual("lisbon");
         break;
       case "Central Portugal":
         region.regionName === "Central Portugal";
@@ -100,7 +100,7 @@ const MainDiv = styled.div<{
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? "#248cf9"
-      : props.$regionVisual === "lisabon"
+      : props.$regionVisual === "lisbon"
       ? "#2E70B2"
       : props.$regionVisual === "central"
       ? "#2DBE5A"
@@ -121,7 +121,7 @@ const DescriptionWrapper = styled.div<{
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? "#248cf9"
-      : props.$regionVisual === "lisabon"
+      : props.$regionVisual === "lisbon"
       ? "#2E70B2"
       : props.$regionVisual === "central"
       ? "#2DBE5A"
@@ -146,7 +146,7 @@ const RegionName = styled.div<{
   color: ${(props) =>
     props.$regionVisual === "north"
       ? "#FCB743"
-      : props.$regionVisual === "lisabon"
+      : props.$regionVisual === "lisbon"
       ? "#FCB743"
       : props.$regionVisual === "central"
       ? "#2E70B2"
@@ -175,7 +175,7 @@ const ExploreBtn = styled.button<{
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? "#FCB743"
-      : props.$regionVisual === "lisabon"
+      : props.$regionVisual === "lisbon"
       ? "#FCB743"
       : props.$regionVisual === "central"
       ? "#2E70B2"
@@ -187,7 +187,7 @@ const ExploreBtn = styled.button<{
   color: ${(props) =>
     props.$regionVisual === "north"
       ? "black"
-      : props.$regionVisual === "lisabon"
+      : props.$regionVisual === "lisbon"
       ? "black"
       : props.$regionVisual === "algarve"
       ? "black"

@@ -10,6 +10,7 @@ export type Place = {
   id: string;
   region: string;
   location: string;
+  visual: string;
   placeName: string;
   placeDesc: string;
   placeImage: string;
@@ -18,6 +19,6 @@ export type Place = {
 export type RegionVisual =
   | "north"
   | "central"
-  | "lisabon"
+  | "lisbon"
   | "alentejo"
   | "algarve";

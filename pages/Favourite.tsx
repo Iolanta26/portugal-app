@@ -6,6 +6,7 @@ import back from "../public/back-icon.svg";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { FavContext } from "../store/appContext";
+import { RegionVisual } from "../types";
 
 const Favourite = () => {
   const router = useRouter();
@@ -32,7 +33,7 @@ const Favourite = () => {
             <div key={"fav" + `${place.id}`}>
               <PlaceCard
                 place={place}
-                regionVisual={placesCtx.regionVisualColor}
+                regionVisual={place.visual as RegionVisual}
               />
             </div>
           ))}
@@ -64,6 +65,5 @@ const MainListContainer = styled.div`
   width: 350px;
   margin-top: 10px;
 `;
-
 
 export default Favourite;

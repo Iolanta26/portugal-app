@@ -52,7 +52,7 @@ const Card = styled.div<{
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? "#248cf9"
-      : props.$regionVisual === "lisabon"
+      : props.$regionVisual === "lisbon"
       ? "#2E70B2"
       : props.$regionVisual === "central"
       ? "#2DBE5A"
