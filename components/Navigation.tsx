@@ -1,34 +1,41 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import styled from "styled-components";
 
 import azulejo from "../public/azulejo.png";
 
 export const Navigation = () => {
-  const router = useRouter();
   return (
     <Navbar>
-      <MenuButton onClick={() => router.push("./ChooseRegion")}>
-        <Icon src="./map-pin.svg" alt="map-pin" />
-        <MenuText>Regions</MenuText>
-      </MenuButton>
-      <MenuButton onClick={() => router.push("./Search")}>
-        <Icon src="./search.svg" alt="search" />
-        <MenuText>Search</MenuText>
-      </MenuButton>
+      <Link href="/ChooseRegion">
+        <MenuButton>
+          <Icon src="./map-pin.svg" alt="map-pin" />
+          <MenuText>Regions</MenuText>
+        </MenuButton>
+      </Link>
+      <Link href="/Search">
+        <MenuButton>
+          <Icon src="./search.svg" alt="search" />
+          <MenuText>Search</MenuText>
+        </MenuButton>
+      </Link>
       <CenterWrapper>
         <ImageWrapper>
           <AzulejoImage src={azulejo} alt="center" />
         </ImageWrapper>
       </CenterWrapper>
-      <MenuButton onClick={() => router.push("./Favourite")}>
-        <Icon src="./heart.svg" alt="favourite" />
-        <MenuText>Favourite</MenuText>
-      </MenuButton>
-      <MenuButton onClick={() => router.push("./Info")}>
-        <Icon src="./info.svg" alt="info" />
-        <MenuText>Info</MenuText>
-      </MenuButton>
+      <Link href="/Favourite">
+        <MenuButton>
+          <Icon src="./heart.svg" alt="favourite" />
+          <MenuText>Favourite</MenuText>
+        </MenuButton>
+      </Link>
+      <Link href="/Info">
+        <MenuButton>
+          <Icon src="./info.svg" alt="info" />
+          <MenuText>Info</MenuText>
+        </MenuButton>
+      </Link>
     </Navbar>
   );
 };

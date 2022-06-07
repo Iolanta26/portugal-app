@@ -54,7 +54,17 @@ const Region = ({ router }: Props) => {
         >
           <Image src={back} alt="back" />
         </BackWrapper>
-        <ImageOfPlace $regionDiv={true} src={region?.mainImage} alt="region" />
+        <CarouselDiv>
+          <ImageOfPlace
+            $regionDiv={true}
+            src={region?.mainImage}
+            alt="region"
+          />
+
+          <OtherImage src={region?.images.firstImage} alt="" />
+          <OtherImage src={region?.images.secondImage} alt="" />
+          <OtherImage src={region?.images.thirdImage} alt="" />
+        </CarouselDiv>
       </ImageFrame>
       <DescriptionWrapper $regionVisual={regionVisual}>
         <DescriptionContainer>
@@ -116,6 +126,14 @@ const DescriptionWrapper = styled.div<{
   border-radius: 30px;
   z-index: 20;
 `;
+
+const CarouselDiv = styled.div`
+  white-space: nowrap;
+  overflow: scroll;
+  overflow-y: hidden;
+`;
+
+const OtherImage = styled.img``;
 
 const DescriptionContainer = styled.div`
   margin: 20px 24px;
@@ -182,11 +200,4 @@ const ExploreBtn = styled.button<{
     transition: ease 0.2s;
     box-shadow: 0 7px 7px rgba(0, 0, 0, 0.15);
   }
-`;
-
-const TramDiv = styled.div`
-  width: 80px;
-  position: absolute;
-  right: 40px;
-  top: -55px;
 `;

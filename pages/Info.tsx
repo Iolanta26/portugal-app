@@ -7,7 +7,7 @@ import linkedin from "/public/linkedin.png";
 
 const Info = () => (
   <MainContainer>
-    <ProjectText>Project is originally designed and coded by</ProjectText>
+    <ProjectText>Project is designed and coded by</ProjectText>
     <MyName>Iolanta Scheifel</MyName>
     <SocialIcons>
       <SocialIconContainer>

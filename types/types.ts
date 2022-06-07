@@ -3,7 +3,11 @@ export type Region = {
   regionName: string;
   regionDesc: string;
   mainImage: string;
-  images: string[];
+  images: {
+    firstImage: string;
+    secondImage: string;
+    thirdImage: string;
+  };
 };
 
 export type Place = {
