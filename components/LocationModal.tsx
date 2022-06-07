@@ -116,6 +116,7 @@ const Text = styled.div<{
   position: relative;
   top: -60px;
   z-index: 120;
+  max-width: 1200px;
 `;
 
 const HeartButtonWrapper = styled.div`

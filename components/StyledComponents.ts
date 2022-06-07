@@ -49,6 +49,7 @@ export const ImageFrame = styled.div<{
   justify-content: center;
   position: relative;
   z-index: 2;
+  max-width: 1200px;
 `;
 
 export const ImageOfPlace = styled.img<{

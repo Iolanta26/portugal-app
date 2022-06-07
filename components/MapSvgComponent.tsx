@@ -6,9 +6,9 @@ export const MapSvgComponent = () => {
   return (
     <div>
       {" "}
-      <svg
-        width="296"
-        height="588"
+      <SvgElement
+        width="496"
+        height="788"
         viewBox="0 0 296 588"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -287,10 +287,12 @@ export const MapSvgComponent = () => {
             />
           </filter>
         </defs>
-      </svg>
+      </SvgElement>
     </div>
   );
 };
+
+const SvgElement = styled.svg``;
 
 const Region = styled.g`
   cursor: pointer;

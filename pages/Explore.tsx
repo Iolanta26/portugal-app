@@ -63,4 +63,11 @@ const ExploreButton = styled.button`
   padding: 20px 25px;
   position: absolute;
   top: 600px;
+
+  &:hover,
+  :focus {
+    transform: translateY(2px);
+    transition: ease 0.2s;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.15);
+  }
 `;

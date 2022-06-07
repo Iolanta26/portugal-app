@@ -109,7 +109,7 @@ const DescriptionWrapper = styled.div<{
 }>`
   position: absolute;
   top: 450px;
-  width: 100%;
+  max-width: 1200px;
   height: 100%;
   background-color: ${(props) =>
     props.$regionVisual === "north"
