@@ -77,6 +77,12 @@ const SocialIconContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &:hover,
+  :focus {
+    transform: translateY(2px);
+    transition: ease 0.2s;
+  }
 `;
 
 const TechnologiesContainer = styled.div`

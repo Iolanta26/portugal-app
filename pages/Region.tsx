@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { NextRouter, withRouter } from "next/router";
 import back from "../public/back-icon.svg";
 import Image from "next/image";
@@ -10,12 +10,14 @@ import {
   ImageFrame,
   ImageOfPlace,
 } from "../components/StyledComponents";
+import tram from "../public/tram.svg";
 
 type Props = {
   router: NextRouter;
+  view: any;
 };
 
-const Region = ({ router }: Props) => {
+const Region = ({ router, view }: Props) => {
   const [regionVisual, setRegionVisual] = useState<RegionVisual>("north");
   const { regionId } = router.query;
 
@@ -67,6 +69,7 @@ const Region = ({ router }: Props) => {
         </CarouselDiv>
       </ImageFrame>
       <DescriptionWrapper $regionVisual={regionVisual}>
+        {regionVisual === "lisbon" && <ImageTram src="./tram.svg" alt="tram" />}
         <DescriptionContainer>
           <RegionName $regionVisual={regionVisual}>
             {region?.regionName}
@@ -131,6 +134,27 @@ const CarouselDiv = styled.div`
   white-space: nowrap;
   overflow: scroll;
   overflow-y: hidden;
+`;
+
+const tramMove = keyframes`
+0% {
+  transform:translate(0px, 0);
+}
+50% {
+  transform: translate(250px, 0);
+}
+100% {
+  transform: translate(0px, 0);
+}
+
+`;
+
+const ImageTram = styled.img`
+  width: 70px;
+  animation: ${tramMove} ease-in-out 10s;
+  position: absolute;
+  top: -55px;
+  right: 250px;
 `;
 
 const OtherImage = styled.img``;
