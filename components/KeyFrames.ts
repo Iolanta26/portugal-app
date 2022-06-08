@@ -10,6 +10,6 @@ export const tramMove = keyframes`
   transform:translate(0px, 0);
 }
 100% {
-  transform: translate(-80px, 0);
+  transform: translate(270px, 0);
 }
 `;

@@ -56,22 +56,20 @@ const Region = ({ router }: Props) => {
         >
           <Image src={back} alt="back" />
         </BackWrapper>
-        <CarouselDiv>
+        <FlexImages>
           <ImageOfPlace
             $regionDiv={true}
             src={region?.mainImage}
             alt="region"
           />
-
           <OtherImage src={region?.images.firstImage} alt="" />
           <OtherImage src={region?.images.secondImage} alt="" />
-          <OtherImage src={region?.images.thirdImage} alt="" />
-        </CarouselDiv>
+        </FlexImages>
       </ImageFrame>
       <DescriptionWrapper $regionVisual={regionVisual}>
         {regionVisual === "lisbon" && <ImageTram src="./tram.svg" alt="tram" />}
         {regionVisual === "algarve" && (
-          <ImageBeach src="./beach.svg" alt="tram" />
+          <ImageBeach src="./beach.svg" alt="beach" />
         )}
         <DescriptionContainer>
           <RegionName $regionVisual={regionVisual}>
@@ -112,13 +110,19 @@ const MainDiv = styled.div<{
   background-color: white;
 `;
 
+const FlexImages = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+`;
+
 const DescriptionWrapper = styled.div<{
   $regionVisual: string;
 }>`
   position: absolute;
-  top: 450px;
+  top: 390px;
   max-width: 1200px;
-  height: 100%;
+  height: 300px;
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? `${colors.bluePalette}`
@@ -131,7 +135,7 @@ const DescriptionWrapper = styled.div<{
       : props.$regionVisual === "algarve"
       ? `${colors.brownPalette}`
       : "transparent"};
-  border-radius: 30px;
+  border-radius: 20px;
   z-index: 20;
 `;
 
@@ -152,19 +156,13 @@ const DescriptionText = styled.div<{
       : "transparent"};
 `;
 
-const CarouselDiv = styled.div`
-  white-space: nowrap;
-  overflow: scroll;
-  overflow-y: hidden;
-`;
-
 const ImageTram = styled.img`
   width: 70px;
   animation: ${tramMove} ease-in-out 3s;
   animation-fill-mode: forwards;
   position: absolute;
-  top: 0px;
-  left: 350px;
+  top: -48px;
+  left: 15px;
   z-index: 15;
 `;
 
@@ -193,7 +191,9 @@ const ImageBeach = styled.img`
   transform: scaleX(-1);
 `;
 
-const OtherImage = styled.img``;
+const OtherImage = styled.img`
+  height: 500px;
+`;
 
 const DescriptionContainer = styled.div`
   margin: 20px 24px;

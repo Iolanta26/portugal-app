@@ -72,7 +72,7 @@ export const ImageFrame = styled.div<{
   $regionDiv: boolean;
 }>`
   overflow: hidden;
-  height: ${(props) => (props.$regionDiv === true ? "500px" : "400px")};
+  height: ${(props) => (props.$regionDiv === true ? "450px" : "400px")};
   width: 100%;
   display: flex;
   justify-content: center;
@@ -85,7 +85,6 @@ export const ImageOfPlace = styled.img<{
   $regionDiv: boolean;
 }>`
   width: 100%;
-  height: ${(props) => (props.$regionDiv === true ? "500px" : "400px")};
+  height: ${(props) => (props.$regionDiv === true ? "400px" : "400px")};
   object-fit: cover;
-  position: absolute;
 `;
