@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { colors } from "../theme";
 import { Place, RegionVisual } from "../types";
+import { opacityAnimation } from "./KeyFrames";
 import { LocationModal } from "./LocationModal";
 
 type Props = {
@@ -18,7 +20,7 @@ export const PlaceCard = ({ regionVisual, place }: Props) => {
       {!openModal && (
         <Card $regionVisual={regionVisual} onClick={() => setOpenModal(true)}>
           <PlaceImage src={placeImage} alt="place image" />
-          <ShortDesc>
+          <ShortDesc $regionVisual={regionVisual}>
             <Name>{placeName}</Name>
             <Location>Location: {location}</Location>
           </ShortDesc>
@@ -49,17 +51,18 @@ const Card = styled.div<{
   border-radius: 15px;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  animation: ${opacityAnimation} 1s ease;
   background-color: ${(props) =>
     props.$regionVisual === "north"
-      ? "#248cf9"
+      ? `${colors.bluePalette}`
       : props.$regionVisual === "lisbon"
-      ? "#2E70B2"
+      ? `${colors.darkBluePalette}`
       : props.$regionVisual === "central"
-      ? "#2DBE5A"
+      ? `${colors.greenPalette}`
       : props.$regionVisual === "alentejo"
-      ? "#FCB743"
+      ? `${colors.orangePalette}`
       : props.$regionVisual === "algarve"
-      ? "#B07420"
+      ? `${colors.brownPalette}`
       : "transparent"};
   &:hover,
   :focus {
@@ -68,7 +71,9 @@ const Card = styled.div<{
   }
 `;
 
-const ShortDesc = styled.div`
+const ShortDesc = styled.div<{
+  $regionVisual: string;
+}>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +82,10 @@ const ShortDesc = styled.div`
   width: 135px;
   position: absolute;
   right: 5px;
-  color: #fff3e0;
+  color: ${(props) =>
+    props.$regionVisual === "alentejo"
+      ? `${colors.darkTextColor}`
+      : `${colors.lightTextColor}`};
 `;
 
 const Name = styled.div`

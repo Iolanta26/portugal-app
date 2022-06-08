@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../theme";
 
 export const BackWrapper = styled.button`
   background: transparent;
@@ -22,15 +23,43 @@ export const FlexContainer = styled.div<{
   padding: 0;
 `;
 
-export const PlaceName = styled.div`
+export const PlaceName = styled.div<{
+  $regionVisual: string;
+}>`
   font-family: "Rochester", cursive;
   color: white;
   font-size: 30px;
+  color: ${(props) =>
+    props.$regionVisual === "north"
+      ? `${colors.lightTextColor}`
+      : props.$regionVisual === "lisbon"
+      ? `${colors.lightTextColor}`
+      : props.$regionVisual === "central"
+      ? `${colors.darkTextColor}`
+      : props.$regionVisual === "alentejo"
+      ? `${colors.darkTextColor}`
+      : props.$regionVisual === "algarve"
+      ? `${colors.lightTextColor}`
+      : "transparent"};
 `;
 
-export const LocationName = styled.div`
+export const LocationName = styled.div<{
+  $regionVisual: string;
+}>`
   font-size: 16px;
   line-height: 30px;
+  color: ${(props) =>
+    props.$regionVisual === "north"
+      ? `${colors.lightTextColor}`
+      : props.$regionVisual === "lisbon"
+      ? `${colors.lightTextColor}`
+      : props.$regionVisual === "central"
+      ? `${colors.darkTextColor}`
+      : props.$regionVisual === "alentejo"
+      ? `${colors.darkTextColor}`
+      : props.$regionVisual === "algarve"
+      ? `${colors.lightTextColor}`
+      : "transparent"};
 `;
 
 export const Description = styled.div`

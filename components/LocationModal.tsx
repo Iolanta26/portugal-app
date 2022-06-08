@@ -10,6 +10,7 @@ import {
   LocationName,
   PlaceName,
 } from "./StyledComponents";
+import { colors } from "../theme";
 
 type Props = {
   regionVisual: RegionVisual;
@@ -46,8 +47,8 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
         <ImageOfPlace src={placeImage} alt="place image" />
       </ImageFrame>
       <Text $regionVisual={regionVisual}>
-        <PlaceName>{placeName}</PlaceName>
-        <LocationName>{location}</LocationName>
+        <PlaceName $regionVisual={regionVisual}>{placeName}</PlaceName>
+        <LocationName $regionVisual={regionVisual}>{location}</LocationName>
         <HeartButtonWrapper>
           <HeartEllipseButton
             disabled={disable}
@@ -95,15 +96,15 @@ const Text = styled.div<{
 }>`
   background-color: ${(props) =>
     props.$regionVisual === "north"
-      ? "#248cf9"
+      ? `${colors.bluePalette}`
       : props.$regionVisual === "lisbon"
-      ? "#2E70B2"
+      ? `${colors.darkBluePalette}`
       : props.$regionVisual === "central"
-      ? "#2DBE5A"
+      ? `${colors.greenPalette}`
       : props.$regionVisual === "alentejo"
-      ? "#FCB743"
+      ? `${colors.orangePalette}`
       : props.$regionVisual === "algarve"
-      ? "#B07420"
+      ? `${colors.brownPalette}`
       : "transparent"};
   width: 80%;
   height: 120px;
