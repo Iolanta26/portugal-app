@@ -5,3 +5,4 @@ export * from "./PlaceCard";
 export * from "./StyledComponents";
 export * from "./HeartButton";
 export * from "./KeyFrames";
+export * from "./IconsForRegions";

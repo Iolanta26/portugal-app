@@ -35,10 +35,18 @@ const MainFlexContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-  margin-left: 35px;
+  margin-left: 55px;
   margin-top: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
+
+// const LeafImageOne = styled.img`
+//   width: 180px;
+//   position: absolute;
+//   right: 0;
+//   bottom: 0;
+//   transform: rotate(10deg);
+// `;
 
 const MainText = styled.div`
   font-size: 26px;

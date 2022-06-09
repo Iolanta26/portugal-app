@@ -11,7 +11,7 @@ import {
   ImageOfPlace,
 } from "../components/StyledComponents";
 import { colors } from "../theme";
-import { opacityAnimation, tramMove } from "../components";
+import { IconsForRegions, opacityAnimation, tramMove } from "../components";
 
 type Props = {
   router: NextRouter;
@@ -62,21 +62,23 @@ const Region = ({ router }: Props) => {
             src={region?.mainImage}
             alt="region"
           />
+
           <OtherImage src={region?.images.firstImage} alt="" />
+
           <OtherImage src={region?.images.secondImage} alt="" />
         </FlexImages>
       </ImageFrame>
       <DescriptionWrapper $regionVisual={regionVisual}>
-        {regionVisual === "lisbon" && <ImageTram src="./tram.svg" alt="tram" />}
-        {regionVisual === "algarve" && (
-          <ImageBeach src="./beach.svg" alt="beach" />
-        )}
         <DescriptionContainer>
           <RegionName $regionVisual={regionVisual}>
             {region?.regionName}
           </RegionName>
           <DescriptionText $regionVisual={regionVisual}>
             {region?.regionDesc}
+            <BestKnownText $regionVisual={regionVisual}>
+              Best known for:
+              <IconsForRegions regionVisual={regionVisual} />
+            </BestKnownText>
           </DescriptionText>
         </DescriptionContainer>
         <ButtonWrapper>
@@ -98,6 +100,26 @@ const Region = ({ router }: Props) => {
 };
 
 export default withRouter(Region);
+
+const BestKnownText = styled.div<{
+  $regionVisual: string;
+}>`
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 20px;
+  color: ${(props) =>
+    props.$regionVisual === "north"
+      ? `${colors.orangePalette}`
+      : props.$regionVisual === "lisbon"
+      ? `${colors.orangePalette}`
+      : props.$regionVisual === "central"
+      ? `${colors.darkBluePalette}`
+      : props.$regionVisual === "alentejo"
+      ? `${colors.brownPalette}`
+      : props.$regionVisual === "algarve"
+      ? `${colors.orangePalette}`
+      : "transparent"};
+`;
 
 const MainDiv = styled.div<{
   $regionVisual: string;
@@ -122,7 +144,7 @@ const DescriptionWrapper = styled.div<{
   position: absolute;
   top: 390px;
   max-width: 1200px;
-  height: 300px;
+  height: fit-content;
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? `${colors.bluePalette}`
@@ -144,7 +166,7 @@ const DescriptionText = styled.div<{
 }>`
   color: ${(props) =>
     props.$regionVisual === "north"
-      ? `${colors.lightTextColor}`
+      ? `${colors.darkTextColor}`
       : props.$regionVisual === "lisbon"
       ? `${colors.lightTextColor}`
       : props.$regionVisual === "central"
@@ -193,6 +215,7 @@ const ImageBeach = styled.img`
 
 const OtherImage = styled.img`
   height: 500px;
+  margin-top: 8px;
 `;
 
 const DescriptionContainer = styled.div`
@@ -207,15 +230,15 @@ const RegionName = styled.div<{
   animation: ${opacityAnimation} 0.7s ease;
   color: ${(props) =>
     props.$regionVisual === "north"
-      ? "#FCB743"
+      ? `${colors.orangePalette}`
       : props.$regionVisual === "lisbon"
-      ? "#FCB743"
+      ? `${colors.orangePalette}`
       : props.$regionVisual === "central"
-      ? "#2E70B2"
+      ? `${colors.darkBluePalette}`
       : props.$regionVisual === "alentejo"
-      ? "#B07420"
+      ? `${colors.brownPalette}`
       : props.$regionVisual === "algarve"
-      ? "#FCB743"
+      ? `${colors.orangePalette}`
       : "transparent"};
 `;
 

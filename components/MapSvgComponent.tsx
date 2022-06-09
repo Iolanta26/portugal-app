@@ -5,10 +5,9 @@ export const MapSvgComponent = () => {
   const router = useRouter();
   return (
     <div>
-      {" "}
       <SvgElement
-        width="496"
-        height="788"
+        width="380"
+        height="600"
         viewBox="0 0 296 588"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -300,8 +299,8 @@ const Region = styled.g`
   &:focus,
   &:active,
   &:hover {
-      transform: translateY(1px);
       box-shadow: 0 20px 30px rgba(0, 0, 0, 0.45);
+      filter: brightness(1.06);
     }
   }
 `;

@@ -57,7 +57,7 @@ export const REGIONS: Region[] = [
     mainImage: "./alentejo.jpg",
     images: {
       firstImage:
-        "https://images.unsplash.com/photo-1558102400-72da9fdbecae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1592&q=80",
+        "https://images.unsplash.com/photo-1651508820682-2d3e37e7183e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80",
       secondImage:
         "https://images.unsplash.com/photo-1578859651203-c7126a106b59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80",
       thirdImage:
