@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { NextRouter, withRouter } from "next/router";
-import { useContext } from "react";
 
 import styled from "styled-components";
 import { PlaceCard } from "../components";
@@ -69,7 +68,7 @@ const MainListContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 350px;
+  max-width: 1000px;
   margin-top: 10px;
 `;
 

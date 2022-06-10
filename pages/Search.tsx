@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { FlexContainer, PlaceCard } from "../components";
+import { PlaceCard } from "../components";
 import { PLACES } from "../dummy-data/places";
 import { RegionVisual } from "../types";
 
@@ -12,31 +12,29 @@ const Search = ({}: Props) => {
   const [searchPlace, setSearchPlace] = useState("");
 
   const searchPlaces = PLACES.filter((place) => {
-    if (searchPlace === "") {
-      return place;
-    } else if (
-      place.placeName.toLowerCase().includes(searchPlace.toLowerCase())
-    ) {
+    if (place.placeName.toLowerCase().includes(searchPlace.toLowerCase())) {
       return (
-        <PlaceCard place={place} regionVisual={place.visual as RegionVisual} />
+        <PlaceCard
+          place={place}
+          regionVisual={place.visual as RegionVisual}
+          style="image_only"
+        />
       );
     } else if (
       place.location.toLowerCase().includes(searchPlace.toLowerCase())
     ) {
       return (
-        <PlaceCard place={place} regionVisual={place.visual as RegionVisual} />
+        <PlaceCard
+          place={place}
+          regionVisual={place.visual as RegionVisual}
+          style="image_only"
+        />
       );
     }
-  }).map((place) => {
-    return (
-      <div key={place.id}>
-        <PlaceCard place={place} regionVisual={place.visual as RegionVisual} />
-      </div>
-    );
   });
 
   return (
-    <FlexContainer $isRow={true}>
+    <>
       <SearchMainContainer>
         <SearchBarWrapper>
           <SearchInput
@@ -46,11 +44,25 @@ const Search = ({}: Props) => {
             }}
             placeholder="Search locations"
           />
-          <Icon src="./search.svg" alt="search" />
+          <SearchIcon src="./search.svg" alt="search" />
         </SearchBarWrapper>
       </SearchMainContainer>
-      <AllItems>{searchPlaces}</AllItems>
-    </FlexContainer>
+      <FlexWrapper>
+        <AllItems>
+          {searchPlaces.map((place) => {
+            return (
+              <PlaceCardContainer key={place.id}>
+                <PlaceCard
+                  place={place}
+                  regionVisual={place.visual as RegionVisual}
+                  style="image_only"
+                />
+              </PlaceCardContainer>
+            );
+          })}
+        </AllItems>
+      </FlexWrapper>
+    </>
   );
 };
 
@@ -97,7 +109,7 @@ const SearchInput = styled.input`
   }
 `;
 
-const Icon = styled.img`
+const SearchIcon = styled.img`
   position: absolute;
   top: 50%;
   right: 12px;
@@ -107,29 +119,23 @@ const Icon = styled.img`
   transition: 0.2s;
 `;
 
-// const PlaceCardDiv = styled.div`
-//   diplay: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-//   background-color: blue;
-//   width: fit-content;
-// `;
+const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const PlaceCardContainer = styled.div`
+  display: flex;
+`;
 
 const AllItems = styled.div`
-  diplay: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  flex-direction: row;
-  // background-color: green;
-  width: 50%;
+  max-width: 1000px;
+  margin-top: 10px;
   padding-top: 150px;
   padding-bottom: 100px;
 `;
-
-// const ListOfPlaces = styled.div`
-//   diplay: flex;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: red;
-// `;

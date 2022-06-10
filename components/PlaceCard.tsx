@@ -1,16 +1,19 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { colors } from "../theme";
 import { Place, RegionVisual } from "../types";
 import { opacityAnimation } from "./KeyFrames";
 import { LocationModal } from "./LocationModal";
 
+type CardStyle = "full" | "image_only";
+
 type Props = {
   regionVisual: RegionVisual;
   place: Place;
+  style?: CardStyle;
 };
 
-export const PlaceCard = ({ regionVisual, place }: Props) => {
+export const PlaceCard = ({ regionVisual, place, style = "full" }: Props) => {
   const [openModal, setOpenModal] = useState(false);
 
   const { placeName, placeImage, location } = place;
@@ -18,9 +21,13 @@ export const PlaceCard = ({ regionVisual, place }: Props) => {
   return (
     <>
       {!openModal && (
-        <Card $regionVisual={regionVisual} onClick={() => setOpenModal(true)}>
+        <Card
+          $regionVisual={regionVisual}
+          onClick={() => setOpenModal(true)}
+          $style={style}
+        >
           <PlaceImage src={placeImage} alt="place image" />
-          <ShortDesc $regionVisual={regionVisual}>
+          <ShortDesc $regionVisual={regionVisual} $style={style}>
             <Name>{placeName}</Name>
             <Location>Location: {location}</Location>
           </ShortDesc>
@@ -39,6 +46,7 @@ export const PlaceCard = ({ regionVisual, place }: Props) => {
 
 const Card = styled.div<{
   $regionVisual: string;
+  $style: CardStyle;
 }>`
   display: flex;
   justify-content: center;
@@ -69,10 +77,17 @@ const Card = styled.div<{
     transform: translateY(2px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   }
+
+  ${({ $style }) =>
+    $style === "image_only" &&
+    css`
+      width: 170px;
+    `}
 `;
 
 const ShortDesc = styled.div<{
   $regionVisual: string;
+  $style: CardStyle;
 }>`
   display: flex;
   justify-content: center;
@@ -86,6 +101,17 @@ const ShortDesc = styled.div<{
     props.$regionVisual === "alentejo"
       ? `${colors.darkTextColor}`
       : `${colors.lightTextColor}`};
+
+  ${({ $style }) =>
+    $style === "image_only" &&
+    css`
+      width: 150px;
+      background-color: rgba(245, 245, 245, 0.6);
+      right: 10px;
+      left: 10px;
+      height: 100px;
+      color: ${colors.darkTextColor};
+    `}
 `;
 
 const Name = styled.div`

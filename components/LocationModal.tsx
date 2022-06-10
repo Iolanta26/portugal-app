@@ -82,7 +82,7 @@ const MainContainer = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 98;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background-color: white;
 `;
@@ -144,8 +144,8 @@ const HeartEllipseButton = styled.button<{
 
   &:hover,
   :focus {
-    transform: translateY(3px);
-    transition: ease 0.2s;
+    transform: translateY(2px);
+    transition: ease 0.1s;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   }
   

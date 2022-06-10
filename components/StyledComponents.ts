@@ -63,9 +63,9 @@ export const LocationName = styled.div<{
 `;
 
 export const Description = styled.div`
-  width: 85%;
+  width: 65%;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 `;
 
 export const ImageFrame = styled.div<{
