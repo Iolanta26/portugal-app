@@ -11,7 +11,6 @@ import { PLACES } from "../dummy-data/places";
 import { getRegionById } from "../functions/functions";
 
 import back from "../public/back-icon.svg";
-import { FavContext } from "../store/appContext";
 import { RegionVisual } from "../types";
 
 type Props = {
@@ -20,8 +19,6 @@ type Props = {
 
 const ListOfPlaces = ({ router }: Props) => {
   const { regionId, regionVisual } = router.query;
-
-  const placesCtx = useContext(FavContext);
 
   const placesAccordingToRegion = PLACES.filter(
     (place) => place.region === regionId

@@ -11,7 +11,11 @@ import {
   ImageOfPlace,
 } from "../components/StyledComponents";
 import { colors } from "../theme";
-import { IconsForRegions, opacityAnimation, tramMove } from "../components";
+import {
+  GenericButton,
+  IconsForRegions,
+  opacityAnimation,
+} from "../components";
 
 type Props = {
   router: NextRouter;
@@ -62,9 +66,7 @@ const Region = ({ router }: Props) => {
             src={region?.mainImage}
             alt="region"
           />
-
           <OtherImage src={region?.images.firstImage} alt="" />
-
           <OtherImage src={region?.images.secondImage} alt="" />
         </FlexImages>
       </ImageFrame>
@@ -82,17 +84,16 @@ const Region = ({ router }: Props) => {
           </DescriptionText>
         </DescriptionContainer>
         <ButtonWrapper>
-          <ExploreBtn
-            $regionVisual={regionVisual}
+          <GenericButton
+            regionVisual={regionVisual}
+            text="Explore more"
             onClick={() =>
               router.push({
                 pathname: "./ListOfPlaces",
                 query: { regionId, regionVisual },
               })
             }
-          >
-            Explore more
-          </ExploreBtn>
+          />
         </ButtonWrapper>
       </DescriptionWrapper>
     </MainDiv>
@@ -178,41 +179,6 @@ const DescriptionText = styled.div<{
       : "transparent"};
 `;
 
-const ImageTram = styled.img`
-  width: 70px;
-  animation: ${tramMove} ease-in-out 3s;
-  animation-fill-mode: forwards;
-  position: absolute;
-  top: -48px;
-  left: 15px;
-  z-index: 15;
-`;
-
-// const beachMove = keyframes`
-// 0% {
-//   transform: rotate(3deg);
-
-// }
-// 50% {
-//   transform: rotate(0deg);
-
-// }
-// 100% {
-//   transform: rotate(3deg);
-
-// }
-
-// `;
-
-const ImageBeach = styled.img`
-  width: 100px;
-  animation: ease-in-out 2s infinite;
-  position: absolute;
-  top: -20px;
-  right: 10px;
-  transform: scaleX(-1);
-`;
-
 const OtherImage = styled.img`
   height: 500px;
   margin-top: 8px;
@@ -247,42 +213,4 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-`;
-
-const ExploreBtn = styled.button<{
-  $regionVisual: string;
-}>`
-  border: none;
-  background: #fcb743;
-  border-radius: 15px;
-  font-size: 15px;
-  padding: 20px 25px;
-  animation: ${opacityAnimation} 0.5s ease;
-  background-color: ${(props) =>
-    props.$regionVisual === "north"
-      ? "#FCB743"
-      : props.$regionVisual === "lisbon"
-      ? "#FCB743"
-      : props.$regionVisual === "central"
-      ? "#2E70B2"
-      : props.$regionVisual === "alentejo"
-      ? "#B07420"
-      : props.$regionVisual === "algarve"
-      ? "#FCB743"
-      : "transparent"};
-  color: ${(props) =>
-    props.$regionVisual === "north"
-      ? "black"
-      : props.$regionVisual === "lisbon"
-      ? "black"
-      : props.$regionVisual === "algarve"
-      ? "black"
-      : "#fff5e8"};
-  margin-bottom: 100px;
-  &:hover,
-  :focus {
-    transform: translateY(2px);
-    transition: ease 0.2s;
-    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.15);
-  }
 `;

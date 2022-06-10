@@ -11,6 +11,7 @@ import {
   PlaceName,
 } from "./StyledComponents";
 import { colors } from "../theme";
+import { GenericButton } from "./GenericButton";
 
 type Props = {
   regionVisual: RegionVisual;
@@ -62,9 +63,11 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
         </HeartButtonWrapper>
       </Text>
       <Description>{placeDesc}</Description>
-      <Back $regionVisual={regionVisual} onClick={onClose}>
-        Close
-      </Back>
+      <GenericButton
+        regionVisual={regionVisual}
+        onClick={onClose}
+        text="Close"
+      />
     </MainContainer>
   );
 };
@@ -125,44 +128,6 @@ const HeartButtonWrapper = styled.div`
   top: 90px;
   right: 40px;
   cursor: pointer;
-`;
-
-const Back = styled.button<{
-  $regionVisual: string;
-}>`
-  border: none;
-  background: #fcb743;
-  border-radius: 15px;
-  width: 120px;
-  font-size: 16px;
-  padding: 20px 25px;
-  background-color: ${(props) =>
-    props.$regionVisual === "north"
-      ? "#FCB743"
-      : props.$regionVisual === "lisbon"
-      ? "#FCB743"
-      : props.$regionVisual === "central"
-      ? "#2E70B2"
-      : props.$regionVisual === "alentejo"
-      ? "#B07420"
-      : props.$regionVisual === "algarve"
-      ? "#FCB743"
-      : "#DA000D"};
-  color: ${(props) =>
-    props.$regionVisual === "north"
-      ? "black"
-      : props.$regionVisual === "lisbon"
-      ? "black"
-      : props.$regionVisual === "algarve"
-      ? "black"
-      : "#fff5e8"};
-  margin-top: 16px;
-  &:hover,
-  :focus {
-    transform: translateY(2px);
-    transition: ease 0.2s;
-    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.15);
-  }
 `;
 
 const HeartEllipseButton = styled.button<{
