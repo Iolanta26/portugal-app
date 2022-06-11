@@ -229,7 +229,7 @@ export const PLACES: Place[] = [
     visual: "algarve",
     placeName: "Lagos",
     placeDesc:
-      "Lagos is the western Algarve's liveliest resort town. It's also of great historical significance. Prince Henry the Navigator launched Portugal's Age of Discovery from Lagos in the 15th century, and the nobleman later became governor of the Algarve. His extraordinary vision, and the bravery of the intrepid explorers who set sail for uncharted waters, helped place Portugal on the world map, and Lagos is proud of its seafaring heritage.",
+      "Lagos is the western Algarve's liveliest resort town. It's also of great historical significance. Lagos is proud of its seafaring heritage.",
     placeImage:
       "https://images.unsplash.com/photo-1608651103410-0a3d8e5dc198?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774",
   },
@@ -294,7 +294,7 @@ export const PLACES: Place[] = [
     visual: "lisbon",
     placeName: "Pena Castle",
     placeDesc:
-      "The Pena is a Romanticist castle in São Pedro de Penaferrim, in the municipality of Sintra, on the Portuguese Riviera. The castle stands on the top of a hill in the Sintra Mountains above the town of Sintra, and on a clear day it can be easily seen from Lisbon and much of its metropolitan area. The Pena Park is a vast forested area spread out over 200 hectares and it surrounds the palace. The park is filled with walking paths, secret paths, pavilions, lakes, ponds and exotic trees designed based on the orders given by King Ferdinand which is where the exotic taste comes from.",
+      "The Pena is a Romanticist castle in São Pedro de Penaferrim. The castle stands on the top of a hill in the Sintra Mountains above the town of Sintra, and on a clear day it can be easily seen from Lisbon and much of its metropolitan area. The Pena Park is a vast forested area spread out over 200 hectares and it surrounds the palace. The park is filled with walking paths, secret paths, pavilions, lakes, ponds and exotic trees.",
     placeImage:
       "https://images.unsplash.com/photo-1498730515581-993ec29aaab3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1736&q=80",
   },

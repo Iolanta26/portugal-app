@@ -7,12 +7,7 @@ import { FavContext } from "../store";
 import { HeartButton } from "./HeartButton";
 import { GenericButton } from "./GenericButton";
 
-import {
-  Description,
-  ImageFrame,
-  LocationName,
-  PlaceName,
-} from "./StyledComponents";
+import { ImageFrame, LocationName, PlaceName } from "./StyledComponents";
 import { colors } from "../theme";
 
 type Props = {
@@ -84,7 +79,7 @@ const MainContainer = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 98;
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   background-color: white;
 `;
@@ -94,6 +89,22 @@ const ImageOfPlace = styled.img`
   height: 400px;
   object-fit: cover;
   position: absolute;
+`;
+
+const Description = styled.div`
+  width: 75%;
+  text-align: center;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    width: 85%;
+    margin-top: -60px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-height: 840px) {
+    margin-top: 0px;
+  }
 `;
 
 const Text = styled.div<{
@@ -112,7 +123,7 @@ const Text = styled.div<{
       ? `${colors.brownPalette}`
       : "transparent"};
   width: 80%;
-  height: 120px;
+  // height: 120px;
   color: white;
   display: flex;
   align-items: center;
@@ -122,7 +133,16 @@ const Text = styled.div<{
   position: relative;
   top: -60px;
   z-index: 120;
-  max-width: 1200px;
+  // max-width: 1300px;
+  padding: 20px 30px;
+
+  @media (max-width: 768px) {
+    top: -110px;
+  }
+
+  @media (max-height: 840px) {
+    top: -50px;
+  }
 `;
 
 const HeartButtonWrapper = styled.div`
@@ -130,6 +150,10 @@ const HeartButtonWrapper = styled.div`
   top: 90px;
   right: 40px;
   cursor: pointer;
+
+  @media (max-height: 840px) {
+    top: 70px;
+  }
 `;
 
 const HeartEllipseButton = styled.button<{

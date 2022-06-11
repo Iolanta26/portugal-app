@@ -62,12 +62,6 @@ export const LocationName = styled.div<{
       : "transparent"};
 `;
 
-export const Description = styled.div`
-  width: 65%;
-  text-align: center;
-  margin-bottom: 30px;
-`;
-
 export const ImageFrame = styled.div<{
   $regionDiv: boolean;
 }>`
@@ -79,12 +73,20 @@ export const ImageFrame = styled.div<{
   position: relative;
   z-index: 2;
   max-width: 1200px;
+
+  @media (max-width: 768px) {
+    height: 450px;
+  }
 `;
 
 export const ImageOfPlace = styled.img<{
   $regionDiv: boolean;
 }>`
   width: 100%;
-  height: ${(props) => (props.$regionDiv === true ? "400px" : "400px")};
+  height: ${(props) => (props.$regionDiv === true ? "450px" : "400px")};
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    height: 450px;
+  }
 `;
