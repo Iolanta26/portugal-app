@@ -1,12 +1,13 @@
-import Image from "next/image";
-import React, { useContext } from "react";
-import { BackWrapper, PlaceCard } from "../components";
-
-import back from "../public/back-icon.svg";
-import { useRouter } from "next/router";
 import styled from "styled-components";
-import { FavContext } from "../store/appContext";
+import { useContext } from "react";
+import { useRouter } from "next/router";
+
+import { BackWrapper, PlaceCard } from "../components";
+import { FavContext } from "../store";
 import { RegionVisual } from "../types";
+
+import Image from "next/image";
+import back from "../public/back-icon.svg";
 
 const Favourite = () => {
   const router = useRouter();

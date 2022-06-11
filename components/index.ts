@@ -1,3 +1,5 @@
+export * from "./styles";
+
 export * from "./GenericButton";
 export * from "./HeartButton";
 export * from "./IconsForRegions";

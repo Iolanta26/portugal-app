@@ -1,11 +1,10 @@
-import { useRouter } from "next/router";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
-import { BackWrapper, FlexContainer } from "../components/StyledComponents";
+import { BackWrapper, FlexContainer, MapSvgComponent } from "../components";
 
 import Image from "next/image";
 import back from "../public/back-icon.svg";
-import { MapSvgComponent } from "../components";
 
 const MapPortugal = () => {
   const router = useRouter();

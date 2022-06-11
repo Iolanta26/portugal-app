@@ -15,8 +15,6 @@ export const colors = {
 
   beigePallete: "#ffd07b",
 } as const;
-// export type ColorKeys = keyof typeof colors;
-// export type ColorValues = typeof colors[ColorKeys];
 
 export type Theme = {
   colors: Record<keyof typeof colors, string>;

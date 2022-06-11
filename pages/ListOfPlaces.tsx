@@ -1,16 +1,13 @@
-import Image from "next/image";
+import styled from "styled-components";
 import { NextRouter, withRouter } from "next/router";
 
-import styled from "styled-components";
-import { PlaceCard } from "../components";
-
-import { BackWrapper } from "../components/StyledComponents";
-
-import { PLACES } from "../dummy-data/places";
-import { getRegionById } from "../functions/functions";
-
-import back from "../public/back-icon.svg";
+import { BackWrapper, PlaceCard } from "../components";
+import { getRegionById } from "../functions";
+import { PLACES } from "../dummy-data";
 import { RegionVisual } from "../types";
+
+import Image from "next/image";
+import back from "../public/back-icon.svg";
 
 type Props = {
   router: NextRouter;

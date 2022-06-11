@@ -1,11 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
+
 import { PlaceCard } from "../components";
-import { PLACES } from "../dummy-data/places";
+import { PLACES } from "../dummy-data";
 import { RegionVisual } from "../types";
 
 type Props = {
-  regionVisual: string;
+  regionVisual: RegionVisual;
 };
 
 const Search = ({}: Props) => {

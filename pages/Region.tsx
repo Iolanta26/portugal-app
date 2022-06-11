@@ -1,21 +1,24 @@
-import styled, { keyframes } from "styled-components";
-import { NextRouter, withRouter } from "next/router";
-import back from "../public/back-icon.svg";
-import Image from "next/image";
-import { getRegionById } from "../functions/functions";
+import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { RegionVisual } from "../types";
-import {
-  BackWrapper,
-  ImageFrame,
-  ImageOfPlace,
-} from "../components/StyledComponents";
-import { colors } from "../theme";
+import { NextRouter, withRouter } from "next/router";
+
 import {
   GenericButton,
   IconsForRegions,
   opacityAnimation,
 } from "../components";
+import {
+  BackWrapper,
+  ImageFrame,
+  ImageOfPlace,
+} from "../components/StyledComponents";
+
+import { getRegionById } from "../functions";
+import { RegionVisual } from "../types";
+import { colors } from "../theme";
+
+import Image from "next/image";
+import back from "../public/back-icon.svg";
 
 type Props = {
   router: NextRouter;

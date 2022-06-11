@@ -1,9 +1,11 @@
-import { useState } from "react";
 import styled, { css } from "styled-components";
+import { useState } from "react";
+
+import { LocationModal } from "./LocationModal";
+import { opacityAnimation } from "./KeyFrames";
+
 import { colors } from "../theme";
 import { Place, RegionVisual } from "../types";
-import { opacityAnimation } from "./KeyFrames";
-import { LocationModal } from "./LocationModal";
 
 type CardStyle = "full" | "image_only";
 

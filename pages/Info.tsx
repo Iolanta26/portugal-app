@@ -1,6 +1,5 @@
-import Image from "next/image";
-import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
 import github from "/public/github.png";
 import linkedin from "/public/linkedin.png";

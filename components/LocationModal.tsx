@@ -1,9 +1,12 @@
-import { useContext, useState } from "react";
 import styled from "styled-components";
+import { useContext, useState } from "react";
 
 import { Place, RegionVisual } from "../types";
+import { FavContext } from "../store";
+
 import { HeartButton } from "./HeartButton";
-import { FavContext } from "../store/appContext";
+import { GenericButton } from "./GenericButton";
+
 import {
   Description,
   ImageFrame,
@@ -11,7 +14,6 @@ import {
   PlaceName,
 } from "./StyledComponents";
 import { colors } from "../theme";
-import { GenericButton } from "./GenericButton";
 
 type Props = {
   regionVisual: RegionVisual;
@@ -144,7 +146,7 @@ const HeartEllipseButton = styled.button<{
 
   &:hover,
   :focus {
-    transform: translateY(2px);
+    transform: translateY(1px);
     transition: ease 0.1s;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   }

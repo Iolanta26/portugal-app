@@ -10,37 +10,37 @@ export const IconsForRegions = ({ regionVisual }: Props) => (
   <IconsWrapper>
     {regionVisual === "north" && (
       <>
-        <Icon70px src="./northIcon.svg" alt="beach" />
-        <Icon70px src="./portowine.svg" alt="beach" />
-        <Icon100px src="./mountain.svg" alt="beach" />
+        <Icon70px src="./regionIcons/northIcon.svg" alt="grapes" />
+        <Icon70px src="./regionIcons/portowine.svg" alt="portwine" />
+        <Icon100px src="./regionIcons/mountain.svg" alt="mountain" />
       </>
     )}
     {regionVisual === "central" && (
       <>
-        <Icon90px src="./central.svg" alt="beach" />
-        <Icon80px src="./olivetree.svg" alt="beach" />
-        <OliveOil src="./oliveoil.svg" alt="beach" />
+        <Icon90px src="./regionIcons/central.svg" alt="fish" />
+        <Icon80px src="./regionIcons/olivetree.svg" alt="olive-tree" />
+        <OliveOil src="./regionIcons/oliveoil.svg" alt="olive-oil" />
       </>
     )}
     {regionVisual === "lisbon" && (
       <>
-        <Icon70px src="./tram.svg" alt="beach" />
-        <Icon90px src="./pena.svg" alt="beach" />
-        <Icon70px src="./pasteis.svg" alt="beach" />
+        <Icon70px src="./regionIcons/tram.svg" alt="tram" />
+        <Icon90px src="./regionIcons/pena.svg" alt="pena-castle" />
+        <Icon70px src="./regionIcons/pasteis.svg" alt="pastry" />
       </>
     )}
     {regionVisual === "alentejo" && (
       <>
-        <Icon70px src="./alentejo2.svg" alt="beach" />
-        <Icon80px src="./cork.svg" alt="beach" />
-        <Icon70px src="./wine.svg" alt="beach" />
+        <Icon70px src="./regionIcons/alentejo2.svg" alt="grape-field" />
+        <Icon80px src="./regionIcons/cork.svg" alt="cork" />
+        <Icon70px src="./regionIcons/wine.svg" alt="wine" />
       </>
     )}
     {regionVisual === "algarve" && (
       <>
-        <Icon100px src="./beach.svg" alt="beach" />
-        <Icon80px src="./seafood.svg" alt="beach" />
-        <Icon90px src="./rock.svg" alt="beach" />
+        <Icon100px src="./regionIcons/beach.svg" alt="beach" />
+        <Icon80px src="./regionIcons/seafood.svg" alt="oyster" />
+        <Icon90px src="./regionIcons/rock.svg" alt="rock" />
       </>
     )}
   </IconsWrapper>
