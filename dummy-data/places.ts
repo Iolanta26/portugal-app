@@ -8,9 +8,31 @@ export const PLACES: Place[] = [
     visual: "lisbon",
     placeName: "The Monserrate Palace",
     placeDesc:
-      "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Montesinho Natural Park, and the Alvão Natural Park.",
+      "Not very far from the historic centre of Sintra is one of the most beautiful architectural and landscape Romantic creations in Portugal: the Park and Palace of Monserrate, unique representatives of 19th century eclecticism.",
     placeImage:
       "https://images.unsplash.com/photo-1556830608-7d151fe93185?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=754&q=80",
+  },
+  {
+    id: "1837fjw3",
+    region: "1north",
+    location: "Porto",
+    visual: "north",
+    placeName: "Lello Bookstore",
+    placeDesc:
+      "Livraria Lello is a bookshop with an extraordinary historical and architectural value. It is internationally renowned as one of the most beautiful bookstores in the world! The bookstore is one of Porto’s busiest attractions and reflects the city’s growth as a tourism destination ",
+    placeImage:
+      "https://images.unsplash.com/photo-1588505910760-a8e9a240dc95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+  },
+  {
+    id: "9uy64ffv",
+    region: "2central-portugal",
+    location: "Batalha",
+    visual: "central",
+    placeName: "Monastery of Batalha",
+    placeDesc:
+      "The monastery was built to thank the Virgin Mary for the Portuguese victory over the Castilians in the battle of Aljubarrota in 1385, fulfilling a promise of King John I of Portugal. In the district of Leiria the UNESCO-inscribed Monastery of Batalha is one of Portugal’s cultural treasures and the pinnacle of late Gothic art.",
+    placeImage:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Batalha_monastery.jpg/2560px-Batalha_monastery.jpg",
   },
   {
     id: "2",
@@ -19,9 +41,20 @@ export const PLACES: Place[] = [
     visual: "lisbon",
     placeName: "Jerónimos Monastery",
     placeDesc:
-      "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Montesinho Natural Park, and the Alvão Natural Park.",
+      "The Jeronimos Monastery is the most impressive symbol of Portugal's power and wealth during the Age of Discovery. King Manuel I built it in 1502 on the site of a hermitage founded by Prince Henry the Navigator, where Vasco da Gama and his crew spent their last night in Portugal in prayer before leaving for India. It was built to commemorate Vasco Da Gama's voyage and to give thanks to the Virgin Mary for its success.",
     placeImage:
       "https://images.pexels.com/photos/10389539/pexels-photo-10389539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    id: "9u674ffb",
+    region: "2central-portugal",
+    location: "Leiria district",
+    visual: "central",
+    placeName: "Mira de Aire Caves",
+    placeDesc:
+      "Mira de Aire caves were elected in 2010 as one of the 7 natural wonders of Portugal.During your visit, you’ll discover 600 metres of this natural beauty climbing down 683 steps which means 110 metres deep. Don’t panic, at the end of the tour you won’t need to climb your way back – there’s an elevator that will take you back to surface.",
+    placeImage:
+      "https://images.unsplash.com/photo-1572587356426-b33bf42f999b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
   },
   {
     id: "3",
@@ -30,7 +63,7 @@ export const PLACES: Place[] = [
     visual: "lisbon",
     placeName: "Belém Tower",
     placeDesc:
-      "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Montesinho Natural Park, and the Alvão Natural Park.",
+      "UNESCO World Heritage, a cornerstone of Portuguese identity and an icon of a country historically moulded by its proximity to the ocean and its maritime discoveries of new worlds.The tower’s unique design includes a modern and heavily armed bastion, protruding over the river.",
     placeImage:
       "https://images.pexels.com/photos/4304223/pexels-photo-4304223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
@@ -41,20 +74,42 @@ export const PLACES: Place[] = [
     visual: "lisbon",
     placeName: "Lisbon Zoo",
     placeDesc:
-      "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Montesinho Natural Park, and the Alvão Natural Park.",
+      "Founded in 1884, the Lisbon Zoo was the first park with fauna and flora in the Iberian Peninsula. The Lisbon Zoo has ceased to be an animal showroom to take an active role in the protection and conservation of Nature.In the Zoo live around 2000 animals in a group of approximately 300 species, including mammals, birds, reptiles and amphibians.",
     placeImage:
       "https://images.unsplash.com/photo-1643968165423-63791a900eb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
   },
   {
+    id: "18cmx32w3",
+    region: "1north",
+    location: "Lamego",
+    visual: "north",
+    placeName: "Lamego",
+    placeDesc:
+      "Lamego is an old Baroque village in the Douro region that is famous for making port wines. Lamego is filled with history. Portugal’s first king, Afonso Henriques, ascended the throne here in the 12th century. The king built the village’s primary church, the Se. Other sights include a 12th century castle and a 13th century keep that guard the town from atop a hill.",
+    placeImage:
+      "https://www.touropia.com/gfx/d/destinations-in-northern-portugal/lamego.jpg",
+  },
+  {
     id: "5",
     region: "3lisbon",
-    location: "Lisbon",
+    location: "Cascais",
     visual: "lisbon",
     placeName: "Cascais",
     placeDesc:
-      "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Montesinho Natural Park, and the Alvão Natural Park.",
+      "Cascais is the finest resort town of the Lisbon coastline, and is a highly recommended day trip from Lisbon. Within Cascais are grand mansions, fascinating museums and attractive parks, while the surrounding coastline offers beautiful beaches.",
     placeImage:
-      "https://images.unsplash.com/photo-1532442856323-1f974756e44c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1934&q=80",
+      "https://images.unsplash.com/photo-1615672337908-13fb56e84ad0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80",
+  },
+  {
+    id: "8ubvr665",
+    region: "2central-portugal",
+    location: "Coimbra",
+    visual: "central",
+    placeName: "University of Coimbra",
+    placeDesc:
+      "This institution was founded right back in the 1200s,putting it among the oldest universities on the Iberian peninsula,. It was originally in Lisbon and moved to Coimbra in the 14th century, eventually occupying the former Alcaçova royal palace buildings.",
+    placeImage:
+      "https://images.unsplash.com/photo-1635893312205-6abda7db17a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
   },
   {
     id: "6",
@@ -80,6 +135,17 @@ export const PLACES: Place[] = [
       "https://images.unsplash.com/photo-1565012975094-cad0b63d3646?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870",
   },
   {
+    id: "18kee1w3",
+    region: "1north",
+    location: "Praia da Costa Nova",
+    visual: "north",
+    placeName: "Praia da Costa Nova",
+    placeDesc:
+      "The houses in this fishing village near Aveiro are painted in colorful stripes: vibrant red, blue and green accented with white stripes. These unique homes were originally built by fishermen as shelters; now they’re vacation homes. This is a good place in north Portugal to eat your fill of fresh seafood. ",
+    placeImage:
+      "https://www.touropia.com/gfx/d/destinations-in-northern-portugal/praia_da_costa_nova.jpg",
+  },
+  {
     id: "13",
     region: "5algarve",
     location: "Praça Marques de Pombal",
@@ -102,6 +168,17 @@ export const PLACES: Place[] = [
       "https://www.planetware.com/photos-large/P/portugal-algarve-olhao-seafront-esplanade.jpg",
   },
   {
+    id: "18nmx81w3",
+    region: "1north",
+    location: "Peneda-Geres",
+    visual: "north",
+    placeName: "Peneda-Geres National Park",
+    placeDesc:
+      "Established in mountainous northwest Portugal, Peneda-Gerês National Park is the country’s only national park. Gerês, as the park is commonly known, was founded in 1971 to preserve the environment while allowing resource development.",
+    placeImage:
+      "https://www.touropia.com/gfx/d/destinations-in-northern-portugal/peneda_geres_national_park.jpg",
+  },
+  {
     id: "15",
     region: "5algarve",
     location: "Loulé",
@@ -113,6 +190,17 @@ export const PLACES: Place[] = [
       "https://www.planetware.com/photos-large/P/portugal-algarve-loule-castle.jpg",
   },
   {
+    id: "7o8gr2142",
+    region: "2central-portugal",
+    location: "Aveiro",
+    visual: "central",
+    placeName: "Aveiro",
+    placeDesc:
+      "In Central Portugal you can also visit Aveiro. This city is considered to be the “Portuguese Venice” because of its canals, where you’ll discover the city by “moliceiro”, a sort of gondola that was used for harvesting seaweed or “moliço”, underwater vegetation in Ria de Aveiro.",
+    placeImage:
+      "https://images.unsplash.com/photo-1531772337062-9d94547f333f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80",
+  },
+  {
     id: "16",
     region: "5algarve",
     location: "Albufeira",
@@ -122,6 +210,17 @@ export const PLACES: Place[] = [
       "Albufeira is the destination of choice for many Algarve holidaymakers. Its central location on the coast of southern Portugal makes it one of the region's most accessible resorts, and it's a favorite with tourists from across Europe and beyond.",
     placeImage:
       "https://images.unsplash.com/photo-1611396709200-a4061944b4ad?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774",
+  },
+  {
+    id: "18n456o3",
+    region: "1north",
+    location: "Braga",
+    visual: "north",
+    placeName: "Baroque Sanctuário",
+    placeDesc:
+      "Braga is considered the most religious town in Portugal. Portugal’s third largest city has so many churches and monuments, trying to see them all on a day trip from Porto just can’t be done. Concentrate, instead, on just a few, starting with the Baroque Sanctuário do Bom Jesus do Monte, the city’s leading sight.",
+    placeImage:
+      "https://images.unsplash.com/photo-1632250275398-6f3f773b99e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
   },
   {
     id: "7",
@@ -145,6 +244,17 @@ export const PLACES: Place[] = [
     placeImage: "https://alma-da-comporta.com/app/uploads/2019/10/troia.jpg",
   },
   {
+    id: "7o8h542",
+    region: "2central-portugal",
+    location: "Berlenga Grande ",
+    visual: "central",
+    placeName: "Berlengas Archipelago",
+    placeDesc:
+      "Listed since 2011 as UNESCO’s World Biosphere Reserve, Berlengas Nature Reserve was the first protected area in the country, decreed by king D. Afonso V who, with that, banned hunting in the biggest island of this archipelago, Berlenga Grande (1.5 km long and 800 m wide).",
+    placeImage:
+      "https://images.pexels.com/photos/10534656/pexels-photo-10534656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
     id: "9",
     region: "4alentejo",
     location: "Alentejo",
@@ -156,6 +266,17 @@ export const PLACES: Place[] = [
       "https://img.theculturetrip.com/768x/smart/wp-content/uploads/2020/08/2bepfmd.jpg",
   },
   {
+    id: "121nn65r3",
+    region: "1north",
+    location: "Douro",
+    visual: "north",
+    placeName: "Douro Valley",
+    placeDesc:
+      "The Douro Valley is known for its table wines and port, so be sure to visit a winery where you can kick back and do a little tasting in the world’s first designated wine region.",
+    placeImage:
+      "https://images.unsplash.com/photo-1638664370752-8188076afbab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+  },
+  {
     id: "10",
     region: "4alentejo",
     location: "Monsaraz",
@@ -165,6 +286,17 @@ export const PLACES: Place[] = [
       "It was listed as one of Portugal’s Seven Wonders in 2017, has been classified a top monument village and is the epitome of a traditional Portuguese village. Perched on a hilltop that allows you to take in the surrounding countryside, it’s as picturesque as it is old-worldly and peaceful.",
     placeImage:
       "https://img.theculturetrip.com/768x/smart/wp-content/uploads/2020/08/kkat25.jpg",
+  },
+  {
+    id: "23iuia9",
+    region: "3lisbon",
+    location: "Sintra",
+    visual: "lisbon",
+    placeName: "Pena Castle",
+    placeDesc:
+      "The Pena is a Romanticist castle in São Pedro de Penaferrim, in the municipality of Sintra, on the Portuguese Riviera. The castle stands on the top of a hill in the Sintra Mountains above the town of Sintra, and on a clear day it can be easily seen from Lisbon and much of its metropolitan area. The Pena Park is a vast forested area spread out over 200 hectares and it surrounds the palace. The park is filled with walking paths, secret paths, pavilions, lakes, ponds and exotic trees designed based on the orders given by King Ferdinand which is where the exotic taste comes from.",
+    placeImage:
+      "https://images.unsplash.com/photo-1498730515581-993ec29aaab3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1736&q=80",
   },
   {
     id: "11",
@@ -189,6 +321,17 @@ export const PLACES: Place[] = [
       "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRcsmKsV1W0BnCR_p-suQDcTUpppB5_x4dCrywmaHygw7qZ3G2whSlUjbsXewcoccO5dHr6xBLN6cmgSPuDIljvuQ",
   },
   {
+    id: "43ytn543",
+    region: "1north",
+    location: "Porto",
+    visual: "north",
+    placeName: "Porto",
+    placeDesc:
+      "Explore Porto from its narrow streets in the old town section of Ribeira to the grand plazas in the newer sections. It even gave its name to one of the world’s most popular dessert wines, port. Take a tasting tour of the port wine cellars along the Douro River and perhaps experience the city’s vibrant nightlife. If history is your thing, you’ll find lots of Baroque buildings and monuments in the old town.",
+    placeImage:
+      "https://images.unsplash.com/photo-1577958194277-7b3bc213b03c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1930&q=80",
+  },
+  {
     id: "19",
     region: "3lisbon",
     location: "Lisbon",
@@ -198,6 +341,17 @@ export const PLACES: Place[] = [
       "It is located in the Parque das Nações, which was the exhibition grounds for the Expo '98. It is the largest indoor aquarium in Europe.",
     placeImage:
       "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcR0SB7HkRD7HC3RWMrUOlUaKXJd87fkereSJv6ESu5L5pNVHUT-qqF71fUov91-AJ_aXOSznJuOdTtJ65u9w-dUfA",
+  },
+  {
+    id: "90jkj528hb",
+    region: "2central-portugal",
+    location: "Óbidos",
+    visual: "central",
+    placeName: "Óbidos",
+    placeDesc:
+      "Conquered from the Moors by the first king of Portugal, D. Afonso Henriques, this village is a must see for tourists and you shouldn’t miss it! Óbidos is a fortified village where you can visit the castle (from the outside), stroll through a maze of streets surrounded by houses painted in white and decorated with beautiful flowers and walk along 1.5 km over the city walls.",
+    placeImage:
+      "https://images.unsplash.com/photo-1586029714704-d864f4603de0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   },
   {
     id: "20",
