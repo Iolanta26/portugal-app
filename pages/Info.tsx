@@ -8,6 +8,11 @@ const Info = () => (
   <MainContainer>
     <ProjectText>Project is designed and coded by</ProjectText>
     <MyName>Iolanta Scheifel</MyName>
+    <ProjectText>
+      Portugal in your pocket is created to show all diversity of Portugal's
+      nature and famous locations. This app is going to grow with new features
+      in future.
+    </ProjectText>
     <SocialIcons>
       <SocialIconContainer>
         <a
@@ -45,6 +50,7 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 200px;
 `;
 
 const ProjectText = styled.div`
@@ -52,8 +58,7 @@ const ProjectText = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 70%;
-  margin-top: 200px;
+  width: 60%;
   margin-bottom: 30px;
 `;
 

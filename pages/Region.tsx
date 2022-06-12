@@ -65,13 +65,9 @@ const Region = ({ router }: Props) => {
           <Image src={back} alt="back" />
         </BackWrapper>
         <FlexImages>
-          <ImageOfPlace
-            $regionDiv={true}
-            src={region?.mainImage}
-            alt="region"
-          />
+          <FirstImage src={region?.mainImage} alt="region" />
           <OtherImage src={region?.images.firstImage} alt="" />
-          <OtherImage src={region?.images.secondImage} alt="" />
+          <ThirdImage src={region?.images.secondImage} alt="" />
         </FlexImages>
       </ImageFrame>
       <DescriptionWrapper $regionVisual={regionVisual}>
@@ -183,11 +179,24 @@ const DescriptionText = styled.div<{
       : "transparent"};
 `;
 
+const FirstImage = styled.img`
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  animation: ${pictureMoveUp} 1.5s ease-in-out;
+  animation-delay: 1.5s;
+`;
+
 const OtherImage = styled.img`
   height: 500px;
   margin-top: 8px;
-  animation: ${pictureMoveUp} 1.8s ease-in-out;
-  animation-delay: 2s;
+  animation: ${pictureMoveUp} 1.5s ease-in-out;
+  animation-delay: 1.5s;
+`;
+
+const ThirdImage = styled.img`
+  height: 500px;
+  margin-top: 8px;
 `;
 
 const DescriptionContainer = styled.div`

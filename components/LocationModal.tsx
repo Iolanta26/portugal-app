@@ -7,7 +7,12 @@ import { FavContext } from "../store";
 import { HeartButton } from "./HeartButton";
 import { GenericButton } from "./GenericButton";
 
-import { ImageFrame, LocationName, PlaceName } from "./StyledComponents";
+import {
+  ImageFrame,
+  ImageOfPlace,
+  LocationName,
+  PlaceName,
+} from "./StyledComponents";
 import { colors } from "../theme";
 
 type Props = {
@@ -82,13 +87,6 @@ const MainContainer = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: white;
-`;
-
-const ImageOfPlace = styled.img`
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  position: absolute;
 `;
 
 const Description = styled.div`

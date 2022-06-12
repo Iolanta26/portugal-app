@@ -1,6 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { colors } from "../theme";
-import { pictureMoveUp } from "./KeyFrames";
 
 export const BackWrapper = styled.button`
   background: transparent;
@@ -67,7 +66,7 @@ export const ImageFrame = styled.div<{
   $regionDiv: boolean;
 }>`
   overflow: hidden;
-  height: ${(props) => (props.$regionDiv === true ? "450px" : "400px")};
+  height: ${(props) => (props.$regionDiv === true ? "450px" : "350px")};
   width: 100%;
   display: flex;
   justify-content: center;
@@ -80,17 +79,13 @@ export const ImageFrame = styled.div<{
   }
 `;
 
-export const ImageOfPlace = styled.img<{
-  $regionDiv: boolean;
-}>`
+export const ImageOfPlace = styled.img`
   width: 100%;
-  height: ${(props) => (props.$regionDiv === true ? "450px" : "400px")};
+  height: 400px;
   object-fit: cover;
-
-  animation: ${pictureMoveUp} 1.8s ease-in-out;
   animation-delay: 2s;
 
   @media (max-width: 768px) {
-    height: 450px;
+    height: 400px;
   }
 `;
