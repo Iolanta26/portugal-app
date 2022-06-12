@@ -150,7 +150,7 @@ export const PLACES: Place[] = [
     region: "5algarve",
     location: "Praça Marques de Pombal",
     visual: "algarve",
-    placeName: " Arquivo Histórico Municipal ",
+    placeName: "Arquivo Histórico",
     placeDesc:
       "The handsome main square features an eye-catching mosaic sun burst radiating from a central obelisk and is ringed by orange trees and plenty of inviting cafés and restaurants. A fun-filled diversion is to take the ferry from the quay near the marina to the Spanish border town of Ayamonte, with its colorful tapas restaurants and traditionally styled delicatessens. ",
     placeImage:
@@ -170,9 +170,9 @@ export const PLACES: Place[] = [
   {
     id: "18nmx81w3",
     region: "1north",
-    location: "Peneda-Geres",
+    location: "Peneda-Geres National Park",
     visual: "north",
-    placeName: "Peneda-Geres National Park",
+    placeName: "Peneda-Geres",
     placeDesc:
       "Established in mountainous northwest Portugal, Peneda-Gerês National Park is the country’s only national park. Gerês, as the park is commonly known, was founded in 1971 to preserve the environment while allowing resource development.",
     placeImage:
@@ -369,7 +369,7 @@ export const PLACES: Place[] = [
     region: "3lisbon",
     location: "Lisbon",
     visual: "lisbon",
-    placeName: "Museu Nacional do Azulejo",
+    placeName: "National Tile Museum",
     placeDesc:
       "The Museu Nacional do Azulejo, occasionally known in English as the National Tile Museum, is an art museum in Lisbon, Portugal dedicated to the azulejo, traditional tilework of Portugal and the former Portuguese Empire, as well as of other Iberophone cultures. Housed in the former Madre de Deus Convent, the museum's collection is one of the largest of ceramics in the world.",
     placeImage:
