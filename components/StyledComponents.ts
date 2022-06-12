@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../theme";
+import { pictureMoveUp } from "./KeyFrames";
 
 export const BackWrapper = styled.button`
   background: transparent;
@@ -85,6 +86,9 @@ export const ImageOfPlace = styled.img<{
   width: 100%;
   height: ${(props) => (props.$regionDiv === true ? "450px" : "400px")};
   object-fit: cover;
+
+  animation: ${pictureMoveUp} 1.8s ease-in-out;
+  animation-delay: 2s;
 
   @media (max-width: 768px) {
     height: 450px;

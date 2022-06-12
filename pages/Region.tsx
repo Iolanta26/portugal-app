@@ -6,6 +6,7 @@ import {
   GenericButton,
   IconsForRegions,
   opacityAnimation,
+  pictureMoveUp,
 } from "../components";
 import {
   BackWrapper,
@@ -185,6 +186,8 @@ const DescriptionText = styled.div<{
 const OtherImage = styled.img`
   height: 500px;
   margin-top: 8px;
+  animation: ${pictureMoveUp} 1.8s ease-in-out;
+  animation-delay: 2s;
 `;
 
 const DescriptionContainer = styled.div`
