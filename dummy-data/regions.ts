@@ -40,12 +40,10 @@ export const REGIONS: Region[] = [
     regionName: "Alentejo",
     regionDesc:
       "The Alentejo region in Portugal is famous for its cork oaks and olive groves, but there is so much to do in this area that spans from the Tagus River down to the Algarve and East all the way to the Spanish border.",
-    mainImage: "./alentejo.jpg",
+    mainImage: "./regionImages/alentejo-region.jpg",
     images: {
-      firstImage:
-        "https://images.unsplash.com/photo-1651508820682-2d3e37e7183e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80",
-      secondImage:
-        "https://images.unsplash.com/photo-1579184410476-d4021beff617?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      firstImage: "./regionImages/alentejo2-region.jpg",
+      secondImage: "./regionImages/alentejo3-region.jpg",
     },
   },
   {
@@ -53,13 +51,10 @@ export const REGIONS: Region[] = [
     regionName: "Algarve",
     regionDesc:
       "The Algarve is Portugal's southernmost region, and one of the most popular vacation destinations in Europe. Blessed with a superb coastline and some of the country's loveliest beaches, the province enjoys hot, dry summers and short, mild winters. Warm sea temperatures and gentle winds add to its allure.",
-    mainImage:
-      "https://images.unsplash.com/photo-1650557175315-05ad335468f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    mainImage: "./regionImages/algarve1-region.jpg",
     images: {
-      firstImage:
-        "https://images.pexels.com/photos/5886096/pexels-photo-5886096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      secondImage:
-        "https://images.unsplash.com/photo-1582108497746-b23d8674a5bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+      firstImage: "./regionImages/algarve2-region.jpg",
+      secondImage: "./regionImages/algarve3-region.jpg",
     },
   },
 ];

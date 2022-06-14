@@ -9,9 +9,9 @@ const Info = () => (
     <ProjectText>Project is designed and coded by</ProjectText>
     <MyName>Iolanta Scheifel</MyName>
     <ProjectText>
-      Portugal in your pocket is created to show all diversity of Portugal's
-      nature and famous locations. This app is going to grow with new features
-      in future.
+      <Cursive>Portugal in your pocket</Cursive> is created to show all
+      diversity of it's nature and famous locations. This app is going to grow
+      with new features in future.
     </ProjectText>
     <SocialIcons>
       <SocialIconContainer>
@@ -54,9 +54,7 @@ const MainContainer = styled.div`
 `;
 
 const ProjectText = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   text-align: center;
   width: 60%;
   margin-bottom: 30px;
@@ -66,6 +64,11 @@ const MyName = styled.div`
   font-family: "Rochester", cursive;
   font-size: 30px;
   margin-bottom: 30px;
+`;
+
+const Cursive = styled.p`
+  font-family: "Rochester", cursive;
+  font-size: 20px;
 `;
 
 const SocialIcons = styled.div`

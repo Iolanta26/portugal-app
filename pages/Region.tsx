@@ -137,6 +137,8 @@ const FlexImages = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  max-width: 600px;
+  width: 100%;
 `;
 
 const DescriptionWrapper = styled.div<{
@@ -144,7 +146,7 @@ const DescriptionWrapper = styled.div<{
 }>`
   position: absolute;
   top: 390px;
-  max-width: 1200px;
+  max-width: 600px;
   height: fit-content;
   background-color: ${(props) =>
     props.$regionVisual === "north"

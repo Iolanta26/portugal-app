@@ -41,8 +41,12 @@ const Background = styled.img`
   position: absolute;
   object-fit: cover;
   height: 100vh;
-  width: 100vw;
+  width: 40vw;
   top: -10px;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 `;
 
 const MainText = styled.div`

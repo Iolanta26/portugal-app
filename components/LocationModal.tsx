@@ -47,7 +47,7 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
   return (
     <MainContainer>
       <ImageFrame $regionDiv={false}>
-        <ImageOfPlace src={placeImage} alt="place image" />
+        <ImageOfPlace src={placeImage} alt="place image" loading="eager" />
       </ImageFrame>
       <Text $regionVisual={regionVisual}>
         <PlaceName $regionVisual={regionVisual}>{placeName}</PlaceName>
@@ -90,7 +90,7 @@ const MainContainer = styled.div`
 `;
 
 const Description = styled.div`
-  width: 75%;
+  width: 45%;
   text-align: center;
   margin-bottom: 30px;
 
@@ -120,8 +120,7 @@ const Text = styled.div<{
       : props.$regionVisual === "algarve"
       ? `${colors.brownPalette}`
       : "transparent"};
-  width: 80%;
-  // height: 120px;
+  width: 50%;
   color: white;
   display: flex;
   align-items: center;
@@ -136,6 +135,7 @@ const Text = styled.div<{
 
   @media (max-width: 768px) {
     top: -110px;
+    width: 100%;
   }
 
   @media (max-height: 840px) {

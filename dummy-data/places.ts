@@ -294,7 +294,7 @@ export const PLACES: Place[] = [
     visual: "lisbon",
     placeName: "Pena Castle",
     placeDesc:
-      "The Pena is a Romanticist castle in São Pedro de Penaferrim. The castle stands on the top of a hill in the Sintra Mountains above the town of Sintra, and on a clear day it can be easily seen from Lisbon and much of its metropolitan area. The Pena Park is a vast forested area spread out over 200 hectares and it surrounds the palace. The park is filled with walking paths, secret paths, pavilions, lakes, ponds and exotic trees.",
+      "The castle stands on the top of a hill in the Sintra Mountains above the town of Sintra, and on a clear day it can be easily seen from Lisbon and much of its metropolitan area. The Pena Park is a vast forested area spread out over 200 hectares and it surrounds the palace. The park is filled with walking paths, secret paths, pavilions, lakes, ponds and exotic trees.",
     placeImage:
       "https://images.unsplash.com/photo-1498730515581-993ec29aaab3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1736&q=80",
   },
@@ -327,7 +327,7 @@ export const PLACES: Place[] = [
     visual: "north",
     placeName: "Porto",
     placeDesc:
-      "Explore Porto from its narrow streets in the old town section of Ribeira to the grand plazas in the newer sections. It even gave its name to one of the world’s most popular dessert wines, port. Take a tasting tour of the port wine cellars along the Douro River and perhaps experience the city’s vibrant nightlife. If history is your thing, you’ll find lots of Baroque buildings and monuments in the old town.",
+      "Explore Porto from its narrow streets in the old town section of Ribeira to the grand plazas in the newer sections. Take a tasting tour of the port wine cellars along the Douro River and perhaps experience the city’s vibrant nightlife. If history is your thing, you’ll find lots of Baroque buildings and monuments in the old town.",
     placeImage:
       "https://images.unsplash.com/photo-1577958194277-7b3bc213b03c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1930&q=80",
   },

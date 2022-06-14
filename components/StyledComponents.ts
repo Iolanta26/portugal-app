@@ -66,8 +66,8 @@ export const ImageFrame = styled.div<{
   $regionDiv: boolean;
 }>`
   overflow: hidden;
-  height: ${(props) => (props.$regionDiv === true ? "450px" : "350px")};
-  width: 100%;
+  height: ${(props) => (props.$regionDiv === true ? "450px" : "45%")};
+  width: 50%;
   display: flex;
   justify-content: center;
   position: relative;
@@ -76,6 +76,7 @@ export const ImageFrame = styled.div<{
 
   @media (max-width: 768px) {
     height: 450px;
+    width: 100%;
   }
 `;
 

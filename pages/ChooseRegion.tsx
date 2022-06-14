@@ -31,21 +31,16 @@ export default MapPortugal;
 
 const MainFlexContainer = styled.div`
   height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const TextContainer = styled.div`
-  margin-left: 55px;
+  margin-bottom: 25px;
   margin-top: 50px;
-  margin-bottom: 30px;
+  width: 300px;
 `;
-
-// const LeafImageOne = styled.img`
-//   width: 180px;
-//   position: absolute;
-//   right: 0;
-//   bottom: 0;
-//   transform: rotate(10deg);
-// `;
 
 const MainText = styled.div`
   font-size: 26px;
