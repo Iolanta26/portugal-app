@@ -6,15 +6,10 @@ export const REGIONS: Region[] = [
     regionName: "North",
     regionDesc:
       "Northern Portugal is a mountainous region. Its peaks known as serras include Serra do Gerês (1544 m), Peneda (1416 m), Marão (1415 m) and Soajo (1415 m). Some of which forms natural parks: the Peneda-Gerês National Park, Montesinho Natural Park, and the Alvão Natural Park.",
-    mainImage:
-      "https://images.unsplash.com/photo-1553476685-5274087fb6ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+    mainImage: "./regionImages/braga-main.jpg",
     images: {
-      firstImage:
-        "https://images.unsplash.com/photo-1614074184188-d38b0605de5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=972&q=80",
-      secondImage:
-        "https://images.pexels.com/photos/2549573/pexels-photo-2549573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      thirdImage:
-        "https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      firstImage: "./regionImages/porto-region.jpg",
+      secondImage: "./regionImages/porto2-region.jpg",
     },
   },
   {
@@ -24,12 +19,9 @@ export const REGIONS: Region[] = [
       "Central Portugal is an amazing region, a place where you can discover villages of rare beauty frozen in time, breathtaking landscapes, cities that know how to preserve their history and at the same time embrace modernity. Visiting this region is definitely one of the things to do in Portugal so don’t miss the opportunity!",
     mainImage: "./central-main.jpg",
     images: {
-      firstImage:
-        "https://images.unsplash.com/photo-1562255999-d7ac6444f8d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80",
+      firstImage: "./regionImages/coimbra-region.jpg",
       secondImage:
         "https://images.unsplash.com/photo-1627543745848-fc0f900193cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1066&q=80",
-      thirdImage:
-        "https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
     },
   },
   {
@@ -37,15 +29,10 @@ export const REGIONS: Region[] = [
     regionName: "Greater Lisbon",
     regionDesc:
       "The Lisbon region of Portugal is the economic and political power of the country. The capital and largest city of Portugal. You can find great landmarks, such as Park Eduardo VII, which fronts the statue of Marques de Pombal (responsible for the reconstruction of the city after an earthquake) and, in the northern end, the largest Portuguese flag in the world.",
-    mainImage:
-      "https://images.pexels.com/photos/4304223/pexels-photo-4304223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    mainImage: "./regionImages/lisbon-main.jpg",
     images: {
-      firstImage:
-        "https://images.unsplash.com/photo-1558102400-72da9fdbecae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1592&q=80",
-      secondImage:
-        "https://images.unsplash.com/photo-1578859651203-c7126a106b59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80",
-      thirdImage:
-        "https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      firstImage: "./regionImages/lisbon2-region.jpg",
+      secondImage: "./regionImages/lisbon3-region.jpg",
     },
   },
   {
@@ -59,8 +46,6 @@ export const REGIONS: Region[] = [
         "https://images.unsplash.com/photo-1651508820682-2d3e37e7183e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80",
       secondImage:
         "https://images.unsplash.com/photo-1579184410476-d4021beff617?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-      thirdImage:
-        "https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
     },
   },
   {
@@ -75,8 +60,6 @@ export const REGIONS: Region[] = [
         "https://images.pexels.com/photos/5886096/pexels-photo-5886096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       secondImage:
         "https://images.unsplash.com/photo-1582108497746-b23d8674a5bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-      thirdImage:
-        "https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
     },
   },
 ];

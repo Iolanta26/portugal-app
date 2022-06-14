@@ -28,7 +28,7 @@ export const PlaceCard = ({ regionVisual, place, style = "full" }: Props) => {
           onClick={() => setOpenModal(true)}
           $style={style}
         >
-          <PlaceImage src={placeImage} alt="place image" />
+          <PlaceImage src={placeImage} alt="place image" loading="eager" />
           <ShortDesc $regionVisual={regionVisual} $style={style}>
             <Name>{placeName}</Name>
             <Location>Location: {location}</Location>

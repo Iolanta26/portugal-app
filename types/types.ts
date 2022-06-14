@@ -6,7 +6,6 @@ export type Region = {
   images: {
     firstImage: string;
     secondImage: string;
-    thirdImage: string;
   };
 };
 
