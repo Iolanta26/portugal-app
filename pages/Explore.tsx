@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import { colors } from "../theme";
 
 const Explore = () => {
   const router = useRouter();
@@ -56,17 +57,17 @@ const MainText = styled.div`
   flex-direction: column;
   z-index: 3;
   position: absolute;
-  top: 380px;
+  top: 300px;
 `;
 
 const ExploreButton = styled.button`
   border: none;
-  background: #fcb743;
+  background: ${colors.orangePalette};
   border-radius: 15px;
   font-size: 15px;
-  padding: 20px 25px;
+  padding: 15px 25px;
   position: absolute;
-  top: 600px;
+  top: 500px;
 
   &:hover,
   :focus {

@@ -50,7 +50,8 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 200px;
+  margin-top: 80px;
+  padding-bottom: 100px;
 `;
 
 const ProjectText = styled.div`
