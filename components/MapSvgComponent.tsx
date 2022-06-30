@@ -6,8 +6,8 @@ export const MapSvgComponent = () => {
   return (
     <div>
       <SvgElement
-        width="380"
-        height="530"
+        width="400"
+        height="470"
         viewBox="0 0 296 588"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

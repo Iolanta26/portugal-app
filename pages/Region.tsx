@@ -9,7 +9,7 @@ import {
   pictureMoveUp,
 } from "../components";
 import {
-  BackWrapper,
+  BackButton,
   ImageFrame,
   ImageOfPlace,
 } from "../components/StyledComponents";
@@ -57,36 +57,25 @@ const Region = ({ router }: Props) => {
   }, [regionVisual]);
 
   return (
-    <MainDiv $regionVisual={regionVisual}>
-      <ImageFrame $regionDiv={true}>
-        <BackWrapper
-          onClick={() => router.push({ pathname: "./ChooseRegion" })}
-        >
+    <>
+      <BackButtonWrapper>
+        <BackButton onClick={() => router.push({ pathname: "./ChooseRegion" })}>
           <Image src={back} alt="back" />
-        </BackWrapper>
-        <FlexImages>
-          <FirstImage src={region?.mainImage} alt="region" />
-          <OtherImage src={region?.images.firstImage} alt="" />
-          <ThirdImage src={region?.images.secondImage} alt="" />
-        </FlexImages>
-      </ImageFrame>
-      <DescriptionWrapper $regionVisual={regionVisual}>
-        <DescriptionContainer>
-          <RegionName $regionVisual={regionVisual}>
-            {region?.regionName}
-          </RegionName>
-          <DescriptionText $regionVisual={regionVisual}>
-            {region?.regionDesc}
-            <BestKnownText $regionVisual={regionVisual}>
-              Best known for:
-              <IconsForRegions regionVisual={regionVisual} />
-            </BestKnownText>
-          </DescriptionText>
-        </DescriptionContainer>
+        </BackButton>
+      </BackButtonWrapper>
+      <MainDiv $regionVisual={regionVisual}>
+        <ImageFrame $regionDiv={true}>
+          <FlexImages>
+            <FirstImage src={region?.mainImage} alt="region" />
+            <OtherImage src={region?.images.firstImage} alt="" />
+            <ThirdImage src={region?.images.secondImage} alt="" />
+          </FlexImages>
+        </ImageFrame>
         <ButtonWrapper>
           <GenericButton
             regionVisual={regionVisual}
-            text="Explore more"
+            text="Explore"
+            style="circle"
             onClick={() =>
               router.push({
                 pathname: "./ListOfPlaces",
@@ -95,19 +84,39 @@ const Region = ({ router }: Props) => {
             }
           />
         </ButtonWrapper>
-      </DescriptionWrapper>
-    </MainDiv>
+        <DescriptionWrapper $regionVisual={regionVisual}>
+          <DescriptionContainer>
+            <RegionName $regionVisual={regionVisual}>
+              {region?.regionName}
+            </RegionName>
+            <DescriptionText $regionVisual={regionVisual}>
+              {region?.regionDesc}
+              <BestKnownText $regionVisual={regionVisual}>
+                Best known for:
+                <IconsForRegions regionVisual={regionVisual} />
+              </BestKnownText>
+            </DescriptionText>
+          </DescriptionContainer>
+        </DescriptionWrapper>
+      </MainDiv>
+    </>
   );
 };
 
 export default withRouter(Region);
 
+const BackButtonWrapper = styled.div`
+  background-color: red;
+  width: 280px;
+  margin-left: 10px;
+`;
+
 const BestKnownText = styled.div<{
   $regionVisual: string;
 }>`
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 15px;
   color: ${(props) =>
     props.$regionVisual === "north"
       ? `${colors.orangePalette}`
@@ -129,15 +138,15 @@ const MainDiv = styled.div<{
   align-items: center;
   flex-direction: column;
   margin: 0;
+  top: -30px;
   position: relative;
-  background-color: white;
 `;
 
 const FlexImages = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  max-width: 600px;
+  // width: 330px;
   width: 100%;
 `;
 
@@ -145,9 +154,8 @@ const DescriptionWrapper = styled.div<{
   $regionVisual: string;
 }>`
   position: absolute;
-  top: 390px;
-  max-width: 600px;
-  height: fit-content;
+  top: 305px;
+  height: 340px;
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? `${colors.bluePalette}`
@@ -179,25 +187,26 @@ const DescriptionText = styled.div<{
       : props.$regionVisual === "algarve"
       ? `${colors.lightTextColor}`
       : "transparent"};
+  font-size: 12px;
 `;
 
 const FirstImage = styled.img`
   width: 100%;
-  height: 450px;
+  height: 500px;
   object-fit: cover;
   animation: ${pictureMoveUp} 1.5s ease-in-out;
   animation-delay: 1.5s;
 `;
 
 const OtherImage = styled.img`
-  height: 500px;
+  height: 400px;
   margin-top: 8px;
   animation: ${pictureMoveUp} 1.5s ease-in-out;
   animation-delay: 1.5s;
 `;
 
 const ThirdImage = styled.img`
-  height: 500px;
+  height: 400px;
   margin-top: 8px;
 `;
 
@@ -208,8 +217,8 @@ const DescriptionContainer = styled.div`
 const RegionName = styled.div<{
   $regionVisual: string;
 }>`
-  font-size: 34px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
   animation: ${opacityAnimation} 0.7s ease;
   color: ${(props) =>
     props.$regionVisual === "north"
@@ -228,6 +237,8 @@ const RegionName = styled.div<{
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 50px;
+  position: absolute;
+  z-index: 100;
+  top: 280px;
+  right: 20px;
 `;

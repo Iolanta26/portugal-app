@@ -28,7 +28,12 @@ export const PlaceCard = ({ regionVisual, place, style = "full" }: Props) => {
           onClick={() => setOpenModal(true)}
           $style={style}
         >
-          <PlaceImage src={placeImage} alt="place image" loading="eager" />
+          <PlaceImage
+            src={placeImage}
+            alt="place image"
+            loading="eager"
+            $style={style}
+          />
           <ShortDesc $regionVisual={regionVisual} $style={style}>
             <Name>{placeName}</Name>
             <Location>Location: {location}</Location>
@@ -54,8 +59,8 @@ const Card = styled.div<{
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 300px;
-  height: 170px;
+  width: 250px;
+  height: 150px;
   overflow: hidden;
   margin: 10px;
   border-radius: 15px;
@@ -83,7 +88,8 @@ const Card = styled.div<{
   ${({ $style }) =>
     $style === "image_only" &&
     css`
-      width: 170px;
+      width: 130px;
+      height: 130px;
     `}
 `;
 
@@ -96,7 +102,7 @@ const ShortDesc = styled.div<{
   align-items: center;
   flex-direction: column;
   z-index: 3;
-  width: 135px;
+  width: 100px;
   position: absolute;
   right: 5px;
   color: ${(props) =>
@@ -107,17 +113,17 @@ const ShortDesc = styled.div<{
   ${({ $style }) =>
     $style === "image_only" &&
     css`
-      width: 150px;
+      width: 115px;
       background-color: rgba(245, 245, 245, 0.6);
       right: 10px;
-      left: 10px;
-      height: 100px;
+      left: 7.5px;
+      height: 80px;
       color: ${colors.darkTextColor};
     `}
 `;
 
 const Name = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   text-align: center;
   display: flex;
@@ -130,11 +136,21 @@ const Location = styled.div`
   text-align: center;
 `;
 
-const PlaceImage = styled.img`
-  width: 150px;
-  height: 150px;
+const PlaceImage = styled.img<{
+  $style: CardStyle;
+}>`
+  width: 130px;
+  height: 130px;
   object-fit: cover;
   position: absolute;
   border-radius: 15px;
   left: 10px;
+
+  ${({ $style }) =>
+    $style === "image_only" &&
+    css`
+      left: 7.5px;
+      width: 115px;
+      height: 115px;
+    `}
 `;

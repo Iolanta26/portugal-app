@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
 import { colors } from "../theme";
 
-export const BackWrapper = styled.button`
+export const BackButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  position: absolute;
-  z-index: 3;
-  top: 15px;
-  left: 15px;
+  // position: absolute;
+  z-index: 100;
+  // top: 15px;
+  // left: 210px;
   position: fixed;
 `;
 
@@ -66,8 +66,8 @@ export const ImageFrame = styled.div<{
   $regionDiv: boolean;
 }>`
   overflow: hidden;
-  height: ${(props) => (props.$regionDiv === true ? "450px" : "45%")};
-  width: 50%;
+  height: ${(props) => (props.$regionDiv === true ? "400px" : "45%")};
+  width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
@@ -75,7 +75,7 @@ export const ImageFrame = styled.div<{
   max-width: 1200px;
 
   @media (max-width: 768px) {
-    height: 450px;
+    height: 400px;
     width: 100%;
   }
 `;

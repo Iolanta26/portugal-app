@@ -24,7 +24,6 @@ const ContainerMain = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
 `;
 
 const Portugal = styled.div`
@@ -39,15 +38,15 @@ const Paragraph = styled.div`
 `;
 
 const Background = styled.img`
-  position: absolute;
+  position: relative;
   object-fit: cover;
-  height: 100vh;
-  width: 40vw;
-  top: -10px;
+  height: 620px;
+  width: 100%;
+  top: -30px;
 
-  @media (max-width: 768px) {
-    width: 100vw;
-  }
+  // @media (max-width: 768px) {
+  //   width: 100vw;
+  // }
 `;
 
 const MainText = styled.div`

@@ -50,7 +50,7 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 80px;
+  margin-top: 30px;
   padding-bottom: 100px;
 `;
 
@@ -58,25 +58,25 @@ const ProjectText = styled.div`
   display: block;
   text-align: center;
   width: 60%;
-  margin-bottom: 30px;
+  font-size: 14px;
 `;
 
 const MyName = styled.div`
-  font-family: "Rochester", cursive;
-  font-size: 30px;
-  margin-bottom: 30px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 `;
 
 const Cursive = styled.p`
   font-family: "Rochester", cursive;
-  font-size: 20px;
+  font-size: 24px;
 `;
 
 const SocialIcons = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin-top: 20px;
 `;
 
 const SocialIconContainer = styled.div`
@@ -99,6 +99,8 @@ const TechnologiesContainer = styled.div`
   align-items: center;
   text-align: center;
   flex-direction: column;
+  font-size: 14px;
+  margin-top: 20px;
 `;
 
 const TechnologiesText = styled.div`

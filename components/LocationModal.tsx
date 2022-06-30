@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { Place, RegionVisual } from "../types";
 import { FavContext } from "../store";
@@ -33,6 +33,7 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
     console.log("favourite: ", place);
     setIsClicked(true);
     setDisable(true);
+    placesCtx.buttonIsHighlighted = true;
     const foundId = placesCtx.selectedPlaces.find(
       (placeId: Place) => placeId?.id === place.id
     );
@@ -45,64 +46,80 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
   };
 
   return (
-    <MainContainer>
-      <ImageFrame $regionDiv={false}>
-        <ImageOfPlace src={placeImage} alt="place image" loading="eager" />
-      </ImageFrame>
-      <Text $regionVisual={regionVisual}>
-        <PlaceName $regionVisual={regionVisual}>{placeName}</PlaceName>
-        <LocationName $regionVisual={regionVisual}>{location}</LocationName>
-        <HeartButtonWrapper>
-          <HeartEllipseButton
-            disabled={disable}
-            $isClicked={isClicked}
-            onClick={() => {
-              addToFavouriteList();
-            }}
-          >
-            <HeartButton />
-          </HeartEllipseButton>
-        </HeartButtonWrapper>
-      </Text>
-      <Description>{placeDesc}</Description>
-      <GenericButton
-        regionVisual={regionVisual}
-        onClick={onClose}
-        text="Close"
-      />
-    </MainContainer>
+    <ModalContainer>
+      <MainContainer>
+        <ImageFrame $regionDiv={false}>
+          <ImageOfPlace src={placeImage} alt="place image" loading="eager" />
+        </ImageFrame>
+        <Text $regionVisual={regionVisual}>
+          <PlaceName $regionVisual={regionVisual}>{placeName}</PlaceName>
+          <LocationName $regionVisual={regionVisual}>{location}</LocationName>
+          <HeartButtonWrapper>
+            <HeartEllipseButton
+              disabled={disable}
+              $isClicked={isClicked}
+              onClick={() => {
+                addToFavouriteList();
+              }}
+            >
+              <HeartButton />
+            </HeartEllipseButton>
+          </HeartButtonWrapper>
+        </Text>
+        <Description>{placeDesc}</Description>
+        <GenericButton
+          regionVisual={regionVisual}
+          onClick={onClose}
+          text="Close"
+        />
+      </MainContainer>
+    </ModalContainer>
   );
 };
 
+const ModalContainer = styled.div`
+  // position: absolute;
+  // backround-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
 const MainContainer = styled.div`
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  z-index: 200;
+  top: 30px;
+  // left: 33%;
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
-  z-index: 98;
-  height: 100vh;
-  width: 100vw;
+  // z-index: 50;
+  height: 660px;
+  width: 330px;
   background-color: white;
 `;
 
 const Description = styled.div`
-  width: 45%;
+  width: 290px;
   text-align: center;
   margin-bottom: 30px;
+  font-size: 12px;
 
-  @media (max-width: 768px) {
-    width: 85%;
-    margin-top: -60px;
-    margin-bottom: 40px;
-  }
+  // @media (max-width: 768px) {
+  //   width: 85%;
+  //   margin-top: -60px;
+  //   margin-bottom: 40px;
+  // }
 
-  @media (max-height: 840px) {
-    margin-top: 0px;
-  }
+  // @media (max-height: 840px) {
+  //   margin-top: 0px;
+  // }
 `;
 
 const Text = styled.div<{
@@ -120,7 +137,7 @@ const Text = styled.div<{
       : props.$regionVisual === "algarve"
       ? `${colors.brownPalette}`
       : "transparent"};
-  width: 50%;
+  width: 290px;
   color: white;
   display: flex;
   align-items: center;

@@ -71,18 +71,18 @@ export default Search;
 
 const SearchMainContainer = styled.div`
   position: relative;
-  top: 50px;
+  top: 35px;
 `;
 
 const SearchBarWrapper = styled.div`
   position: absolute;
-  top: 30px;
+  top: 10px;
   left: 50%;
   transform: translate(-50%, -50%);
 
   &:hover input {
     width: 250px;
-    height: 50px;
+    height: 40px;
     background: white;
     border-radius: 10px;
 
@@ -94,8 +94,8 @@ const SearchBarWrapper = styled.div`
 
 const SearchInput = styled.input`
   padding: 10px;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   background: none;
   border: 2px solid #ffd52d;
   border-radius: 50px;
@@ -113,7 +113,7 @@ const SearchInput = styled.input`
 const SearchIcon = styled.img`
   position: absolute;
   top: 50%;
-  right: 12px;
+  right: 7px;
   transform: translate(-50%, -50%);
   font-size: 26px;
   color: #ffd52d;
@@ -136,7 +136,6 @@ const AllItems = styled.div`
   align-items: center;
   flex-wrap: wrap;
   max-width: 1000px;
-  margin-top: 10px;
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 100px;
 `;

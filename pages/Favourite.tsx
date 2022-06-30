@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useContext } from "react";
 import { useRouter } from "next/router";
 
-import { BackWrapper, PlaceCard } from "../components";
+import { BackButton, PlaceCard } from "../components";
 import { FavContext } from "../store";
 import { RegionVisual } from "../types";
 
@@ -15,9 +15,11 @@ const Favourite = () => {
 
   return (
     <PageContainer>
-      <BackWrapper onClick={() => router.back()}>
-        <Image src={back} alt="back" />
-      </BackWrapper>
+      <div style={{ marginLeft: "10px" }}>
+        <BackButton onClick={() => router.back()}>
+          <Image src={back} alt="back" />
+        </BackButton>
+      </div>
       <div
         style={{
           display: "flex",
@@ -27,7 +29,9 @@ const Favourite = () => {
         }}
       >
         <TextWrapper>
-          <Places>Your favourite locations</Places>
+          <Places>
+            Your favourite <br /> locations
+          </Places>
         </TextWrapper>
         <MainListContainer>
           {placesCtx.selectedPlaces.map((place) => (
@@ -45,13 +49,14 @@ const Favourite = () => {
 };
 
 const TextWrapper = styled.div`
-  margin-top: 50px;
+  margin-top: 10px;
   color: #13406c;
   width: 300px;
+  margin-left: 50px;
 `;
 
 const Places = styled.div`
-  font-size: 30px;
+  font-size: 20px;
 `;
 
 const PageContainer = styled.div`

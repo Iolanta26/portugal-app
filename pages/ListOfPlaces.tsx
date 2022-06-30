@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NextRouter, withRouter } from "next/router";
 
-import { BackWrapper, PlaceCard } from "../components";
+import { BackButton, PlaceCard } from "../components";
 import { getRegionById } from "../functions";
 import { PLACES } from "../dummy-data";
 import { RegionVisual } from "../types";
@@ -24,9 +24,11 @@ const ListOfPlaces = ({ router }: Props) => {
 
   return (
     <PageContainer>
-      <BackWrapper onClick={() => router.back()}>
-        <Image src={back} alt="back" />
-      </BackWrapper>
+      <BackButtonWrapper>
+        <BackButton onClick={() => router.back()}>
+          <Image src={back} alt="back" />
+        </BackButton>
+      </BackButtonWrapper>
       <div
         style={{
           display: "flex",
@@ -69,20 +71,25 @@ const MainListContainer = styled.div`
   margin-top: 10px;
 `;
 
+const BackButtonWrapper = styled.div`
+  margin-left: 10px;
+`;
+
 const CardsContainer = styled.div`
   display: flex;
 `;
 
 const TextWrapper = styled.div`
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-left: 5px;
   color: #13406c;
-  width: 300px;
+  width: 250px;
 `;
 
 const Places = styled.div`
-  font-size: 20px;
+  font-size: 16px;
 `;
 
 const RegionName = styled.div`
-  font-size: 40px;
+  font-size: 24px;
 `;
