@@ -64,8 +64,6 @@ const Navbar = styled.div`
   background-color: #fecf81;
   height: 50px;
   position: fixed;
-  // bottom: 0;
-  // left: 0;
   width: 320px;
   display: flex;
   flex-direction: row;
@@ -83,6 +81,7 @@ const CenterWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 `;
 
 const AzulejoImage = styled(Image)`
@@ -94,6 +93,7 @@ const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 `;
 
 const Icon = styled.img`

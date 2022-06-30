@@ -11,9 +11,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <Camera></Camera>
         </CameraContainer>
         <Component {...pageProps} />
-
         <Navigation />
-
         <GlobalStyleReset />
       </PhoneMockup>
     </GeneralDiv>
@@ -31,7 +29,7 @@ const PhoneMockup = styled.div`
   margin: 40px auto;
   width: 320px;
   height: 650px;
-  z-index: 2000;
+  z-index: 2500;
   border-radius: 40px;
   box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919,
     0px 0px 0px 20px #111;

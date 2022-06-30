@@ -5,10 +5,7 @@ export const BackButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  // position: absolute;
-  z-index: 100;
-  // top: 15px;
-  // left: 210px;
+  z-index: 5;
   position: fixed;
 `;
 

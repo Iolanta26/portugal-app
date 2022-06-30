@@ -22,24 +22,23 @@ export const PlaceCard = ({ regionVisual, place, style = "full" }: Props) => {
 
   return (
     <>
-      {!openModal && (
-        <Card
-          $regionVisual={regionVisual}
-          onClick={() => setOpenModal(true)}
+      <Card
+        $regionVisual={regionVisual}
+        onClick={() => setOpenModal(true)}
+        $style={style}
+      >
+        <PlaceImage
+          src={placeImage}
+          alt="place image"
+          loading="eager"
           $style={style}
-        >
-          <PlaceImage
-            src={placeImage}
-            alt="place image"
-            loading="eager"
-            $style={style}
-          />
-          <ShortDesc $regionVisual={regionVisual} $style={style}>
-            <Name>{placeName}</Name>
-            <Location>Location: {location}</Location>
-          </ShortDesc>
-        </Card>
-      )}
+        />
+        <ShortDesc $regionVisual={regionVisual} $style={style}>
+          <Name>{placeName}</Name>
+          <Location>Location: {location}</Location>
+        </ShortDesc>
+      </Card>
+
       {openModal && (
         <LocationModal
           place={place}

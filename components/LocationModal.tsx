@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import { Place, RegionVisual } from "../types";
 import { FavContext } from "../store";
@@ -78,19 +78,23 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
 };
 
 const ModalContainer = styled.div`
-  // position: absolute;
+  position: absolute;
   // backround-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
+  top: 0px;
+  left: 0;
+  z-index: 10;
 `;
 
 const MainContainer = styled.div`
   position: fixed;
   z-index: 200;
-  top: 30px;
-  // left: 33%;
+  border-radius: 30px;
+  // top: 50px;
+  // left: 50px;
   // position: absolute;
   // top: 0;
   // right: 0;
@@ -100,8 +104,8 @@ const MainContainer = styled.div`
   align-items: center;
   flex-direction: column;
   // z-index: 50;
-  height: 660px;
-  width: 330px;
+  height: 630px;
+  width: 320px;
   background-color: white;
 `;
 
