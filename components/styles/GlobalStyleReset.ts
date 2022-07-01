@@ -11,6 +11,7 @@ html, body {
   font-family: 'Quicksand', sans-serif;
   margin: 0;
   padding: 0;
+  overflow: hidden;
  
 }
 

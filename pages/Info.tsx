@@ -62,8 +62,7 @@ const ProjectText = styled.div`
 `;
 
 const MyName = styled.div`
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 16px;
   margin-top: 20px;
 `;
 
