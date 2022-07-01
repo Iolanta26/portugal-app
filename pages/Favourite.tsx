@@ -13,6 +13,10 @@ const Favourite = () => {
   const router = useRouter();
   const placesCtx = useContext(FavContext);
 
+  if (!placesCtx.selectedPlaces) {
+    console.log("no content");
+  } else console.log("doesn't work");
+
   return (
     <PageContainer>
       <div style={{ marginLeft: "10px" }}>
@@ -34,14 +38,20 @@ const Favourite = () => {
           </Places>
         </TextWrapper>
         <MainListContainer>
-          {placesCtx.selectedPlaces.map((place) => (
-            <div key={"fav" + `${place.location}` + `${place.id}`}>
-              <PlaceCard
-                place={place}
-                regionVisual={place.visual as RegionVisual}
-              />
-            </div>
-          ))}
+          {placesCtx.selectedPlaces.length === 0 ? (
+            <NoContentText>
+              Start choosing you favourite places to see them here
+            </NoContentText>
+          ) : (
+            placesCtx.selectedPlaces.map((place) => (
+              <div key={"fav" + `${place.location}` + `${place.id}`}>
+                <PlaceCard
+                  place={place}
+                  regionVisual={place.visual as RegionVisual}
+                />
+              </div>
+            ))
+          )}
         </MainListContainer>
       </div>
     </PageContainer>
@@ -52,7 +62,7 @@ const TextWrapper = styled.div`
   margin-top: 10px;
   color: #13406c;
   width: 300px;
-  margin-left: 50px;
+  margin-left: 60px;
 `;
 
 const Places = styled.div`
@@ -70,6 +80,13 @@ const MainListContainer = styled.div`
   flex-wrap: wrap;
   width: 350px;
   margin-top: 10px;
+`;
+
+const NoContentText = styled.div`
+  width: 220px;
+  margin-top: 100px;
+  font-size: 14px;
+  text-align: center;
 `;
 
 export default Favourite;
