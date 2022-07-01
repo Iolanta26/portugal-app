@@ -3,7 +3,7 @@ export const HeartButton = () => {
     <div>
       <svg
         width="40"
-        height="50"
+        height="45"
         viewBox="0 0 49 50"
         fill={""}
         xmlns="http://www.w3.org/2000/svg"

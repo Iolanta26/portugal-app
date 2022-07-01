@@ -49,9 +49,14 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
     <ModalContainer>
       <MainContainer>
         <ImageFrame $regionDiv={false}>
-          <ImageOfPlace src={placeImage} alt="place image" loading="eager" />
+          <ImageOfPlace
+            src={placeImage}
+            alt="place image"
+            loading="eager"
+            $regionDiv={false}
+          />
         </ImageFrame>
-        <Text $regionVisual={regionVisual}>
+        <MainTextContainer $regionVisual={regionVisual}>
           <PlaceName $regionVisual={regionVisual}>{placeName}</PlaceName>
           <LocationName $regionVisual={regionVisual}>{location}</LocationName>
           <HeartButtonWrapper>
@@ -65,13 +70,15 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
               <HeartButton />
             </HeartEllipseButton>
           </HeartButtonWrapper>
-        </Text>
+        </MainTextContainer>
         <Description>{placeDesc}</Description>
-        <GenericButton
-          regionVisual={regionVisual}
-          onClick={onClose}
-          text="Close"
-        />
+        <ButtonWrapper>
+          <GenericButton
+            regionVisual={regionVisual}
+            onClick={onClose}
+            text="Close"
+          />
+        </ButtonWrapper>
       </MainContainer>
     </ModalContainer>
   );
@@ -79,11 +86,6 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
 
 const ModalContainer = styled.div`
   position: absolute;
-  // backround-color: red;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // flex-direction: column;
   top: 0px;
   left: 0;
   z-index: 10;
@@ -93,27 +95,21 @@ const MainContainer = styled.div`
   position: fixed;
   z-index: 200;
   border-radius: 30px;
-  // top: 50px;
-  // left: 50px;
-  // position: absolute;
-  // top: 0;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
-  // z-index: 50;
   height: 630px;
   width: 320px;
   background-color: white;
 `;
 
 const Description = styled.div`
-  width: 290px;
+  width: 280px;
   text-align: center;
   margin-bottom: 30px;
   font-size: 12px;
+  position: absolute;
+  top: 350px;
 
   // @media (max-width: 768px) {
   //   width: 85%;
@@ -126,7 +122,7 @@ const Description = styled.div`
   // }
 `;
 
-const Text = styled.div<{
+const MainTextContainer = styled.div<{
   $regionVisual: string;
 }>`
   background-color: ${(props) =>
@@ -142,37 +138,35 @@ const Text = styled.div<{
       ? `${colors.brownPalette}`
       : "transparent"};
   width: 290px;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border-radius: 30px;
-  position: relative;
-  top: -60px;
+  position: absolute;
+  bottom: 310px;
   z-index: 120;
-  // max-width: 1300px;
   padding: 20px 30px;
 
-  @media (max-width: 768px) {
-    top: -110px;
-    width: 100%;
-  }
+  // @media (max-width: 768px) {
+  //   top: -110px;
+  //   width: 100%;
+  // }
 
-  @media (max-height: 840px) {
-    top: -50px;
-  }
+  // @media (max-height: 840px) {
+  //   top: -50px;
+  // }
 `;
 
 const HeartButtonWrapper = styled.div`
   position: absolute;
-  top: 90px;
-  right: 40px;
+  top: 80px;
+  right: 30px;
   cursor: pointer;
 
-  @media (max-height: 840px) {
-    top: 70px;
-  }
+  // @media (max-height: 840px) {
+  //   top: 70px;
+  // }
 `;
 
 const HeartEllipseButton = styled.button<{
@@ -180,8 +174,8 @@ const HeartEllipseButton = styled.button<{
   $disabledMode?: boolean;
 }>`
   background-color: ${(props) => (props.$isClicked ? "#FA3593" : "#ffd1fd")} ;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex:
   justify-content: center;
@@ -194,4 +188,9 @@ const HeartEllipseButton = styled.button<{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   }
   
+`;
+
+const ButtonWrapper = styled.div`
+  position: absolute;
+  top: 530px;
 `;

@@ -25,7 +25,7 @@ export const PlaceName = styled.div<{
 }>`
   font-family: "Rochester", cursive;
   color: white;
-  font-size: 30px;
+  font-size: 24px;
   color: ${(props) =>
     props.$regionVisual === "north"
       ? `${colors.lightTextColor}`
@@ -63,27 +63,31 @@ export const ImageFrame = styled.div<{
   $regionDiv: boolean;
 }>`
   overflow: hidden;
-  height: ${(props) => (props.$regionDiv === true ? "400px" : "45%")};
-  width: 100%;
+  height: ${(props) => (props.$regionDiv === true ? "400px" : "270px")};
+  width: 320px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
   display: flex;
   justify-content: center;
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  // max-width: 1200px;
 
-  @media (max-width: 768px) {
-    height: 400px;
-    width: 100%;
-  }
+  // @media (max-width: 768px) {
+  //   height: 400px;
+  //   width: 100%;
+  // }
 `;
 
-export const ImageOfPlace = styled.img`
+export const ImageOfPlace = styled.img<{
+  $regionDiv: boolean;
+}>`
   width: 100%;
-  height: 400px;
+  // height: ${(props) => (props.$regionDiv === true ? "400px" : "300px")};
   object-fit: cover;
   animation-delay: 2s;
 
-  @media (max-width: 768px) {
-    height: 400px;
-  }
+  // @media (max-width: 768px) {
+  //   height: 400px;
+  // }
 `;

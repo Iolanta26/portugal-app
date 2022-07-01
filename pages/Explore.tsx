@@ -30,11 +30,13 @@ const Portugal = styled.div`
   font-family: "Rochester", cursive;
   color: white;
   font-size: 50px;
+  text-shadow: 2px 2px 4px rgba(84, 84, 84, 1);
 `;
 
 const Paragraph = styled.div`
   color: white;
   font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(84, 84, 84, 1);
 `;
 
 const Background = styled.img`

@@ -3,15 +3,11 @@ import Link from "next/link";
 
 import Image from "next/image";
 import azulejo from "../public/azulejo.png";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FavContext } from "../store";
-import { HeartButton } from "./HeartButton";
 
 export const Navigation = () => {
-  const [clicked, setClicked] = useState(false);
   const placesCtx = useContext(FavContext);
-
-  console.log("button:", placesCtx.buttonIsHighlighted);
 
   return (
     <MainNavContainer>
@@ -35,11 +31,7 @@ export const Navigation = () => {
         </CenterWrapper>
         <Link href="/Favourite">
           <MenuButton>
-            <HeartIcon
-              src="./heart.svg"
-              alt="favourite"
-              // $buttonHighlighted={placesCtx.buttonIsHighlighted === true}
-            />
+            <HeartIcon src="./heart.svg" alt="favourite" />
             <MenuText>Favourite</MenuText>
           </MenuButton>
         </Link>
@@ -97,17 +89,14 @@ const ImageWrapper = styled.div`
 `;
 
 const Icon = styled.img`
-  // display: flex;
   position: absolute;
   top: 0px;
   width: 20px;
 `;
 
 const HeartIcon = styled.img`
-  // display: flex;
   position: absolute;
   top: 0px;
-  // background-color: #ffd1fd;
   width: 20px;
 `;
 
