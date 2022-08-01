@@ -30,10 +30,11 @@ const MapPortugal = () => {
 export default MapPortugal;
 
 const MainFlexContainer = styled.div`
-  height: 620px;
+  // height: 640px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  // padding-bottom: 16px;
 `;
 
 const TextContainer = styled.div`

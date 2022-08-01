@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-import { PlaceCard } from "../components";
+import { PlaceCard, Weather } from "../components";
 import { PLACES } from "../dummy-data";
 import { RegionVisual } from "../types";
 
@@ -137,5 +137,5 @@ const AllItems = styled.div`
   flex-wrap: wrap;
   max-width: 1000px;
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 `;

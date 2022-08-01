@@ -13,10 +13,6 @@ const Favourite = () => {
   const router = useRouter();
   const placesCtx = useContext(FavContext);
 
-  if (!placesCtx.selectedPlaces) {
-    console.log("no content");
-  } else console.log("doesn't work");
-
   return (
     <PageContainer>
       <div style={{ marginLeft: "10px" }}>
@@ -58,6 +54,10 @@ const Favourite = () => {
   );
 };
 
+const PageContainer = styled.div`
+  padding-bottom: 100px;
+`;
+
 const TextWrapper = styled.div`
   margin-top: 10px;
   color: #13406c;
@@ -67,10 +67,6 @@ const TextWrapper = styled.div`
 
 const Places = styled.div`
   font-size: 20px;
-`;
-
-const PageContainer = styled.div`
-  padding-bottom: 100px;
 `;
 
 const MainListContainer = styled.div`

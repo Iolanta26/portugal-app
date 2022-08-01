@@ -3,12 +3,8 @@ import Link from "next/link";
 
 import Image from "next/image";
 import azulejo from "../public/azulejo.png";
-import { useContext } from "react";
-import { FavContext } from "../store";
 
 export const Navigation = () => {
-  const placesCtx = useContext(FavContext);
-
   return (
     <MainNavContainer>
       <Navbar>
@@ -24,15 +20,17 @@ export const Navigation = () => {
             <MenuText>Search</MenuText>
           </MenuButton>
         </Link>
-        <CenterWrapper>
-          <ImageWrapper>
-            <AzulejoImage src={azulejo} alt="center" />
-          </ImageWrapper>
-        </CenterWrapper>
+        <ImageContainer>
+          <CenterWrapper>
+            <ImageWrapper>
+              <AzulejoImage src={azulejo} alt="center" />
+            </ImageWrapper>
+          </CenterWrapper>
+        </ImageContainer>
         <Link href="/Favourite">
           <MenuButton>
             <HeartIcon src="./heart.svg" alt="favourite" />
-            <MenuText>Favourite</MenuText>
+            <MenuText>Favourites</MenuText>
           </MenuButton>
         </Link>
         <Link href="/Info">
@@ -48,28 +46,39 @@ export const Navigation = () => {
 
 const MainNavContainer = styled.div`
   position: absolute;
-  bottom: 50px;
-  z-index: 20;
+  bottom: 48px;
+  z-index: 200;
 `;
 
 const Navbar = styled.div`
+  position: fixed;
   background-color: #fecf81;
   height: 50px;
-  position: fixed;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  border-bottom-right-radius: 35px;
-  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+`;
+
+const ImageContainer = styled.div`
+  overflow: hidden;
+  height: 60px;
+  position: relative;
+  bottom: 5px;
 `;
 
 const CenterWrapper = styled.div`
   width: 75px;
   height: 75px;
   background: #ffe5ba;
-  border-radius: 50%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;

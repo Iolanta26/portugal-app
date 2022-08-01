@@ -58,7 +58,7 @@ const ProjectText = styled.div`
   display: block;
   text-align: center;
   width: 60%;
-  font-size: 14px;
+  font-size: 13px;
 `;
 
 const MyName = styled.div`
@@ -69,6 +69,7 @@ const MyName = styled.div`
 const Cursive = styled.p`
   font-family: "Rochester", cursive;
   font-size: 24px;
+  margin-bottom: 10px;
 `;
 
 const SocialIcons = styled.div`

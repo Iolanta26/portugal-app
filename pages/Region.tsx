@@ -7,15 +7,12 @@ import {
   IconsForRegions,
   opacityAnimation,
   pictureMoveUp,
+  Weather,
 } from "../components";
-import {
-  BackButton,
-  ImageFrame,
-  ImageOfPlace,
-} from "../components/StyledComponents";
+import { BackButton } from "../components/StyledComponents";
 
 import { getRegionById } from "../functions";
-import { RegionVisual } from "../types";
+import { CapitalCity, RegionVisual } from "../types";
 import { colors } from "../theme";
 
 import Image from "next/image";
@@ -27,6 +24,7 @@ type Props = {
 
 const Region = ({ router }: Props) => {
   const [regionVisual, setRegionVisual] = useState<RegionVisual>("north");
+  const [city, setCity] = useState<CapitalCity>("Coimbra");
   const { regionId } = router.query;
 
   const region = getRegionById(regionId as string);
@@ -35,23 +33,28 @@ const Region = ({ router }: Props) => {
     switch (region?.regionName) {
       case "North":
         region.regionName === "North";
+        setCity("Porto");
         setRegionVisual("north");
         break;
       case "Greater Lisbon":
         region.regionName === "Greater Lisbon";
         setRegionVisual("lisbon");
+        setCity("Lisbon");
         break;
       case "Central Portugal":
         region.regionName === "Central Portugal";
         setRegionVisual("central");
+        setCity("Coimbra");
         break;
       case "Alentejo":
         region.regionName === "Alentejo";
         setRegionVisual("alentejo");
+        setCity("Evora");
         break;
       case "Algarve":
         region.regionName === "Algarve";
         setRegionVisual("algarve");
+        setCity("Faro");
         break;
     }
   }, [regionVisual]);
@@ -63,42 +66,41 @@ const Region = ({ router }: Props) => {
           <Image src={back} alt="back" />
         </BackButton>
       </BackButtonWrapper>
-      <MainDiv $regionVisual={regionVisual}>
-        <ImageFrame $regionDiv={true}>
-          <FlexImages>
-            <FirstImage src={region?.mainImage} alt="region" />
-            <OtherImage src={region?.images.firstImage} alt="" />
-            <ThirdImage src={region?.images.secondImage} alt="" />
-          </FlexImages>
-        </ImageFrame>
-        <ButtonWrapper>
-          <GenericButton
-            regionVisual={regionVisual}
-            text="Explore"
-            style="circle"
-            onClick={() =>
-              router.push({
-                pathname: "./ListOfPlaces",
-                query: { regionId, regionVisual },
-              })
-            }
-          />
-        </ButtonWrapper>
-        <DescriptionWrapper $regionVisual={regionVisual}>
-          <DescriptionContainer>
-            <RegionName $regionVisual={regionVisual}>
-              {region?.regionName}
-            </RegionName>
-            <DescriptionText $regionVisual={regionVisual}>
-              {region?.regionDesc}
-              <BestKnownText $regionVisual={regionVisual}>
-                Best known for:
-                <IconsForRegions regionVisual={regionVisual} />
-              </BestKnownText>
-            </DescriptionText>
-          </DescriptionContainer>
-        </DescriptionWrapper>
-      </MainDiv>
+      <Weather cityName={city} />
+      <ImageFrame $regionDiv={true}>
+        <FlexImages>
+          <FirstImage src={region?.mainImage} alt="region" />
+          <SecondImage src={region?.images.firstImage} alt="" />
+          <ThirdImage src={region?.images.secondImage} alt="" />
+        </FlexImages>
+      </ImageFrame>
+      <ButtonWrapper>
+        <GenericButton
+          regionVisual={regionVisual}
+          text="Explore"
+          style="circle"
+          onClick={() =>
+            router.push({
+              pathname: "./ListOfPlaces",
+              query: { regionId, regionVisual },
+            })
+          }
+        />
+      </ButtonWrapper>
+      <DescriptionWrapper $regionVisual={regionVisual}>
+        <DescriptionContainer>
+          <RegionName $regionVisual={regionVisual}>
+            {region?.regionName}
+          </RegionName>
+          <DescriptionText $regionVisual={regionVisual}>
+            {region?.regionDesc}
+            <BestKnownText $regionVisual={regionVisual}>
+              Best known for:
+              <IconsForRegions regionVisual={regionVisual} />
+            </BestKnownText>
+          </DescriptionText>
+        </DescriptionContainer>
+      </DescriptionWrapper>
     </>
   );
 };
@@ -106,9 +108,20 @@ const Region = ({ router }: Props) => {
 export default withRouter(Region);
 
 const BackButtonWrapper = styled.div`
-  background-color: red;
-  width: 280px;
   margin-left: 10px;
+`;
+
+const ImageFrame = styled.div<{
+  $regionDiv: boolean;
+}>`
+  overflow: hidden;
+  height: 320px;
+  width: 100%;
+  max-width: 330px;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  position: absolute;
 `;
 
 const BestKnownText = styled.div<{
@@ -131,17 +144,6 @@ const BestKnownText = styled.div<{
       : "transparent"};
 `;
 
-const MainDiv = styled.div<{
-  $regionVisual: string;
-}>`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 0;
-  top: -30px;
-  position: relative;
-`;
-
 const FlexImages = styled.div`
   display: flex;
   flex-direction: column;
@@ -155,7 +157,7 @@ const DescriptionWrapper = styled.div<{
 }>`
   position: absolute;
   top: 305px;
-  height: 340px;
+  height: 50%;
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? `${colors.bluePalette}`
@@ -191,22 +193,21 @@ const DescriptionText = styled.div<{
 `;
 
 const FirstImage = styled.img`
-  width: 100%;
-  height: 500px;
+  height: 350px;
   object-fit: cover;
   animation: ${pictureMoveUp} 1.5s ease-in-out;
   animation-delay: 1.5s;
 `;
 
-const OtherImage = styled.img`
-  height: 400px;
+const SecondImage = styled.img`
+  height: 350px;
   margin-top: 8px;
   animation: ${pictureMoveUp} 1.5s ease-in-out;
   animation-delay: 1.5s;
 `;
 
 const ThirdImage = styled.img`
-  height: 400px;
+  height: 350px;
   margin-top: 8px;
 `;
 

@@ -65,18 +65,10 @@ export const ImageFrame = styled.div<{
   overflow: hidden;
   height: ${(props) => (props.$regionDiv === true ? "400px" : "270px")};
   width: 320px;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
   display: flex;
   justify-content: center;
-  position: relative;
+  position: absolute;
   z-index: 2;
-  // max-width: 1200px;
-
-  // @media (max-width: 768px) {
-  //   height: 400px;
-  //   width: 100%;
-  // }
 `;
 
 export const ImageOfPlace = styled.img<{

@@ -6,7 +6,7 @@ export const PLACES: Place[] = [
     region: "3lisbon",
     location: "Sintra",
     visual: "lisbon",
-    placeName: "The Monserrate Palace",
+    placeName: "Monserrate Palace",
     placeDesc:
       "Not very far from the historic centre of Sintra is one of the most beautiful architectural and landscape Romantic creations in Portugal: the Park and Palace of Monserrate, unique representatives of 19th century eclecticism.",
     placeImage:
@@ -371,7 +371,7 @@ export const PLACES: Place[] = [
     visual: "lisbon",
     placeName: "National Tile Museum",
     placeDesc:
-      "The Museu Nacional do Azulejo, occasionally known in English as the National Tile Museum, is an art museum in Lisbon, Portugal dedicated to the azulejo, traditional tilework of Portugal and the former Portuguese Empire, as well as of other Iberophone cultures. Housed in the former Madre de Deus Convent, the museum's collection is one of the largest of ceramics in the world.",
+      "This place, is an art museum in Lisbon, Portugal dedicated to the azulejo, traditional tilework of Portugal and the former Portuguese Empire, as well as of other Iberophone cultures. Housed in the former Madre de Deus Convent, the museum's collection is one of the largest of ceramics in the world.",
     placeImage:
       "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRSFxf90QXUnJPC9zO1vONyHn68G2yMgFZsxBXzwx0SNO4dERXj3Mx_IYgXfH7wKynPYJ_28UXwCHTtkCs3L2-fXg",
   },

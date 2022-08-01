@@ -30,13 +30,13 @@ const Portugal = styled.div`
   font-family: "Rochester", cursive;
   color: white;
   font-size: 50px;
-  text-shadow: 2px 2px 4px rgba(84, 84, 84, 1);
+  text-shadow: 2px 2px 4px rgba (0, 0, 0, 0.75);
 `;
 
 const Paragraph = styled.div`
   color: white;
   font-size: 20px;
-  text-shadow: 2px 2px 4px rgba(84, 84, 84, 1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
 `;
 
 const Background = styled.img`
@@ -45,10 +45,6 @@ const Background = styled.img`
   height: 620px;
   width: 100%;
   top: -30px;
-
-  // @media (max-width: 768px) {
-  //   width: 100vw;
-  // }
 `;
 
 const MainText = styled.div`
@@ -69,6 +65,10 @@ const ExploreButton = styled.button`
   padding: 15px 25px;
   position: absolute;
   top: 500px;
+  color: white;
+  box-shadow: -2px 7px 12px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -2px 7px 12px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px 7px 12px 0px rgba(0, 0, 0, 0.75);
 
   &:hover,
   :focus {

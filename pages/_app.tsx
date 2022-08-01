@@ -4,7 +4,7 @@ import { GlobalStyleReset, Navigation } from "../components";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <GeneralDiv>
+    <>
       <PhoneMockup>
         <CameraContainer>
           <Speaker></Speaker>
@@ -12,24 +12,22 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         </CameraContainer>
         <Component {...pageProps} />
         <Navigation />
-        <GlobalStyleReset />
       </PhoneMockup>
-    </GeneralDiv>
+
+      <GlobalStyleReset />
+    </>
   );
 };
 
 export default MyApp;
 
-const GeneralDiv = styled.div`
-  position: relative;
-`;
-
 const PhoneMockup = styled.div`
   position: relative;
+  z-index: 5000;
   margin: 40px auto;
   width: 320px;
   height: 650px;
-  z-index: 2500;
+  z-index: 5000;
   border-radius: 40px;
   box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919,
     0px 0px 0px 20px #111;
@@ -42,7 +40,7 @@ const PhoneMockup = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2000;
+    z-index: 5000;
   }
 `;
 
@@ -54,7 +52,7 @@ const CameraContainer = styled.div`
   background-color: #1f1f1f;
   border-radius: 0px 0px 40px 40px;
   position: sticky;
-  z-index: 200;
+  z-index: 5000;
 `;
 
 const Speaker = styled.div`

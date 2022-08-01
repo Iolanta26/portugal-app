@@ -25,3 +25,5 @@ export type RegionVisual =
   | "lisbon"
   | "alentejo"
   | "algarve";
+
+export type CapitalCity = "Evora" | "Lisbon" | "Porto" | "Faro" | "Coimbra";

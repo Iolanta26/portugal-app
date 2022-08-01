@@ -59,7 +59,7 @@ const ListOfPlaces = ({ router }: Props) => {
 export default withRouter(ListOfPlaces);
 
 const PageContainer = styled.div`
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 `;
 
 const MainListContainer = styled.div`

@@ -37,7 +37,7 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
     const foundId = placesCtx.selectedPlaces.find(
       (placeId: Place) => placeId?.id === place.id
     );
-    console.log("foundId", foundId);
+    // console.log("foundId", foundId);
     if (foundId) {
       return;
     } else {
@@ -88,19 +88,19 @@ const ModalContainer = styled.div`
   position: absolute;
   top: 0px;
   left: 0;
-  z-index: 10;
 `;
 
 const MainContainer = styled.div`
   position: fixed;
   z-index: 200;
-  border-radius: 30px;
+  border-radius: 40px;
   display: flex;
   align-items: center;
   flex-direction: column;
   height: 630px;
   width: 320px;
   background-color: white;
+  overflow: hidden;
 `;
 
 const Description = styled.div`
@@ -110,16 +110,6 @@ const Description = styled.div`
   font-size: 12px;
   position: absolute;
   top: 350px;
-
-  // @media (max-width: 768px) {
-  //   width: 85%;
-  //   margin-top: -60px;
-  //   margin-bottom: 40px;
-  // }
-
-  // @media (max-height: 840px) {
-  //   margin-top: 0px;
-  // }
 `;
 
 const MainTextContainer = styled.div<{
