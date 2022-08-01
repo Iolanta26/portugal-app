@@ -10,9 +10,17 @@ import { theme } from "../theme";
 type Props = {
   cityName: CapitalCity;
 };
-
+interface Main {
+  main: {
+    temp: number;
+  };
+}
 export const Weather = ({ cityName }: Props) => {
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState<Main>({
+    main: {
+      temp: 0,
+    },
+  });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,7 +31,7 @@ export const Weather = ({ cityName }: Props) => {
       );
       setWeather(res.data);
       setIsLoading(false);
-      // console.log("response object:", res);
+      console.log("response object:", res.data.main);
     };
     if (cityName) getData();
   }, [cityName]);
