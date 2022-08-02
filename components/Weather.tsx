@@ -31,7 +31,7 @@ export const Weather = ({ cityName }: Props) => {
       );
       setWeather(res.data);
       setIsLoading(false);
-      // console.log("response object:", res.data.main);
+      console.log("response object:", res.data.main);
     };
     if (cityName) getData();
   }, [cityName]);
