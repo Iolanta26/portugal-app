@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { RegionVisual } from "../types";
-import { opacityAnimation } from "./KeyFrames";
+import { RegionVisual } from "../../types";
+import { opacityAnimation } from "../styles/KeyFrames";
 
 type Props = {
   regionVisual: RegionVisual;

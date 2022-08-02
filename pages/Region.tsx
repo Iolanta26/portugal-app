@@ -9,7 +9,7 @@ import {
   pictureMoveUp,
   Weather,
 } from "../components";
-import { BackButton } from "../components/StyledComponents";
+import { BackButton } from "../components/styles/StyledComponents";
 
 import { getRegionById } from "../functions";
 import { CapitalCity, RegionVisual } from "../types";
@@ -17,7 +17,7 @@ import { colors } from "../theme";
 
 import Image from "next/image";
 import back from "../public/back-icon.svg";
-import ScrollBar from "../components/ScrollBar";
+import ScrollBar from "../components/UI/ScrollBar";
 
 type Props = {
   router: NextRouter;

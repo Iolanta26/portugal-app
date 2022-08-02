@@ -65,7 +65,7 @@ const ExploreButton = styled.button`
   padding: 15px 25px;
   position: absolute;
   top: 500px;
-  color: white;
+  color: black;
   box-shadow: -2px 7px 12px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -2px 7px 12px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -2px 7px 12px 0px rgba(0, 0, 0, 0.75);

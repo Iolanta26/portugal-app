@@ -4,16 +4,16 @@ import { useContext, useState } from "react";
 import { Place, RegionVisual } from "../types";
 import { FavContext } from "../store";
 
-import { HeartButton } from "./HeartButton";
-import { GenericButton } from "./GenericButton";
+import { GenericButton } from "./UI/GenericButton";
 
 import {
   ImageFrame,
   ImageOfPlace,
   LocationName,
   PlaceName,
-} from "./StyledComponents";
+} from "./styles/StyledComponents";
 import { colors } from "../theme";
+import { HeartButton } from "./UI";
 
 type Props = {
   regionVisual: RegionVisual;

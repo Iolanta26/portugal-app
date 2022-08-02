@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { colors } from "../theme";
+import { colors } from "../../theme";
 
 export const BackButton = styled.button`
   background: transparent;

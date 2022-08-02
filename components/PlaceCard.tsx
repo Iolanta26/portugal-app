@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { useState } from "react";
 
 import { LocationModal } from "./LocationModal";
-import { opacityAnimation } from "./KeyFrames";
+import { opacityAnimation } from "./styles/KeyFrames";
 
 import { colors } from "../theme";
 import { Place, RegionVisual } from "../types";

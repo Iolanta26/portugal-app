@@ -1,5 +1,5 @@
 import { keyframes } from "styled-components";
-import { theme } from "../theme";
+import { theme } from "../../theme";
 
 export const opacityAnimation = keyframes`
 from {opacity: 0;}

@@ -4,7 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 
 import { CapitalCity } from "../types";
-import { opacityAnimation, SunRays } from "./KeyFrames";
+import { opacityAnimation, SunRays } from "./styles/KeyFrames";
 import { theme } from "../theme";
 
 type Props = {

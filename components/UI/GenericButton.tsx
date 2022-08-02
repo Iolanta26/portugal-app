@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { colors } from "../theme";
-import { RegionVisual } from "../types";
-import { opacityAnimation } from "./KeyFrames";
+import { colors } from "../../theme";
+import { RegionVisual } from "../../types";
+import { opacityAnimation } from "../styles/KeyFrames";
 
 type ButtonStyle = "circle" | "rectangular";
 
