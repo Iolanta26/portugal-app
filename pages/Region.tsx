@@ -24,7 +24,7 @@ type Props = {
 
 const Region = ({ router }: Props) => {
   const [regionVisual, setRegionVisual] = useState<RegionVisual>("north");
-  const [city, setCity] = useState<CapitalCity>("Coimbra");
+  const [city, setCity] = useState<CapitalCity>("");
   const { regionId } = router.query;
 
   const region = getRegionById(regionId as string);
