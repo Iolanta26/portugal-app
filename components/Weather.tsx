@@ -27,7 +27,7 @@ export const Weather = ({ cityName }: Props) => {
     setIsLoading(true);
     const getData = async () => {
       const res = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.WEATHER_API_KEY}`
       );
       setWeather(res.data);
       setIsLoading(false);
