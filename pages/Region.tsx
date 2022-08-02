@@ -17,6 +17,7 @@ import { colors } from "../theme";
 
 import Image from "next/image";
 import back from "../public/back-icon.svg";
+import ScrollBar from "../components/ScrollBar";
 
 type Props = {
   router: NextRouter;
@@ -67,6 +68,7 @@ const Region = ({ router }: Props) => {
         </BackButton>
       </BackButtonWrapper>
       <Weather cityName={city} />
+      <ScrollBar />
       <ImageFrame $regionDiv={true}>
         <FlexImages>
           <FirstImage src={region?.mainImage} alt="region" />
@@ -195,14 +197,12 @@ const DescriptionText = styled.div<{
 const FirstImage = styled.img`
   height: 350px;
   object-fit: cover;
-  animation: ${pictureMoveUp} 1.5s ease-in-out;
   animation-delay: 1.5s;
 `;
 
 const SecondImage = styled.img`
   height: 350px;
   margin-top: 8px;
-  animation: ${pictureMoveUp} 1.5s ease-in-out;
   animation-delay: 1.5s;
 `;
 

@@ -11,7 +11,7 @@ export const pictureMoveUp = keyframes`
 	transform: translateY(0);
 }
 50% {
-	transform: translateY(-140px);
+	transform: translateY(-100px);
 }
 100% {
 	transform: translateY(0);
