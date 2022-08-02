@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-import { PlaceCard, Weather } from "../components";
+import { PlaceCard } from "../components";
 import { PLACES } from "../dummy-data";
 import { RegionVisual } from "../types";
 
