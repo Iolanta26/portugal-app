@@ -1,17 +1,41 @@
 import styled from "styled-components";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import { BackButton, PlaceCard } from "../components";
-import { FavContext } from "../store";
-import { RegionVisual } from "../types";
+import { Place, RegionVisual } from "../types";
 
 import Image from "next/image";
 import back from "../public/back-icon.svg";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { PlacesState, State } from "../store/reducers/favouriteReducer";
+import { ActionType } from "../store";
 
-const Favourite = () => {
+type Props = {
+  place: Place;
+  regionVisual: RegionVisual;
+};
+
+const Favourite = ({ place, regionVisual }: Props) => {
+  // const [favouriteList, setFavouriteList] = useState();
   const router = useRouter();
-  const placesCtx = useContext(FavContext);
+
+  const storeData = useSelector((state: State) => state);
+  console.log("storeData:", storeData);
+
+  // const listOfFavouritePlaces = useSelector(
+  //   (favouritePlaces: State) => favouritePlaces
+  // );
+
+  // const favouritePlaces = useSelector<PlacesState>(
+  //   (state) => state.favouritePlaces
+  // );
+
+  // const favouriteLocations = useSelector((state) => state.favouritePlaces);
+
+  console.log("favouriteList:", storeData);
+  // setFavouriteList(listOfFavouritePlaces)
 
   return (
     <PageContainer>
@@ -34,20 +58,37 @@ const Favourite = () => {
           </Places>
         </TextWrapper>
         <MainListContainer>
-          {placesCtx.selectedPlaces.length === 0 ? (
+          {/* {favouriteLocations.map((place: any) => (
+            <div key={"fav" + `${place.id}`}>
+              <PlaceCard
+                place={place}
+                regionVisual={regionVisual as RegionVisual}
+              />
+            </div>
+          ))} */}
+          {/* ))} */}
+          {/* {favouriteList.favouritePlaces.map((place: any) => (
+            <div key={"fav" + `${place.id}`}>
+              <PlaceCard
+                place={place}
+                regionVisual={regionVisual as RegionVisual}
+              />
+            </div>
+          ))} */}
+          {/* {arrayOfFavourites.length === 0 ? (
             <NoContentText>
               Start choosing you favourite places to see them here
             </NoContentText>
           ) : (
-            placesCtx.selectedPlaces.map((place) => (
-              <div key={"fav" + `${place.location}` + `${place.id}`}>
+            arrayOfFavourites.map((place) => (
+              <div key={"fav" + `${place.id}`}>
                 <PlaceCard
                   place={place}
-                  regionVisual={place.visual as RegionVisual}
+                  regionVisual={regionVisual as RegionVisual}
                 />
               </div>
             ))
-          )}
+          )} */}
         </MainListContainer>
       </div>
     </PageContainer>

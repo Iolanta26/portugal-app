@@ -37,7 +37,7 @@ const Info = () => (
       <TechnologiesText>Technologies used:</TechnologiesText>
       <div>Next Js</div>
       <div>Typescript</div>
-      <div>Context API</div>
+      <div>Redux</div>
       <div>Styled Components</div>
     </TechnologiesContainer>
   </MainContainer>
