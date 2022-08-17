@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 import { Place, RegionVisual } from "../types";
 
@@ -12,10 +12,9 @@ import {
   PlaceName,
 } from "./styles/StyledComponents";
 import { colors } from "../theme";
-import { HeartButton } from "./UI";
+import { HeartButton, HeartButtonClicked } from "./UI";
 import { ActionType } from "../store";
-import { Provider, useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 type Props = {
   regionVisual: RegionVisual;
@@ -24,8 +23,7 @@ type Props = {
 };
 
 export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
-  // const [isClicked, setIsClicked] = useState(Boolean(false));
-  // const [disable, setDisable] = useState(false);
+  const [placeFavourite, setPlaceFavourite] = useState(Boolean(false));
 
   const { placeName, placeImage, location, placeDesc } = place;
 
@@ -36,7 +34,8 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
       type: ActionType.ADD_PLACE_TO_FAVOURITE,
       payload: place,
     });
-    console.log("place", place);
+    setPlaceFavourite(true);
+    // console.log("place", place);
   };
 
   const removeFromFavourites = () => {
@@ -44,20 +43,11 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
       type: ActionType.REMOVE_PLACE_FROM_FAVORITE,
       payload: place,
     });
-    console.log("place", place);
+    setPlaceFavourite(false);
+    // console.log("place", place);
   };
 
-  const addToFavouriteList = () => {
-    // const foundId = placesCtx.selectedPlaces.find(
-    //   (placeId: Place) => placeId?.id === place.id
-    // );
-    // // console.log("foundId", foundId);
-    // if (foundId) {
-    //   return;
-    // } else {
-    //   return placesCtx.selectedPlaces?.push(place);
-    // }
-  };
+  console.log("placefavourite:", placeFavourite);
 
   return (
     <ModalContainer>
@@ -79,7 +69,7 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
                 addToFavourites();
               }}
             >
-              <HeartButton />
+              {placeFavourite ? <HeartButtonClicked /> : <HeartButton />}
             </HeartEllipseButton>
           </HeartButtonWrapper>
         </MainTextContainer>
@@ -90,13 +80,6 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
             onClick={onClose}
             text="Close"
           />
-          <button
-            onClick={() => {
-              removeFromFavourites();
-            }}
-          >
-            Delete from Favourites
-          </button>
         </ButtonWrapper>
       </MainContainer>
     </ModalContainer>
