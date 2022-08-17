@@ -1,17 +1,18 @@
 import styled from "styled-components";
-import { useContext } from "react";
 import { useRouter } from "next/router";
 
 import { BackButton, PlaceCard } from "../components";
-import { FavContext } from "../store";
-import { RegionVisual } from "../types";
 
 import Image from "next/image";
 import back from "../public/back-icon.svg";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/reducers";
 
 const Favourite = () => {
   const router = useRouter();
-  const placesCtx = useContext(FavContext);
+
+  const storeData = useSelector((state: RootState) => state.reducer);
+  console.log("storeData:", storeData);
 
   return (
     <PageContainer>
@@ -34,20 +35,11 @@ const Favourite = () => {
           </Places>
         </TextWrapper>
         <MainListContainer>
-          {placesCtx.selectedPlaces.length === 0 ? (
-            <NoContentText>
-              Start choosing you favourite places to see them here
-            </NoContentText>
-          ) : (
-            placesCtx.selectedPlaces.map((place) => (
-              <div key={"fav" + `${place.location}` + `${place.id}`}>
-                <PlaceCard
-                  place={place}
-                  regionVisual={place.visual as RegionVisual}
-                />
-              </div>
-            ))
-          )}
+          {storeData.favouritePlaces.map((place: any) => (
+            <div key={"fav" + `${place.id}`}>
+              <PlaceCard place={place} regionVisual={place.visual} />
+            </div>
+          ))}
         </MainListContainer>
       </div>
     </PageContainer>

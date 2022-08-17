@@ -1,20 +1,24 @@
 import type { AppProps } from "next/app";
+import { Provider } from "react-redux";
 import styled from "styled-components";
 import { GlobalStyleReset, Navigation } from "../components";
+import { store } from "../store";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <PhoneMockup>
-        <CameraContainer>
-          <Speaker></Speaker>
-          <Camera></Camera>
-        </CameraContainer>
-        <Component {...pageProps} />
-        <Navigation />
-      </PhoneMockup>
+      <Provider store={store}>
+        <PhoneMockup>
+          <CameraContainer>
+            <Speaker></Speaker>
+            <Camera></Camera>
+          </CameraContainer>
+          <Component {...pageProps} />
+          <Navigation />
+        </PhoneMockup>
 
-      <GlobalStyleReset />
+        <GlobalStyleReset />
+      </Provider>
     </>
   );
 };
