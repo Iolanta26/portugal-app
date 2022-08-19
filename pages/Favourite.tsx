@@ -12,7 +12,7 @@ const Favourite = () => {
   const router = useRouter();
 
   const storeData = useSelector((state: RootState) => state.reducer);
-  console.log("storeData:", storeData);
+  // console.log("storeData:", storeData);
 
   return (
     <PageContainer>

@@ -6,7 +6,6 @@ import {
   GenericButton,
   IconsForRegions,
   opacityAnimation,
-  pictureMoveUp,
   Weather,
 } from "../components";
 import { BackButton } from "../components/styles/StyledComponents";

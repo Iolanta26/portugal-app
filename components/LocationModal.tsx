@@ -38,16 +38,7 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
     // console.log("place", place);
   };
 
-  const removeFromFavourites = () => {
-    dispatch({
-      type: ActionType.REMOVE_PLACE_FROM_FAVORITE,
-      payload: place,
-    });
-    setPlaceFavourite(false);
-    // console.log("place", place);
-  };
-
-  console.log("placefavourite:", placeFavourite);
+  // console.log("placefavourite:", placeFavourite);
 
   return (
     <ModalContainer>
