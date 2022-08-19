@@ -47,6 +47,7 @@ const ListOfPlaces = ({ router }: Props) => {
               <PlaceCard
                 place={place}
                 regionVisual={regionVisual as RegionVisual}
+                style="full"
               />
             </CardsContainer>
           ))}

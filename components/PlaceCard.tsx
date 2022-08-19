@@ -1,11 +1,15 @@
 import styled, { css } from "styled-components";
 import { useState } from "react";
+import { ActionType } from "../store";
+import { useDispatch } from "react-redux";
 
 import { LocationModal } from "./LocationModal";
 import { opacityAnimation } from "./styles/KeyFrames";
 
 import { colors } from "../theme";
 import { Place, RegionVisual } from "../types";
+import deleteButton from "../public/delete-button.svg";
+import Image from "next/image";
 
 type CardStyle = "full" | "image_only";
 
@@ -13,12 +17,26 @@ type Props = {
   regionVisual: RegionVisual;
   place: Place;
   style?: CardStyle;
+  isDeleteButton?: boolean;
 };
 
-export const PlaceCard = ({ regionVisual, place, style = "full" }: Props) => {
+export const PlaceCard = ({
+  regionVisual,
+  place,
+  style = "full",
+  isDeleteButton,
+}: Props) => {
   const [openModal, setOpenModal] = useState(false);
+  const dispatch = useDispatch();
 
   const { placeName, placeImage, location } = place;
+
+  const removeFromFavourites = (place: Place) => {
+    dispatch({
+      type: ActionType.REMOVE_PLACE_FROM_FAVORITE,
+      payload: place,
+    });
+  };
 
   return (
     <>
@@ -37,6 +55,11 @@ export const PlaceCard = ({ regionVisual, place, style = "full" }: Props) => {
           <Name>{placeName}</Name>
           <Location>Location: {location}</Location>
         </ShortDesc>
+        {isDeleteButton && (
+          <DeleteButton onClick={() => removeFromFavourites(place)}>
+            <Image src={deleteButton} alt="delete-button" />
+          </DeleteButton>
+        )}
       </Card>
 
       {openModal && (
@@ -60,7 +83,6 @@ const Card = styled.div<{
   position: relative;
   width: 250px;
   height: 150px;
-  overflow: hidden;
   margin: 10px;
   border-radius: 15px;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
@@ -152,4 +174,11 @@ const PlaceImage = styled.img<{
       width: 115px;
       height: 115px;
     `}
+`;
+
+const DeleteButton = styled.button`
+  background-color: transparent;
+  position: absolute;
+  right: -5px;
+  top: -15px;
 `;

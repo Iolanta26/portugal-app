@@ -37,7 +37,11 @@ const Favourite = () => {
         <MainListContainer>
           {storeData.favouritePlaces.map((place: any) => (
             <div key={"fav" + `${place.id}`}>
-              <PlaceCard place={place} regionVisual={place.visual} />
+              <PlaceCard
+                place={place}
+                regionVisual={place.visual}
+                isDeleteButton
+              />
             </div>
           ))}
         </MainListContainer>
@@ -68,13 +72,6 @@ const MainListContainer = styled.div`
   flex-wrap: wrap;
   width: 350px;
   margin-top: 10px;
-`;
-
-const NoContentText = styled.div`
-  width: 220px;
-  margin-top: 100px;
-  font-size: 14px;
-  text-align: center;
 `;
 
 export default Favourite;
