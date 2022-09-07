@@ -3,7 +3,7 @@ import { colors } from "../../theme";
 import { RegionVisual } from "../../types";
 import { opacityAnimation } from "../styles/KeyFrames";
 
-type ButtonStyle = "circle" | "rectangular";
+type ButtonStyle = "circle" | "rectangular" | "middle_size";
 
 type Props = {
   text: string;
@@ -70,6 +70,15 @@ const GenericBtn = styled.button<{
       height: 63px;
       border-radius: 50%;
       padding: 0;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    `}
+
+  ${({ $style }) =>
+    $style === "middle_size" &&
+    css`
+      width: 100px;
+      border-radius: 10px;
+      padding: 15px 10px;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
     `}
 `;

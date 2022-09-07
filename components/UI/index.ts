@@ -5,3 +5,8 @@ export * from "./IconsForRegions";
 export * from "./MapSvgComponent";
 export * from "./ScrollBar";
 export * from "./GeneralInput";
+export * from "./RegionSelect";
+export * from "./Input";
+export * from "./ImageInput";
+export * from "./StyledImageInput";
+export * from "./TextArea";

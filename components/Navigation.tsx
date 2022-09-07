@@ -8,37 +8,41 @@ export const Navigation = () => {
   return (
     <MainNavContainer>
       <Navbar>
-        <Link href="/ChooseRegion">
-          <MenuButton>
-            <Icon src="./map-pin.svg" alt="map-pin" />
-            <MenuText>Regions</MenuText>
-          </MenuButton>
-        </Link>
-        <Link href="/Search">
-          <MenuButton>
-            <Icon src="./search.svg" alt="search" />
-            <MenuText>Search</MenuText>
-          </MenuButton>
-        </Link>
-        <ImageContainer>
-          <CenterWrapper>
-            <ImageWrapper>
-              <AzulejoImage src={azulejo} alt="center" />
-            </ImageWrapper>
-          </CenterWrapper>
-        </ImageContainer>
-        <Link href="/Favourite">
-          <MenuButton>
-            <HeartIcon src="./heart.svg" alt="favourite" />
-            <MenuText>Favourites</MenuText>
-          </MenuButton>
-        </Link>
-        <Link href="/Info">
-          <MenuButton>
-            <Icon src="./info.svg" alt="info" />
-            <MenuText>Info</MenuText>
-          </MenuButton>
-        </Link>
+        <IconsDiv>
+          <Link href="/ChooseRegion">
+            <MenuButton>
+              <Icon src="./map-pin.svg" alt="map-pin" />
+              <MenuText>Regions</MenuText>
+            </MenuButton>
+          </Link>
+          <Link href="/Search">
+            <MenuButton>
+              <Icon src="./search.svg" alt="search" />
+              <MenuText>Search</MenuText>
+            </MenuButton>
+          </Link>
+          <ImageContainer>
+            <Link href="/Info">
+              <CenterWrapper>
+                <ImageWrapper>
+                  <AzulejoImage src={azulejo} alt="center" />
+                </ImageWrapper>
+              </CenterWrapper>
+            </Link>
+          </ImageContainer>
+          <Link href="/AddPlace">
+            <MenuButton>
+              <Icon src="./plus-circle.svg" alt="add-icon" />
+              <MenuText>Add</MenuText>
+            </MenuButton>
+          </Link>
+          <Link href="/Favourite">
+            <MenuButton>
+              <HeartIcon src="./heart.svg" alt="favourite" />
+              <MenuText>Favourites</MenuText>
+            </MenuButton>
+          </Link>
+        </IconsDiv>
       </Navbar>
     </MainNavContainer>
   );
@@ -64,11 +68,19 @@ const Navbar = styled.div`
   border-bottom-left-radius: 40px;
 `;
 
+const IconsDiv = styled.div`
+  display: flex;
+  width: 300px;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 7px;
+`;
+
 const ImageContainer = styled.div`
   overflow: hidden;
   height: 60px;
   position: relative;
-  bottom: 5px;
+  bottom: 17px;
 `;
 
 const CenterWrapper = styled.div`
@@ -83,6 +95,7 @@ const CenterWrapper = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 1;
+  cursor: pointer;
 `;
 
 const AzulejoImage = styled(Image)`
@@ -100,13 +113,13 @@ const ImageWrapper = styled.div`
 const Icon = styled.img`
   position: absolute;
   top: 0px;
-  width: 20px;
+  width: 23px;
 `;
 
 const HeartIcon = styled.img`
   position: absolute;
   top: 0px;
-  width: 20px;
+  width: 23px;
 `;
 
 const MenuButton = styled.button`
@@ -116,8 +129,8 @@ const MenuButton = styled.button`
   align-items: center;
   font-size: 10px;
   background: transparent;
-  height: 33px;
-  width: 30px;
+  height: 37px;
+  width: 40px;
   border: none;
   position: relative;
 `;
