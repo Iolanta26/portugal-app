@@ -11,7 +11,7 @@ import {
   LocationName,
   PlaceName,
 } from "./styles/StyledComponents";
-import { colors } from "../theme";
+import { colors, theme } from "../theme";
 import { HeartButton, HeartButtonClicked } from "./UI";
 import { ActionType } from "../store";
 import { useDispatch } from "react-redux";
@@ -44,6 +44,11 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
     <ModalContainer>
       <MainContainer>
         <ImageFrame $regionDiv={false}>
+          <SocialBarContainer>
+            <InstaLink href={instagramLink} target="_blank">
+              <InstaIcon src="./instagram.png" alt="instagram-icon" />
+            </InstaLink>
+          </SocialBarContainer>
           <ImageOfPlace
             src={placeImage}
             alt="place image"
@@ -64,14 +69,7 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
             </HeartEllipseButton>
           </HeartButtonWrapper>
         </MainTextContainer>
-        <Description>
-          {placeDesc}
-          <SocialBarContainer>
-            <InstaLink href={instagramLink} target="_blank">
-              <InstaIcon src="./instagram.svg" alt="instagram-icon" />
-            </InstaLink>
-          </SocialBarContainer>
-        </Description>
+        <Description>{placeDesc}</Description>
 
         <ButtonWrapper>
           <GenericButton
@@ -116,13 +114,29 @@ const Description = styled.div`
 `;
 
 const SocialBarContainer = styled.div`
-  margin-top: 15px;
+  top: 30px;
+  left: 15px;
+  position: absolute;
+  background-color: transparent;
+  border: 0.3px solid ${theme.colors.beigePallete};
+  border-radius: 10px;
+  width: 45px;
+  height: 45px;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const InstaLink = styled.a``;
+const InstaLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const InstaIcon = styled.img`
-  width: 35px;
+  width: 28px;
 `;
 
 const MainTextContainer = styled.div<{
