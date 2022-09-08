@@ -35,11 +35,11 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
       payload: place,
     });
     setPlaceFavourite(true);
-    // console.log("place", place);
   };
 
-  // console.log("placefavourite:", placeFavourite);
+  const instagramLink = `https://www.instagram.com/explore/tags/${place.instagram}`;
 
+  console.log(instagramLink);
   return (
     <ModalContainer>
       <MainContainer>
@@ -64,7 +64,15 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
             </HeartEllipseButton>
           </HeartButtonWrapper>
         </MainTextContainer>
-        <Description>{placeDesc}</Description>
+        <Description>
+          {placeDesc}
+          <SocialBarContainer>
+            <InstaLink href={instagramLink} target="_blank">
+              <InstaIcon src="./instagram.svg" alt="instagram-icon" />
+            </InstaLink>
+          </SocialBarContainer>
+        </Description>
+
         <ButtonWrapper>
           <GenericButton
             regionVisual={regionVisual}
@@ -103,6 +111,18 @@ const Description = styled.div`
   font-size: 12px;
   position: absolute;
   top: 350px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const SocialBarContainer = styled.div`
+  margin-top: 15px;
+`;
+
+const InstaLink = styled.a``;
+
+const InstaIcon = styled.img`
+  width: 35px;
 `;
 
 const MainTextContainer = styled.div<{

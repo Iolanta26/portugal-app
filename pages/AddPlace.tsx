@@ -50,7 +50,6 @@ const AddPlace = () => {
           }}
           text="Submit"
           regionVisual="central"
-          style="middle_size"
         />
       </FormContainer>
     </MainContainer>

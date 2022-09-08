@@ -15,6 +15,7 @@ export type Place = {
   location: string;
   visual: string;
   placeName: string;
+  instagram: string;
   placeDesc: string;
   placeImage: string;
 };
