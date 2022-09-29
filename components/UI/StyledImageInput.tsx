@@ -107,12 +107,12 @@ const UploadImageContainer = styled.label<{
 
 const CloseButton = styled.div`
   position: absolute;
-  bottom: 5px;
+  top: 5px;
   right: 5px;
   background: white;
   color: red;
-  width: 24px;
-  height: 24px;
-  border-radius: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
   cursor: pointer;
 `;

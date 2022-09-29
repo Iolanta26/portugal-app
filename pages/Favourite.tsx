@@ -12,7 +12,6 @@ const Favourite = () => {
   const router = useRouter();
 
   const storeData = useSelector((state: RootState) => state.reducer);
-  // console.log("storeData:", storeData);
 
   return (
     <PageContainer>
@@ -35,15 +34,21 @@ const Favourite = () => {
           </Places>
         </TextWrapper>
         <MainListContainer>
-          {storeData.favouritePlaces.map((place: any) => (
-            <div key={"fav" + `${place.id}`}>
-              <PlaceCard
-                place={place}
-                regionVisual={place.visual}
-                isDeleteButton
-              />
-            </div>
-          ))}
+          {storeData.favouritePlaces.length === 0 ? (
+            <NoDataText>
+              Start choosing your favourite locations to see them here
+            </NoDataText>
+          ) : (
+            storeData.favouritePlaces.map((place: any) => (
+              <div key={"fav" + `${place.id}`}>
+                <PlaceCard
+                  place={place}
+                  regionVisual={place.visual}
+                  isDeleteButton
+                />
+              </div>
+            ))
+          )}
         </MainListContainer>
       </div>
     </PageContainer>
@@ -72,6 +77,17 @@ const MainListContainer = styled.div`
   flex-wrap: wrap;
   width: 350px;
   margin-top: 10px;
+`;
+
+const NoDataText = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 60%;
+  margin-top: 30px;
+  font-size: 14px;
 `;
 
 export default Favourite;

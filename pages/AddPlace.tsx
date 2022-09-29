@@ -1,3 +1,4 @@
+import { InputAdornment } from "@mui/material";
 import styled from "styled-components";
 import {
   GeneralInput,
@@ -21,6 +22,17 @@ const AddPlace = () => {
         <RegionSelect />
         <Space />
         <GeneralInput placeholder="Type city" label="City" />
+        <Space />
+        <GeneralInput
+          placeholder="Instagram account (optional)"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <InstaIcon src="./instagram.png" alt="instagram-icon" />
+              </InputAdornment>
+            ),
+          }}
+        />
         <SmallText>Click and upload your images here</SmallText>
         <ImageContainer>
           <StyledImageInput
@@ -102,4 +114,8 @@ const ImageContainer = styled.div`
   width: 230px;
   justify-content: space-evenly;
   margin-bottom: 15px;
+`;
+
+const InstaIcon = styled.img`
+  width: 17px;
 `;
