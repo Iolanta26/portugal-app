@@ -11,15 +11,12 @@ const ScrollBar = () => {
 };
 
 const CirclesContainer = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 3000;
   width: fit-content;
   height: 50px;
-  left: 300px;
-  top: 50px;
 `;
 
 const FirstCircle = styled.div`

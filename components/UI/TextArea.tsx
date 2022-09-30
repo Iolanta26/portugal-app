@@ -50,12 +50,13 @@ TextArea.displayName = "TextArea";
 const Container = styled.div`
   width: 100%;
   position: relative;
+  display: flex;
 `;
 
 const TextAreaInput = styled.textarea`
-  min-width: 100%;
+  // min-width: 100%;
   width: 100%;
-  max-width: 325px;
+  max-width: 230px;
   min-height: 64px;
   height: 132px;
   border: 1px solid rgba(252, 183, 67, 1);
@@ -69,6 +70,6 @@ const Counter = styled.div`
   color: lightgray;
   font-size: 10px;
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  right: 35px;
+  bottom: 7px;
 `;

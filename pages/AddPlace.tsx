@@ -12,11 +12,15 @@ import { theme } from "../theme";
 const AddPlace = () => {
   return (
     <MainContainer>
-      <TextContainer>
-        <SubText>Add your favourite place to eat</SubText>
-      </TextContainer>
-      <div>This section is in progress...</div>
       <FormContainer>
+        <TextContainer>
+          <SubText>Add your favourite place to eat</SubText>
+        </TextContainer>
+        <div
+          style={{ fontSize: "14px", marginBottom: "20px", marginTop: "20px" }}
+        >
+          This section is in progress...
+        </div>
         <GeneralInput placeholder="Type restaurant name" label="Restaurant" />
         <Space />
         <RegionSelect />
@@ -73,17 +77,17 @@ export default AddPlace;
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  // height: fit-content;
 `;
 
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-top: 30px;
-  margin-bottom: 20px;
+  padding-bottom: 50px;
 `;
 
 const Space = styled.div`
@@ -91,8 +95,6 @@ const Space = styled.div`
 `;
 
 const TextContainer = styled.div`
-  margin-bottom: 15px;
-  margin-top: 15px;
   display: flex;
 `;
 

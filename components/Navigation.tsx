@@ -50,27 +50,35 @@ export const Navigation = () => {
 
 const MainNavContainer = styled.div`
   position: absolute;
-  bottom: 48px;
-  z-index: 200;
+  bottom: 0;
+  z-index: 1200;
+  height: 50px;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 50px;
+  max-height: 50px;
 `;
 
 const Navbar = styled.div`
   position: fixed;
+  bottom: 0;
   background-color: #fecf81;
   height: 50px;
   width: 100%;
-  max-width: 320px;
+  max-width: 1000px;
+  min-height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  border-bottom-right-radius: 40px;
-  border-bottom-left-radius: 40px;
 `;
 
 const IconsDiv = styled.div`
   display: flex;
-  width: 300px;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  width: 100%;
   justify-content: space-evenly;
   position: absolute;
   top: 7px;
@@ -78,9 +86,11 @@ const IconsDiv = styled.div`
 
 const ImageContainer = styled.div`
   overflow: hidden;
-  height: 60px;
-  position: relative;
+  height: 80px;
+  width: 80px;
   bottom: 17px;
+  position: relative;
+  margin-top: 0;
 `;
 
 const CenterWrapper = styled.div`
@@ -129,13 +139,11 @@ const MenuButton = styled.button`
   align-items: center;
   font-size: 10px;
   background: transparent;
-  height: 37px;
+  height: 30px;
   width: 40px;
   border: none;
-  position: relative;
 `;
 
 const MenuText = styled.div`
-  position: absolute;
-  bottom: 0px;
+  margin-bottom: 17px;
 `;

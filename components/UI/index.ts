@@ -1,3 +1,4 @@
+export * from "./BackButtonWithText";
 export * from "./GenericButton";
 export * from "./HeartButton";
 export * from "./HeartButtonClicked";

@@ -1,25 +1,26 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
-import { BackButton, FlexContainer, MapSvgComponent } from "../components";
-
-import Image from "next/image";
-import back from "../public/back-icon.svg";
+import {
+  BackButtonWithText,
+  BackButtonWrapper,
+  FlexContainer,
+  MapSvgComponent,
+} from "../components";
 
 const MapPortugal = () => {
   const router = useRouter();
 
   return (
     <MainFlexContainer>
-      <ButtonWrapper>
-        <BackButton onClick={() => router.push({ pathname: "./Explore" })}>
-          <Image src={back} alt="back" />
-        </BackButton>
-      </ButtonWrapper>
-      <TextContainer>
-        <MainText>Click on region</MainText>
-        <SubText>you would like to see</SubText>
-      </TextContainer>
+      <BackButtonWrapper>
+        <BackButtonWithText
+          onClick={() => router.push({ pathname: "./Explore" })}
+          mainText="Click on region"
+          subText="you would like to see"
+        />
+      </BackButtonWrapper>
+      <div style={{ marginTop: "8vh" }} />
       <FlexContainer $isRow={false}>
         <MapSvgComponent />
       </FlexContainer>
@@ -30,33 +31,8 @@ const MapPortugal = () => {
 export default MapPortugal;
 
 const MainFlexContainer = styled.div`
-  // height: 640px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // padding-bottom: 16px;
-`;
-
-const TextContainer = styled.div`
-  margin-bottom: 25px;
-  margin-top: 10px;
-  margin-left: 60px;
-  width: 300px;
-`;
-
-const ButtonWrapper = styled.div`
-  background-color: red;
-  width: 300px;
-`;
-
-const MainText = styled.div`
-  font-size: 20px;
-  font-weight: 600;
-  color: #b07420;
-`;
-
-const SubText = styled.div`
-  font-size: 16px;
-  font-weight: 300;
-  color: #b07420;
 `;

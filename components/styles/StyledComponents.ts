@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
 import { colors } from "../../theme";
 
-export const BackButton = styled.button`
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 5;
-  position: fixed;
+export const BackButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 `;
 
 export const FlexContainer = styled.div<{
@@ -16,7 +16,7 @@ export const FlexContainer = styled.div<{
   justify-content: center;
   align-items: center;
   flex-direction: ${(props) => (props.$isRow === true ? "row" : "column")};
-  margin: 0;
+  margin: 0
   padding: 0;
 `;
 
@@ -63,8 +63,8 @@ export const ImageFrame = styled.div<{
   $regionDiv: boolean;
 }>`
   overflow: hidden;
-  height: ${(props) => (props.$regionDiv === true ? "400px" : "270px")};
-  width: 320px;
+  height: ${(props) => (props.$regionDiv === true ? "400px" : "43vh")};
+  width: 100vw;
   display: flex;
   justify-content: center;
   position: absolute;
@@ -74,8 +74,8 @@ export const ImageFrame = styled.div<{
 export const ImageOfPlace = styled.img<{
   $regionDiv: boolean;
 }>`
-  width: 100%;
-  // height: ${(props) => (props.$regionDiv === true ? "400px" : "300px")};
+  width: 100vw;
+
   object-fit: cover;
   animation-delay: 2s;
 

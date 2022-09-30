@@ -6,14 +6,14 @@ const Explore = () => {
   const router = useRouter();
   return (
     <ContainerMain>
-      <Background src="./landing-image.jpg" alt="landing" loading="eager" />
+      <VideoBackground src="./portugal.mp4" autoPlay loop muted />
       <MainText>
         <Portugal>Portugal</Portugal>
         <Paragraph>in your pocket</Paragraph>
+        <ExploreButton onClick={() => router.push("./ChooseRegion")}>
+          Start exploring
+        </ExploreButton>
       </MainText>
-      <ExploreButton onClick={() => router.push("./ChooseRegion")}>
-        Start exploring
-      </ExploreButton>
     </ContainerMain>
   );
 };
@@ -24,9 +24,14 @@ const ContainerMain = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100vh;
+  width: 100%;
 `;
 
 const Portugal = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Rochester", cursive;
   color: white;
   font-size: 50px;
@@ -39,12 +44,10 @@ const Paragraph = styled.div`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
 `;
 
-const Background = styled.img`
-  position: relative;
-  object-fit: cover;
-  height: 620px;
+const VideoBackground = styled.video`
   width: 100%;
-  top: -30px;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const MainText = styled.div`
@@ -52,19 +55,18 @@ const MainText = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 3;
   position: absolute;
-  top: 300px;
+  width: 100%;
+  height: 100%;
 `;
 
 const ExploreButton = styled.button`
   border: none;
+  margin-top: 50px;
   background: ${colors.orangePalette};
   border-radius: 15px;
   font-size: 15px;
   padding: 15px 25px;
-  position: absolute;
-  top: 500px;
   color: black;
   box-shadow: -2px 7px 12px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -2px 7px 12px 0px rgba(0, 0, 0, 0.75);
