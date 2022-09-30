@@ -3,15 +3,18 @@ import Image from "next/image";
 
 import github from "/public/github.png";
 import linkedin from "/public/linkedin.png";
+import { LogoText } from "../components";
 
 const Info = () => (
   <MainContainer>
     <ProjectText>Project is designed and coded by</ProjectText>
     <MyName>Iolanta Scheifel</MyName>
     <ProjectText>
-      <Cursive>Portugal in your pocket</Cursive> is created to show all
-      diversity of it's nature and famous locations. This app is going to grow
-      with new features in future.
+      <LogoText isEmphasized />
+      <br />
+      <br />
+      is created to show all diversity of it's nature and famous locations. This
+      app is going to grow with new features in future.
     </ProjectText>
     <SocialIcons>
       <SocialIconContainer>
@@ -67,12 +70,6 @@ const ProjectText = styled.div`
 const MyName = styled.div`
   font-size: 16px;
   margin-top: 20px;
-`;
-
-const Cursive = styled.p`
-  font-family: "Rochester", cursive;
-  font-size: 24px;
-  margin-bottom: 10px;
 `;
 
 const SocialIcons = styled.div`

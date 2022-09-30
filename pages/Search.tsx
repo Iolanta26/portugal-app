@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-import { PlaceCard } from "../components";
+import { LogoText, PlaceCard } from "../components";
 import { PLACES } from "../dummy-data";
 import { RegionVisual } from "../types";
 
@@ -35,7 +35,8 @@ const Search = ({}: Props) => {
   });
 
   return (
-    <>
+    <MainContainer>
+      <LogoText />
       <SearchMainContainer>
         <SearchBarWrapper>
           <SearchInput
@@ -63,15 +64,21 @@ const Search = ({}: Props) => {
           })}
         </AllItems>
       </FlexWrapper>
-    </>
+    </MainContainer>
   );
 };
 
 export default Search;
 
+const MainContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
 const SearchMainContainer = styled.div`
   position: relative;
-  top: 35px;
+  top: 45px;
 `;
 
 const SearchBarWrapper = styled.div`

@@ -11,3 +11,4 @@ export * from "./Input";
 export * from "./ImageInput";
 export * from "./StyledImageInput";
 export * from "./TextArea";
+export * from "./LogoText";

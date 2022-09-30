@@ -5,6 +5,7 @@ import {
   BackButtonWithText,
   BackButtonWrapper,
   FlexContainer,
+  LogoText,
   MapSvgComponent,
 } from "../components";
 
@@ -13,6 +14,7 @@ const MapPortugal = () => {
 
   return (
     <MainFlexContainer>
+      <LogoText />
       <BackButtonWrapper>
         <BackButtonWithText
           onClick={() => router.push({ pathname: "./Explore" })}

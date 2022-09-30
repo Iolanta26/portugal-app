@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import {
   BackButtonWithText,
   BackButtonWrapper,
+  LogoText,
   PlaceCard,
 } from "../components";
 
@@ -17,6 +18,7 @@ const Favourite = () => {
 
   return (
     <PageContainer>
+      <LogoText />
       <BackButtonWrapper>
         <BackButtonWithText
           onClick={() => router.back()}
