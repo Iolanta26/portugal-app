@@ -6,7 +6,7 @@ const Explore = () => {
   const router = useRouter();
   return (
     <ContainerMain>
-      <VideoBackground src="./portugal.mp4" autoPlay loop muted />
+      <VideoBackground src="./portugal.mp4" autoPlay loop muted playsInline />
       <MainText>
         <Portugal>Portugal</Portugal>
         <Paragraph>in your pocket</Paragraph>
