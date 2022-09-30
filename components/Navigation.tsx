@@ -49,10 +49,12 @@ export const Navigation = () => {
 };
 
 const MainNavContainer = styled.div`
+  visibility: hidden;
   @media (max-width: 768px) {
     position: fixed;
     bottom: 50px;
     z-index: 1200;
+    visibility: visible;
   }
 `;
 
