@@ -113,7 +113,7 @@ const Description = styled.div`
 
 const SocialBarContainer = styled.div`
   top: 80px;
-  left: 40px;
+  left: 30px;
   position: absolute;
   background-color: transparent;
   border: 0.3px solid ${theme.colors.beigePallete};
@@ -163,23 +163,13 @@ const MainTextContainer = styled.div<{
   top: 38vh;
   z-index: 120;
   padding: 20px 30px;
-
-  @media (min-height: 768px) {
-    border-radius: 30px;
-    width: 80vw;
-  }
 `;
 
 const HeartButtonWrapper = styled.div`
   position: absolute;
   top: 80px;
-  right: 40px;
+  right: 27px;
   cursor: pointer;
-
-  @media (max-height: 768px) {
-    position: absolute;
-    top: 45vh;
-  }
 `;
 
 const HeartEllipseButton = styled.button<{

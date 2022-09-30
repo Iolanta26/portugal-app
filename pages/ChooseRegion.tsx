@@ -20,7 +20,7 @@ const MapPortugal = () => {
           subText="you would like to see"
         />
       </BackButtonWrapper>
-      <div style={{ marginTop: "60px" }} />
+      <div style={{ marginTop: "8vh" }} />
       <FlexContainer $isRow={false}>
         <MapSvgComponent />
       </FlexContainer>

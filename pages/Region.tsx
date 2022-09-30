@@ -60,6 +60,7 @@ const Region = ({ router }: Props) => {
 
   return (
     <MainContainer>
+      <br />
       <BackButtonWrapper>
         <BackButtonWithText
           onClick={() => router.push({ pathname: "./ChooseRegion" })}

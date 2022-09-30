@@ -3,15 +3,16 @@ import { Provider } from "react-redux";
 import styled from "styled-components";
 import { GlobalStyleReset, Navigation } from "../components";
 import { store } from "../store";
+import { theme } from "../theme";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Provider store={store}>
         <MainContentContainer>
+          <Navigation />
           <AppContentWrapper>
             <Component {...pageProps} />
-            <Navigation />
           </AppContentWrapper>
         </MainContentContainer>
         <GlobalStyleReset />
@@ -34,4 +35,8 @@ const AppContentWrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 1000px;
+  @media (min-width: 768px) {
+    border-right: 1px solid ${theme.colors.orangePalette};
+    border-left: 1px solid ${theme.colors.orangePalette};
+  }
 `;

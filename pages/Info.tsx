@@ -35,10 +35,13 @@ const Info = () => (
     </SocialIcons>
     <TechnologiesContainer>
       <TechnologiesText>Technologies used:</TechnologiesText>
-      <div>Next Js</div>
-      <div>Typescript</div>
-      <div>Redux</div>
-      <div>Styled Components</div>
+      <div>NEXT JS / REACT</div>
+      <br />
+      <div>TYPESCRIPT</div>
+      <br />
+      <div>REDUX</div>
+      <br />
+      <div>STYLED COMPONENTS</div>
     </TechnologiesContainer>
   </MainContainer>
 );
@@ -50,15 +53,15 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 30px;
-  padding-bottom: 100px;
+  height: 100vh;
 `;
 
 const ProjectText = styled.div`
   display: block;
   text-align: center;
-  width: 60%;
-  font-size: 13px;
+  width: 40%;
+  font-size: 14px;
+  margin-top: 20px;
 `;
 
 const MyName = styled.div`

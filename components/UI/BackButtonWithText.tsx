@@ -39,7 +39,7 @@ const MainWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 200px;
+  width: 250px;
 `;
 
 const BackButton = styled.button`
@@ -48,11 +48,11 @@ const BackButton = styled.button`
   cursor: pointer;
   z-index: 5;
   position: fixed;
-  margin-left: 10px;
+  margin-left: 25px;
 `;
 
 const TextContainer = styled.div`
-  margin-left: 40px;
+  margin-left: 60px;
 `;
 
 const MainText = styled.div<{ $isSmall?: boolean; $fontWeight?: boolean }>`
