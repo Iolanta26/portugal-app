@@ -50,10 +50,8 @@ export const Weather = ({ cityName }: Props) => {
 };
 
 const WeatherContainer = styled.div`
-  position: relative;
   z-index: 100;
-  right: 10px;
-  top: 5px;
+  top: 35px;
   left: 250px;
   background-color: transparent;
   border: 1px solid ${theme.colors.beigePallete};

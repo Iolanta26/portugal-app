@@ -6,14 +6,16 @@ const Explore = () => {
   const router = useRouter();
   return (
     <ContainerMain>
-      <Background src="./landing-image.jpg" alt="landing" loading="eager" />
-      <MainText>
-        <Portugal>Portugal</Portugal>
-        <Paragraph>in your pocket</Paragraph>
-      </MainText>
-      <ExploreButton onClick={() => router.push("./ChooseRegion")}>
-        Start exploring
-      </ExploreButton>
+      <AdditionalContainer>
+        {/* <Background src="./landing-image.jpg" alt="landing" loading="eager" /> */}
+        <MainText>
+          <Portugal>Portugal</Portugal>
+          <Paragraph>in your pocket</Paragraph>
+        </MainText>
+        <ExploreButton onClick={() => router.push("./ChooseRegion")}>
+          Start exploring
+        </ExploreButton>
+      </AdditionalContainer>
     </ContainerMain>
   );
 };
@@ -24,9 +26,20 @@ const ContainerMain = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-height: 100vh;
+`;
+
+const AdditionalContainer = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  background: green;
 `;
 
 const Portugal = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Rochester", cursive;
   color: white;
   font-size: 50px;
@@ -40,11 +53,14 @@ const Paragraph = styled.div`
 `;
 
 const Background = styled.img`
-  position: relative;
-  object-fit: cover;
-  height: 620px;
-  width: 100%;
-  top: -30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // position: relative;
+  // object-fit: cover;
+  // height: 620px;
+  // width: 100%;
+  // top: -30px;
 `;
 
 const MainText = styled.div`

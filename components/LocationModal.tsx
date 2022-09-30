@@ -44,11 +44,6 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
     <ModalContainer>
       <MainContainer>
         <ImageFrame $regionDiv={false}>
-          <SocialBarContainer>
-            <InstaLink href={instagramLink} target="_blank">
-              <InstaIcon src="./instagram.png" alt="instagram-icon" />
-            </InstaLink>
-          </SocialBarContainer>
           <ImageOfPlace
             src={placeImage}
             alt="place image"
@@ -59,6 +54,11 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
         <MainTextContainer $regionVisual={regionVisual}>
           <PlaceName $regionVisual={regionVisual}>{placeName}</PlaceName>
           <LocationName $regionVisual={regionVisual}>{location}</LocationName>
+          <SocialBarContainer>
+            <InstaLink href={instagramLink} target="_blank">
+              <InstaIcon src="./instagram.png" alt="instagram-icon" />
+            </InstaLink>
+          </SocialBarContainer>
           <HeartButtonWrapper>
             <HeartEllipseButton
               onClick={() => {
@@ -70,7 +70,6 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
           </HeartButtonWrapper>
         </MainTextContainer>
         <Description>{placeDesc}</Description>
-
         <ButtonWrapper>
           <GenericButton
             regionVisual={regionVisual}
@@ -85,37 +84,36 @@ export const LocationModal = ({ place, regionVisual, onClose }: Props) => {
 
 const ModalContainer = styled.div`
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
+  right: 0;
 `;
 
 const MainContainer = styled.div`
   position: fixed;
   z-index: 200;
-  border-radius: 40px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 630px;
-  width: 320px;
+  height: 100vh;
+  width: 100%;
+  max-width: 1000px;
   background-color: white;
   overflow: hidden;
 `;
 
 const Description = styled.div`
-  width: 280px;
+  width: 80vw;
+  max-width: 750px;
   text-align: center;
-  margin-bottom: 30px;
   font-size: 12px;
   position: absolute;
-  top: 350px;
-  display: flex;
-  flex-direction: column;
+  top: 60vh;
 `;
 
 const SocialBarContainer = styled.div`
-  top: 30px;
-  left: 15px;
+  top: 80px;
+  left: 40px;
   position: absolute;
   background-color: transparent;
   border: 0.3px solid ${theme.colors.beigePallete};
@@ -154,36 +152,34 @@ const MainTextContainer = styled.div<{
       : props.$regionVisual === "algarve"
       ? `${colors.brownPalette}`
       : "transparent"};
-  width: 290px;
+  width: 80vw;
+  max-width: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border-radius: 30px;
-  position: absolute;
-  bottom: 310px;
+  position: relative;
+  top: 38vh;
   z-index: 120;
   padding: 20px 30px;
 
-  // @media (max-width: 768px) {
-  //   top: -110px;
-  //   width: 100%;
-  // }
-
-  // @media (max-height: 840px) {
-  //   top: -50px;
-  // }
+  @media (min-height: 768px) {
+    border-radius: 30px;
+    width: 80vw;
+  }
 `;
 
 const HeartButtonWrapper = styled.div`
   position: absolute;
   top: 80px;
-  right: 30px;
+  right: 40px;
   cursor: pointer;
 
-  // @media (max-height: 840px) {
-  //   top: 70px;
-  // }
+  @media (max-height: 768px) {
+    position: absolute;
+    top: 45vh;
+  }
 `;
 
 const HeartEllipseButton = styled.button<{
@@ -209,5 +205,5 @@ const HeartEllipseButton = styled.button<{
 
 const ButtonWrapper = styled.div`
   position: absolute;
-  top: 530px;
+  bottom: 5vh;
 `;

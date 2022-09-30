@@ -3,19 +3,18 @@ import { useEffect, useState } from "react";
 import { NextRouter, withRouter } from "next/router";
 
 import {
+  BackButtonWithText,
   GenericButton,
   IconsForRegions,
   opacityAnimation,
   Weather,
 } from "../components";
-import { BackButton } from "../components/styles/StyledComponents";
+import { BackButtonWrapper } from "../components/styles/StyledComponents";
 
 import { getRegionById } from "../functions";
 import { CapitalCity, RegionVisual } from "../types";
 import { colors } from "../theme";
 
-import Image from "next/image";
-import back from "../public/back-icon.svg";
 import ScrollBar from "../components/UI/ScrollBar";
 
 type Props = {
@@ -60,14 +59,16 @@ const Region = ({ router }: Props) => {
   }, [regionVisual]);
 
   return (
-    <>
+    <MainContainer>
       <BackButtonWrapper>
-        <BackButton onClick={() => router.push({ pathname: "./ChooseRegion" })}>
-          <Image src={back} alt="back" />
-        </BackButton>
+        <BackButtonWithText
+          onClick={() => router.push({ pathname: "./ChooseRegion" })}
+        />
       </BackButtonWrapper>
-      <Weather cityName={city} />
-      <ScrollBar />
+      <PlacementContainer>
+        <Weather cityName={city} />
+        <ScrollBar />
+      </PlacementContainer>
       <ImageFrame $regionDiv={true}>
         <FlexImages>
           <FirstImage src={region?.mainImage} alt="region" />
@@ -102,23 +103,37 @@ const Region = ({ router }: Props) => {
           </DescriptionText>
         </DescriptionContainer>
       </DescriptionWrapper>
-    </>
+    </MainContainer>
   );
 };
 
 export default withRouter(Region);
 
-const BackButtonWrapper = styled.div`
-  margin-left: 10px;
+const MainContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const PlacementContainer = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 25vh;
+  z-index: 2000;
 `;
 
 const ImageFrame = styled.div<{
   $regionDiv: boolean;
 }>`
   overflow: hidden;
-  height: 320px;
+  height: 50vh;
   width: 100%;
-  max-width: 330px;
   display: flex;
   justify-content: center;
   top: 0;
@@ -149,16 +164,16 @@ const FlexImages = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  // width: 330px;
   width: 100%;
+  max-width: 1000px;
 `;
 
 const DescriptionWrapper = styled.div<{
   $regionVisual: string;
 }>`
   position: absolute;
-  top: 305px;
-  height: 50%;
+  top: 48vh;
+  height: 52vh;
   background-color: ${(props) =>
     props.$regionVisual === "north"
       ? `${colors.bluePalette}`
@@ -171,7 +186,8 @@ const DescriptionWrapper = styled.div<{
       : props.$regionVisual === "algarve"
       ? `${colors.brownPalette}`
       : "transparent"};
-  border-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
   z-index: 20;
 `;
 
@@ -194,20 +210,18 @@ const DescriptionText = styled.div<{
 `;
 
 const FirstImage = styled.img`
-  height: 350px;
+  height: 50vh;
   object-fit: cover;
-  animation-delay: 1.5s;
 `;
 
 const SecondImage = styled.img`
-  height: 350px;
-  margin-top: 8px;
-  animation-delay: 1.5s;
+  height: 50vh;
+  margin-top: 5px;
 `;
 
 const ThirdImage = styled.img`
-  height: 350px;
-  margin-top: 8px;
+  height: 50vh;
+  margin-top: 5px;
 `;
 
 const DescriptionContainer = styled.div`
@@ -239,6 +253,6 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   position: absolute;
   z-index: 100;
-  top: 280px;
+  top: 45vh;
   right: 20px;
 `;

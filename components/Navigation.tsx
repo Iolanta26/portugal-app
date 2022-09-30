@@ -49,9 +49,11 @@ export const Navigation = () => {
 };
 
 const MainNavContainer = styled.div`
-  position: absolute;
-  bottom: 48px;
-  z-index: 200;
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 50px;
+    z-index: 1200;
+  }
 `;
 
 const Navbar = styled.div`
@@ -59,18 +61,15 @@ const Navbar = styled.div`
   background-color: #fecf81;
   height: 50px;
   width: 100%;
-  max-width: 320px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  border-bottom-right-radius: 40px;
-  border-bottom-left-radius: 40px;
 `;
 
 const IconsDiv = styled.div`
   display: flex;
-  width: 300px;
+  width: 100%;
   justify-content: space-evenly;
   position: absolute;
   top: 7px;
